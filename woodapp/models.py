@@ -23,6 +23,7 @@ class Project(models.Model):
     likes = models.ManyToManyField(
         User, related_name='project_like', blank=True)
     approved = models.BooleanField(default=False)
+    created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ["-created_on"]
@@ -38,7 +39,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="projects"
+        User, on_delete=models.CASCADE, related_name="posts"
     )
     excerpt = models.TextField(blank=True)
     category = models.CharField(max_length=200, default='uncategorised')
@@ -46,8 +47,9 @@ class Post(models.Model):
     content = models.TextField()
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(
-        User, related_name='project_like', blank=True)
+        User, related_name='post_like', blank=True)
     approved = models.BooleanField(default=False)
+    created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ["-created_on"]
