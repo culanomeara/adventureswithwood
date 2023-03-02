@@ -10,7 +10,7 @@ class ProjectAdmin(SummernoteModelAdmin):
     search_fields = ['title', 'content', 'category']
     list_filter = ('category', 'status')
     prepopulated_fields = {'slug': ('title',)}
-    summernote_fields = ('content',)
+    summernote_fields = ('tools', 'materials', 'instructions')
 
 
 @admin.register(Post)

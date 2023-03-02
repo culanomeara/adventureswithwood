@@ -14,7 +14,8 @@ class Project(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="projects"
     )
-    category = models.CharField(max_length=200, default='uncategorised')
+    category = models.ForeignKey(
+        'Category', on_delete=models.CASCADE, related_name="proj_categories")
     featured_image = CloudinaryField('image', default='')
     tools = models.TextField()
     materials = models.TextField()
@@ -41,8 +42,9 @@ class Post(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="posts"
     )
+    category = models.ForeignKey(
+        'Category', on_delete=models.CASCADE, related_name="post_categories")
     excerpt = models.TextField(blank=True)
-    category = models.CharField(max_length=200, default='uncategorised')
     featured_image = CloudinaryField('image', default='')
     content = models.TextField()
     status = models.IntegerField(choices=STATUS, default=0)
