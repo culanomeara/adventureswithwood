@@ -16,6 +16,7 @@ class Project(models.Model):
     )
     category = models.ForeignKey(
         'Category', on_delete=models.CASCADE, related_name="proj_categories")
+    summary = models.TextField(blank=True)
     featured_image = CloudinaryField('image', default='')
     tools = models.TextField()
     materials = models.TextField()
