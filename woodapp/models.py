@@ -6,6 +6,7 @@ from cloudinary.models import CloudinaryField
 # https://github.com/Code-Institute-Solutions/Django3blog/blob/master/04_building_the_models/blog/models.py
 
 STATUS = ((0, "Draft"), (1, "Published"))
+TYPE = ((0, 'Project'), (1, 'Post'))
 
 
 class Project(models.Model):
@@ -16,7 +17,7 @@ class Project(models.Model):
     )
     category = models.ForeignKey(
         'Category', on_delete=models.CASCADE, related_name="proj_categories")
-    summary = models.TextField(blank=True)
+    summary_text = models.TextField(blank=True)
     featured_image = CloudinaryField('image', default='')
     tools = models.TextField()
     materials = models.TextField()
@@ -81,6 +82,7 @@ class Comment(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=200)
+    type = models.IntegerField(choices=TYPE, default=0)
 
     def __str__(self):
         return self.name
