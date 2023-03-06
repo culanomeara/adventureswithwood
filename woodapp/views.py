@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponseNotFound
 from django.views import generic, View
 from .models import Post, Project
 
@@ -43,8 +44,8 @@ class ProjectDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Project.objects.filter(status=1)
         project = get_object_or_404(queryset, slug=slug)
-        comments = Project.comments.filter(
-                approved=True).order_by("-created_on")
+        # comments = Project.comments.filter(
+        #       approved=True).order_by("-created_on")
         liked = False
         if project.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -54,7 +55,7 @@ class ProjectDetail(View):
             "project_details.html",
             {
                 "project": project,
-                "comments": comments,
+                # "comments": comments,
                 "liked": liked
             },
         )

@@ -23,7 +23,7 @@
                                     <p class="author">Author: {{ project.author }}</p>
                                 </div>
                             </div>
-                            <a href="{% url 'project_details' project.slug %}" class="project-link">
+                            <a href="{% url 'project_detail' project.slug %}" class="project-link">
                                 <h2 class="card-title">{{ project.title }}</h2>
                                 <p class="card-text">{{ project.summary_text }}</p>
                             </a>
