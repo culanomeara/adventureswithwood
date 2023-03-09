@@ -1,5 +1,5 @@
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponseNotFound
+from django.shortcuts import render, get_object_or_404, reverse
+from django.http import HttpResponseNotFound, HttpResponseRedirect
 from django.views import generic, View
 from .models import Post, Project
 from .forms import CommentForm
@@ -62,7 +62,7 @@ class ProjectDetail(View):
                 "comment_form": CommentForm()
             },
         )
-    
+
     def post(self, request, slug, *args, **kwargs):
         queryset = Project.objects.filter(status=1)
         project = get_object_or_404(queryset, slug=slug)
@@ -81,7 +81,7 @@ class ProjectDetail(View):
             comment.save()
         else:
             comment_form = CommentForm()
-        
+
         return render(
             request,
             "project_details.html",
@@ -93,3 +93,13 @@ class ProjectDetail(View):
                 "comment_form": CommentForm()
             },
         )
+
+
+class ProjectLike(View):
+    def post(self, request, slug, *args, **kwargs):
+        project = get_object_or_404(queryset, slug=slug)
+        if project.likes.filter(id=self.request.user.id).exists():
+            post.likes.remove(request.user)
+        else:
+            post.likes.add(request.user)
+        return HttpResponseRedirect(reverse('project_detail', args=[slug]))
