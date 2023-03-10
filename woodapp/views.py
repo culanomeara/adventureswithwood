@@ -97,9 +97,9 @@ class ProjectDetail(View):
 
 class ProjectLike(View):
     def post(self, request, slug, *args, **kwargs):
-        project = get_object_or_404(queryset, slug=slug)
+        project = get_object_or_404(Project, slug=slug)
         if project.likes.filter(id=self.request.user.id).exists():
-            post.likes.remove(request.user)
+            project.likes.remove(request.user)
         else:
-            post.likes.add(request.user)
+            project.likes.add(request.user)
         return HttpResponseRedirect(reverse('project_detail', args=[slug]))
