@@ -28,12 +28,15 @@
             <div class="card-body">
                 <!-- The project content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
+                <h4>Tools</h4>
                 <p class="card-text ">
                     {{ project.tools | safe }}
                 </p>
+                <h4>Materials</h4>
                 <p class="card-text ">
                     {{ project.materials | safe }}
                 </p>
+                <h4>Instructions</h4>
                 <p class="card-text ">
                     {{ project.instructions | safe }}
                 </p>

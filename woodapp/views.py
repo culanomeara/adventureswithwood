@@ -1,25 +1,25 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponseNotFound, HttpResponseRedirect
-from django.views import generic, View
+from django.views.generic import ListView, DetailView, CreateView
 from .models import Post, Project
 from .forms import CommentForm
 
 
-class ProjectList(generic.ListView):
+class ProjectList(ListView):
     model = Project
     queryset = Project.objects.filter(status=1).order_by('-created_on')
     template_name = 'projects.html'
     paginate_by = 4
 
 
-class PostList(generic.ListView):
+class PostList(ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'posts.html'
     paginate_by = 4
 
 
-class PostDetail(View):
+class PostDetail(DetailView):
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
@@ -40,7 +40,7 @@ class PostDetail(View):
         )
 
 
-class ProjectDetail(View):
+class ProjectDetail(DetailView):
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Project.objects.filter(status=1)
@@ -95,7 +95,7 @@ class ProjectDetail(View):
         )
 
 
-class ProjectLike(View):
+class ProjectLike(ListView):
     def post(self, request, slug, *args, **kwargs):
         project = get_object_or_404(Project, slug=slug)
         if project.likes.filter(id=self.request.user.id).exists():
@@ -103,3 +103,9 @@ class ProjectLike(View):
         else:
             project.likes.add(request.user)
         return HttpResponseRedirect(reverse('project_detail', args=[slug]))
+
+
+class AddPost(CreateView):
+    model = Post()
+    template_name = 'add_post.html'
+    fields = '__all__'
