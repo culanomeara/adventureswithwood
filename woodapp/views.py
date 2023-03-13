@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponseNotFound, HttpResponseRedirect
 from django.views.generic import ListView, DetailView, CreateView
-from .models import Post, Project
+from .models import Post, Project, Category
 from .forms import CommentForm
 
 
@@ -105,7 +105,10 @@ class ProjectLike(ListView):
         return HttpResponseRedirect(reverse('project_detail', args=[slug]))
 
 
+# https://www.youtube.com/watch?v=m3efqF9abyg
 class AddPost(CreateView):
-    model = Post()
+    model = Post
+    category = Category.objects.filter(type=1)
     template_name = 'add_post.html'
-    fields = '__all__'
+    fields = ['title', 'author', 'category', 'excerpt', 'featured_image',
+              'content']
