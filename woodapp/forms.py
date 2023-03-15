@@ -1,4 +1,4 @@
-from .models import Comment, Post, Category
+from .models import Comment, Post
 from django import forms
 
 
@@ -17,5 +17,5 @@ class AddPostForm(forms.ModelForm):
     """
     class Meta:
         model = Post
-        fields = ('title', 'author', 'category', 'excerpt',
+        fields = ('title', 'category', 'excerpt',
                   'featured_image', 'content')
