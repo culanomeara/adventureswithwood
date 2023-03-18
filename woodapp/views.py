@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
+from django.utils.text import slugify
 from django.http import HttpResponseNotFound, HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
@@ -119,7 +120,7 @@ class PostCreate(LoginRequiredMixin, CreateView):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
-            post.slug = form.title
+            post.slug = slugify(post.title)
             post.save()
             print(post)
             return redirect('posts')
