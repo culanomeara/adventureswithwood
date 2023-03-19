@@ -152,3 +152,16 @@ class ProjectCreate(LoginRequiredMixin, CreateView):
         else:
             form = AddProjectForm()
         return redirect('projects')
+
+
+class PostUpdate(LoginRequiredMixin, UpdateView):
+    model = Post
+    fields = ('title', 'category', 'excerpt', 'featured_image', 'content')
+    template_name = "post_update.html"
+
+
+class ProjectUpdate(LoginRequiredMixin, UpdateView):
+    model = Project
+    fields = ('title', 'category', 'summary_text', 'featured_image', 'tools',
+              'materials', 'instructions')
+    template_name = "project_update.html"
