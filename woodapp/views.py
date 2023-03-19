@@ -6,7 +6,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView
 from django.views.generic import CreateView, DeleteView, UpdateView
 from .models import Post, Project, Category
-from .forms import CommentForm, AddPostForm, AddProjectForm, UpdatePostForm, UpdateProjectForm
+from .forms import CommentForm, PostForm, ProjectForm
 
 
 class ProjectList(ListView):
@@ -114,19 +114,19 @@ class PostCreate(LoginRequiredMixin, CreateView):
     fields = ('title', 'category', 'excerpt', 'featured_image', 'content')
     template_name = "post_create.html"
 
-    def post(self, request, *args, **kwargs):
-        form = AddPostForm(request.POST, request.FILES)
+    def post(self, request, slug, *args, **kwargs):
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
-            post = form.save(commit=False)
-            post.author = request.user
-            post.slug = slugify(post.title)
+            # post = form.save(commit=False)
+            post.title = request.POST.get('title')
+            post.featured_image = request.POST.get('featured_image')
             post.save()
             messages.success(request,
                              'You have submitted '
                              'your post: <strong>%s</strong> for approval!'
                              % post.title)
         else:
-            form = AddPostForm()
+            form = PostForm()
         return redirect('posts')
 
 
@@ -137,7 +137,7 @@ class ProjectCreate(LoginRequiredMixin, CreateView):
     template_name = "project_create.html"
 
     def post(self, request, *args, **kwargs):
-        form = AddProjectForm(request.POST, request.FILES)
+        form = ProjectForm(request.POST, request.FILES)
         if form.is_valid():
             project = form.save(commit=False)
             project.author = request.user
@@ -148,26 +148,34 @@ class ProjectCreate(LoginRequiredMixin, CreateView):
                              'your project: <strong>%s</strong> for approval!'
                              % project.title)
         else:
-            form = AddProjectForm()
+            form = ProjectForm()
         return redirect('projects')
 
 
 class PostUpdate(LoginRequiredMixin, UpdateView):
     model = Post
-    fields = ('title', 'category', 'excerpt', 'featured_image', 'content')
+    fields = ('category', 'excerpt', 'featured_image', 'content')
     template_name = "post_update.html"
 
     def post(self, request, *args, **kwargs):
-        form = UpdatePostForm(request.POST, request.FILES)
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
+            post.title = request.title
+            post.author = request.user
+            post.slug = request.slug
+            post.featured_image = self.featured_image
             post.save()
             messages.success(request,
-                             'You have updated '
-                             'your post: <strong>%s</strong>'
-                             % post.title)
+                                'You have updated '
+                                'your post: <strong>%s</strong>'
+                                % post.title)
         else:
-            form = UpdatePostForm()
+            messages.warning(request,
+                                'You have not updated '
+                                'your post')
+            print(form.errors)
+            # form = UpdatePostForm()
         return redirect('posts')
 
 

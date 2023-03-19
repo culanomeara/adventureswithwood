@@ -22,10 +22,10 @@ class Project(models.Model):
     tools = models.TextField()
     materials = models.TextField()
     instructions = models.TextField()
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=STATUS, default=1)
     likes = models.ManyToManyField(
         User, related_name='project_like', blank=True)
-    approved = models.BooleanField(default=False)
+    approved = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -49,10 +49,10 @@ class Post(models.Model):
     excerpt = models.TextField(blank=True)
     featured_image = CloudinaryField('image', default='')
     content = models.TextField()
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=STATUS, default=1)
     likes = models.ManyToManyField(
         User, related_name='post_like', blank=True)
-    approved = models.BooleanField(default=False)
+    approved = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:

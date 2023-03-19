@@ -11,9 +11,9 @@ class CommentForm(forms.ModelForm):
         fields = ('content',)
 
 
-class AddPostForm(forms.ModelForm):
+class PostForm(forms.ModelForm):
     """
-    Add new posts
+    Add/Update posts
     """
     class Meta:
         model = Post
@@ -21,7 +21,7 @@ class AddPostForm(forms.ModelForm):
                   'featured_image', 'content')
 
 
-class AddProjectForm(forms.ModelForm):
+class ProjectForm(forms.ModelForm):
     """
     Add new project
     """
@@ -31,21 +31,22 @@ class AddProjectForm(forms.ModelForm):
                   'tools', 'materials', 'instructions')
 
 
-class UpdatePostForm(forms.ModelForm):
-    """
-    Update post
-    """
-    class Meta:
-        model = Post
-        fields = ('title', 'category', 'excerpt',
-                  'featured_image', 'content')
+    # class UpdatePostForm(forms.ModelForm):
+    #     """
+    #     Update post
+    #     """
+    #     class Meta:
+    #         model = Post
+    #         fields = ('title', 'category', 'excerpt',
+    #                 'featured_image', 'content')
 
 
-class UpdateProjectForm(forms.ModelForm):
-    """
-    Update project
-    """
-    class Meta:
-        model = Project
-        fields = ('title', 'category', 'summary_text', 'featured_image',
-                  'tools', 'materials', 'instructions')
+    # class UpdateProjectForm(forms.ModelForm):
+    #     """
+    #     Update project
+    #     """
+    #     class Meta:
+    #         model = Project
+    #         fields = ('title', 'category', 'summary_text', 'featured_image',
+    #                 'tools', 'materials', 'instructions')
+    # """
