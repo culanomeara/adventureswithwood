@@ -12,6 +12,6 @@ urlpatterns = [
     path('like/<slug:slug>', views.ProjectLike.as_view(), name='project_like'),
     path('post_create', views.PostCreate.as_view(), name='post_create'),
     path('project_create', views.ProjectCreate.as_view(), name='project_create'),
-    path('post_update', views.PostUpdate.as_view(), name='post_update'),
-    path('project_update', views.ProjectUpdate.as_view(), name='project_update'),
+    path('posts/update/<slug:slug>', views.PostUpdate.as_view(), name='post_update'),
+    path('projects/update/<slug:slug>', views.ProjectUpdate.as_view(), name='project_update'),
 ]

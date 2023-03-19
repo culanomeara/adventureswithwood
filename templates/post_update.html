@@ -7,6 +7,6 @@
 <form method="POST" enctype='multipart/form-data'>
     {% csrf_token %}
     {{ form.as_p | safe }}
-    <button type="submit">Submit Updates for Approval</button>
+    <button type="submit">Update</button>
 </form>
 {%endblock%}

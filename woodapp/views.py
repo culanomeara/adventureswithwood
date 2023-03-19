@@ -6,21 +6,19 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView
 from django.views.generic import CreateView, DeleteView, UpdateView
 from .models import Post, Project, Category
-from .forms import CommentForm, AddPostForm, AddProjectForm
+from .forms import CommentForm, AddPostForm, AddProjectForm, UpdatePostForm, UpdateProjectForm
 
 
 class ProjectList(ListView):
     model = Project
     queryset = Project.objects.filter(status=1).order_by('-created_on')
     template_name = 'projects.html'
-    paginate_by = 4
 
 
 class PostList(ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'posts.html'
-    paginate_by = 4
 
 
 class PostDetail(DetailView):
@@ -159,9 +157,37 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
     fields = ('title', 'category', 'excerpt', 'featured_image', 'content')
     template_name = "post_update.html"
 
+    def post(self, request, *args, **kwargs):
+        form = UpdatePostForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.save()
+            messages.success(request,
+                             'You have updated '
+                             'your post: <strong>%s</strong>'
+                             % post.title)
+        else:
+            form = UpdatePostForm()
+        return redirect('posts')
+
 
 class ProjectUpdate(LoginRequiredMixin, UpdateView):
     model = Project
     fields = ('title', 'category', 'summary_text', 'featured_image', 'tools',
               'materials', 'instructions')
     template_name = "project_update.html"
+
+    def post(self, request, *args, **kwargs):
+        form = UpdateProjectForm(request.POST, request.FILES)
+        if form.is_valid():
+            project = form.save(commit=False)
+            project.author = request.user
+            project.slug = slugify(project.title)
+            project.save()
+            messages.success(request,
+                             'You have updated '
+                             'your project: <strong>%s</strong>'
+                             % project.title)
+        else:
+            form = UpdateProjectForm()
+        return redirect('projects')
