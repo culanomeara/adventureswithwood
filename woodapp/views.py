@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.utils.text import slugify
 from django.http import HttpResponseNotFound, HttpResponseRedirect
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
 from .models import Post, Project, Category
@@ -116,14 +117,16 @@ class PostCreate(LoginRequiredMixin, CreateView):
 
     def post(self, request, *args, **kwargs):
         form = AddPostForm(request.POST, request.FILES)
-        print(form)
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
             post.slug = slugify(post.title)
             post.save()
-            print(post)
-            return redirect('posts')
+            messages.success(request,
+                             'You have submitted '
+                             'your post: <strong>%s</strong> for approval!'
+                             % post.title)
+            # return HttpResponseRedirect(request.path_info)
         else:
             form = AddPostForm()
-        return render(request, 'post_create.html', {'form': form})
+        return redirect('posts')
