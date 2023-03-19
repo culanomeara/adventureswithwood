@@ -1,4 +1,4 @@
-from .models import Comment, Post
+from .models import Comment, Post, Project
 from django import forms
 
 
@@ -19,3 +19,13 @@ class AddPostForm(forms.ModelForm):
         model = Post
         fields = ('title', 'category', 'excerpt',
                   'featured_image', 'content')
+
+
+class AddProjectForm(forms.ModelForm):
+    """
+    Add new project
+    """
+    class Meta:
+        model = Project
+        fields = ('title', 'category', 'summary_text', 'featured_image',
+                  'tools', 'materials', 'instructions')
