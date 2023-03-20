@@ -9,10 +9,6 @@ body {
     color: #4A4A4F;
 }
 
-.red-o {
-    color: #E84610;
-}
-
 .thin {
     font-weight: 300;
 }
@@ -62,8 +58,8 @@ body {
 }
 
 .masthead-text {
-    background-color: #445261;
-    color: white;
+    background-color: lightgray ;
+    color: #445261;
     position: relative;
 }
 
@@ -95,6 +91,17 @@ body {
 .page-link {
     color: #E84610;
 }
+
+.post-update {
+    text-decoration: none;
+    color: lightgray;
+}
+
+.post-update:hover,
+.page-update {
+    color: #E84610;
+}
+
 
 .post-title {
     margin-top: 20%;

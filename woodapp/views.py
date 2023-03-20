@@ -172,7 +172,6 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
             messages.warning(request,
                              'You have not updated '
                              'your post')
-            print(form.errors)
             # form = UpdatePostForm()
         return redirect('posts')
 
@@ -183,17 +182,19 @@ class ProjectUpdate(LoginRequiredMixin, UpdateView):
               'materials', 'instructions')
     template_name = "project_update.html"
 
-    def post(self, request, *args, **kwargs):
-        form = UpdateProjectForm(request.POST, request.FILES)
+    def post(self, request, slug, *args, **kwargs):
+        project = get_object_or_404(Project, slug=slug)
+        form = UpdateProjectForm(request.POST, request.FILES, isntance=project)
         if form.is_valid():
-            project = form.save(commit=False)
-            project.author = request.user
             project.slug = slugify(project.title)
+            project = form.save(commit=False)
             project.save()
             messages.success(request,
                              'You have updated '
                              'your project: <strong>%s</strong>'
                              % project.title)
         else:
-            form = UpdateProjectForm()
+            messages.warning(request,
+                             'You have not updated '
+                             'your project')
         return redirect('projects')

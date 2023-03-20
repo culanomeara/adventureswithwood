@@ -11,9 +11,8 @@
                 <p class="project-subtitle">{{ project.author }} | {{ project.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in project.featured_image.url %}
-                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
+                <img src="https://res.cloudinary.com/dsmlahszj/image/upload/v1677950722/ijwoqevbawjruy19i6bt.png" width="100%">
                 {% else %}
                 <img src=" {{ project.featured_image.url }}" width="100%">
                 {% endif %}
@@ -26,8 +25,6 @@
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
-                <!-- The project content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
                 <h4>Tools</h4>
                 <p class="card-text ">
                     {{ project.tools | safe }}
@@ -41,7 +38,6 @@
                     {{ project.instructions | safe }}
                 </p>
                 <div class="row">
-
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}
@@ -56,14 +52,12 @@
                             {% else %}
                             <span class="text-secondary"><i class="far fa-heart"></i></span>
                             {% endif %}
-                        <!-- The number of likes goes before the closing strong tag -->
                         <span class="text-secondary">{{ project.number_of_likes }} </span>
                         </strong>
                     </div>
                     <div class="col-1">
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary"><i class="far fa-comments"></i>
-                            <!-- Our total_comments variable goes before the closing strong tag -->
                             {{ total_comments }}</strong>
                         {% endwith %}
                     </div>
@@ -80,7 +74,6 @@
         <div class="col-md-8 card mb-4  mt-3 ">
             <h3>Comments:</h3>
             <div class="card-body">
-                <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
                 {% for comment in comments %}
                 <div class="comments" style="padding: 10px;">
                     <p class="font-weight-bold">
