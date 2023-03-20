@@ -4,8 +4,6 @@
 
 <div class="container-fluid">
     <div class="row">
-
-        <!-- Project Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for project in project_list %}
@@ -14,10 +12,10 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in project.featured_image.url %}
-                                <img class="card-img-top"
+                                <img class="card-img-top img-thumbnail"
                                     src="https://res.cloudinary.com/dsmlahszj/image/upload/v1677950722/ijwoqevbawjruy19i6bt.png">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ project.featured_image.url }}">
+                                <img class="card-img-top img-thumbnail" src=" {{ project.featured_image.url }}">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Author: {{ project.author }}</p>
@@ -27,6 +25,7 @@
                                 <h2 class="card-title">{{ project.title }}</h2>
                                 <p class="card-text">{{ project.summary_text }}</p>
                             </a>
+                            <a href="{% url 'project_update' project.slug %}" class="project-link">Update</a>
                             <hr />
                             <p class="card-text text-muted h6">{{ project.created_on}} <i class="far fa-heart"></i>
                                 {{ project.number_of_likes }}</p>

@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.utils.text import slugify
 from django.http import HttpResponseNotFound, HttpResponseRedirect
 from django.contrib import messages
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView
 from django.views.generic import CreateView, DeleteView, UpdateView
 from .models import Post, Project, Category
@@ -152,7 +152,7 @@ class ProjectCreate(LoginRequiredMixin, CreateView):
         return redirect('projects')
 
 
-class PostUpdate(LoginRequiredMixin, UpdateView):
+class PostUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
     fields = ('title', 'category', 'excerpt', 'featured_image', 'content')
     template_name = "post_update.html"
@@ -175,8 +175,16 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
             # form = UpdatePostForm()
         return redirect('posts')
 
+# https://www.youtube.com/watch?v=-s7e_Fy6NRU
 
-class ProjectUpdate(LoginRequiredMixin, UpdateView):
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
+
+
+class ProjectUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Project
     fields = ('title', 'category', 'summary_text', 'featured_image', 'tools',
               'materials', 'instructions')
@@ -184,7 +192,7 @@ class ProjectUpdate(LoginRequiredMixin, UpdateView):
 
     def post(self, request, slug, *args, **kwargs):
         project = get_object_or_404(Project, slug=slug)
-        form = UpdateProjectForm(request.POST, request.FILES, isntance=project)
+        form = ProjectForm(request.POST, request.FILES, instance=project)
         if form.is_valid():
             project.slug = slugify(project.title)
             project = form.save(commit=False)
@@ -194,7 +202,12 @@ class ProjectUpdate(LoginRequiredMixin, UpdateView):
                              'your project: <strong>%s</strong>'
                              % project.title)
         else:
-            messages.warning(request,
-                             'You have not updated '
+            messages.warning(request, 'You have not updated '
                              'your project')
         return redirect('projects')
+
+    def test_func(self):
+        project = self.get_object()
+        if self.request.user == project.author:
+            return True
+        return False

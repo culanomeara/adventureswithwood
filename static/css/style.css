@@ -32,6 +32,8 @@ body {
 
 .image-container {
     position: relative;
+    width: 20px;
+    height: 20px;
 }
 
 .image-flash {
@@ -81,6 +83,11 @@ body {
     transform: skew(15deg);
     z-index: 100;
 }
+
+.blog-image {
+    width: 50vh;
+    height: 50vh;
+    }
 
 .post-link {
     text-decoration: none;
