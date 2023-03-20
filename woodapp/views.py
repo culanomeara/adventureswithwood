@@ -154,26 +154,24 @@ class ProjectCreate(LoginRequiredMixin, CreateView):
 
 class PostUpdate(LoginRequiredMixin, UpdateView):
     model = Post
-    fields = ('category', 'excerpt', 'featured_image', 'content')
+    fields = ('title', 'category', 'excerpt', 'featured_image', 'content')
     template_name = "post_update.html"
 
-    def post(self, request, *args, **kwargs):
-        form = PostForm(request.POST, request.FILES)
+    def post(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug)
+        form = PostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
+            post.slug = slugify(post.title)
             post = form.save(commit=False)
-            post.title = request.title
-            post.author = request.user
-            post.slug = request.slug
-            post.featured_image = self.featured_image
             post.save()
             messages.success(request,
-                                'You have updated '
-                                'your post: <strong>%s</strong>'
-                                % post.title)
+                             'You have updated '
+                             'your post: <strong>%s</strong>'
+                             % post.title)
         else:
             messages.warning(request,
-                                'You have not updated '
-                                'your post')
+                             'You have not updated '
+                             'your post')
             print(form.errors)
             # form = UpdatePostForm()
         return redirect('posts')
