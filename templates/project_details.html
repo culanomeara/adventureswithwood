@@ -6,7 +6,7 @@
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <h1 class="project-title">{{ project.title }}</h1>
-                <p class="project-subtitle">{{ project.author }} | {{ project.created_on }}</p>
+                <p class="project-subtitle">{{ project.author }} | {{ project.created_on }} | <a href="{% url 'project_update' project.slug %}" class="project-update">Update</a></p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 {% if "placeholder" in project.featured_image.url %}

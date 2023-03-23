@@ -1,10 +1,17 @@
-from django.shortcuts import render, get_object_or_404, reverse, redirect
+from django.shortcuts import (render,
+                              get_object_or_404,
+                              reverse,
+                              redirect)
+from django.urls import reverse_lazy
 from django.utils.text import slugify
 from django.http import HttpResponseNotFound, HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.views.generic import ListView, DetailView
-from django.views.generic import CreateView, DeleteView, UpdateView
+from django.views.generic import (ListView,
+                                  DetailView,
+                                  CreateView,
+                                  DeleteView,
+                                  UpdateView)
 from .models import Post, Project, Category
 from .forms import CommentForm, PostForm, ProjectForm
 
@@ -209,5 +216,27 @@ class ProjectUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def test_func(self):
         project = self.get_object()
         if self.request.user == project.author:
+            return True
+        return False
+
+
+class PostDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Post
+    template_name = "confirm_delete.html"
+    success_url = reverse_lazy('posts')
+# https://stackoverflow.com/questions/17678689/how-to-add-a-cancel-button-to-deleteview-in-django
+
+    def post(self, request, *args, **kwargs):
+        if "cancel" in request.POST:
+            url = self.get_success_url()
+            return HttpResponseRedirect(url)
+        else:
+            messages.success(request,
+                             'You have successfully deleted your post')
+            return super(PostDelete, self).post(request, *args, **kwargs)
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
             return True
         return False
