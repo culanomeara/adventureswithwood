@@ -227,6 +227,7 @@ class PostDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 # https://stackoverflow.com/questions/17678689/how-to-add-a-cancel-button-to-deleteview-in-django
 
     def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
         if "cancel" in request.POST:
             url = self.get_success_url()
             return HttpResponseRedirect(url)
@@ -240,3 +241,28 @@ class PostDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         if self.request.user == post.author:
             return True
         return False
+
+
+class ProjectDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Project
+    template_name = "confirm_delete.html"
+    success_url = reverse_lazy('projects')
+# https://stackoverflow.com/questions/17678689/how-to-add-a-cancel-button-to-deleteview-in-django
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        if "cancel" in request.POST:
+            url = self.get_success_url()
+            return HttpResponseRedirect(url)
+        else:
+            messages.success(request,
+                             'You have successfully deleted your project')
+            return super(ProjectDelete, self).post(request, *args, **kwargs)
+
+    def test_func(self):
+        project = self.get_object()
+        if self.request.user == project.author:
+            return True
+        return False
+
+

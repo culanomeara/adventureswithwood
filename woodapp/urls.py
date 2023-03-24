@@ -15,4 +15,5 @@ urlpatterns = [
     path('posts/<slug:slug>/update/', views.PostUpdate.as_view(), name='post_update'),
     path('projects/<slug:slug>/update/', views.ProjectUpdate.as_view(), name='project_update'),
     path('posts/<slug:slug>/delete/', views.PostDelete.as_view(), name='confirm_delete'),
+    path('projectss/<slug:slug>/delete/', views.ProjectDelete.as_view(), name='confirm_delete'),
 ]
