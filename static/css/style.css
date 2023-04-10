@@ -37,15 +37,14 @@ body {
 .image-flash {
     position: absolute;
     bottom: 5%;
-    min-width: 30%;
+    min-width: 20%;
     left: -2px;
-    background-color: #23BBBB;
+    background-color: #535252;
 }
 
 .author {
     color: white;
     margin: 4px;
-    text-transform: uppercase;
 }
 
 .masthead {
@@ -87,19 +86,25 @@ body {
     color: #445261;
 }
 
-.p-link:hover,
+.p-link:hover {
+    color: #619dde;
+}
+
 .page-link {
-    color: #E84610;
+    color: #445261;
 }
 
 .p-update {
     text-decoration: none;
-    color: lightgray;
+    color: #445261;
 }
 
-.p-update:hover,
+.p-update:hover {
+    color: #619dde;
+}
+
 .p-update {
-    color: #E84610;
+    color: #445261;
 }
 
 
@@ -110,7 +115,7 @@ body {
 
 .p-subtitle {
     margin-left: 5%;
-    color: rgb(227, 94, 94);
+    color: #445261;
 }
 
 .btn-signup {

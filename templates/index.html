@@ -1,57 +1,156 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% for project in project_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                {% if "placeholder" in project.featured_image.url %}
-                                <img class="card-img-top"
-                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
-                                {% else %}
-                                <img class="card-img-top" src=" {{ project.featured_image.url }}">
-                                {% endif %}
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ project.author }}</p>
-                                </div>
-                            </div>
-                            <a href="{% url 'project_detail' project.slug %}" class="project-link">
-                                <h2 class="card-title">{{ project.title }}</h2>
-                                <p class="card-text">{{ project.summary_text }}</p>
-                            </a>
-                            <hr />
-                            <p class="card-text text-muted h6">{{ project.created_on}} <i class="far fa-heart"></i>
-                                {{ project.number_of_likes }}</p>
-                        </div>
-                    </div>
-                </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
-
-            </div>
-        </div>
+<header>
+    <div
+      id="carouselExampleCaptions"
+      class="carousel slide"
+      data-bs-ride="false"
+    >
+      <div class="carousel-inner">
+        {% for project in featured_projects %}
+        {% if forloop.first %}
+        <div class="carousel-item active">
+        {% else %}
+          <div class="carousel-item">
+        {% endif %}
+            <a href="/project/{{ project.slug }}">
+              <img
+                src="{{ project.featured_image.url }}"
+                class="d-block w-100"
+                alt="{{ project.title }}"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h1>{{ project.title }}</h1>
+              </div>
+            </a> 
+          </div>
+        {% endfor %}
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span
+            class="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span
+            class="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
-</div>
+  </header>
+    <section class="intro container">
+      <div>
+        <h2 class="heading">Who we are</h2>
+        <p>
+          Adventures with Wood aims to inspire, inform and guide you through your lifelong adventures working with all types of wood projects.
+        </p>
+        <p>And if you are struggling for inspiration, you can check out our posts where expert users help you decide which project works best for you</p>
+      </div>
+      <img src="{% static 'images/stacked_logs.jpg' %}" alt="Stack of wood" />
+    </section>
+    <section class="wrapper container">
+      <h3 class="heading">Most Popular Projects</h3>
+      <div class="top">
+          <div class="hero">
+              <a href="/projects/{{ most_popular.0.slug }}">
+                  <div class="ribbon">
+                      <span class="ribbon__content text-center"
+                          >Most Popular</span
+                      >
+                  </div>
+                  <img
+                      src="{{ most_popular.0.featured_image.url }}"
+                      alt="{{ most_popular.0.title }}"
+                  >
+                  <div class="hero-info">
+                      <h3>{{ most_popular.0.title }}</h3>
+                  </div>
+              </a>
+          </div>
+          <div class="cta cta1">
+              <a href="/projects/{{ most_popular.1.slug }}">
+                  <div class="ribbon">
+                      <span class="ribbon__content text-center"
+                          >Most Popular</span
+                      >
+                  </div>
+                  <img
+                      src="{{ most_popular.1.featured_image.url }}"
+                      alt="{{ most_popular.1.title }}"
+                  >
+                  <div class="hero-info">
+                      <h3>{{ most_popular.1.title }}</h3>
+                  </div>
+              </a>
+          </div>
+          <div class="cta cta2">
+              <a href="/projects/{{ most_popular.2.slug }}">
+                  <div class="ribbon">
+                      <span class="ribbon__content text-center"
+                          >Most Popular</span
+                      >
+                  </div>
+                  <img
+                      src="{{ most_popular.2.featured_image.url }}"
+                      alt="{{ most_popular.2.title }}"
+                  >
+                  <div class="hero-info">
+                      <h3>{{ most_popular.2.title }}</h3>
+                  </div>
+              </a>
+          </div>
+      </div>
+  </section>
+  <div class="heading-container container">
+  <div class="row">
+    <div class="col-2 col-md-3">
+      <div class="divider"></div>
+    </div>
+    <div class="col-8 col-md-6 text-center">
+      <h3 class="heading">Categories</h3>
+    </div>
+    <div class="col-2 col-md-3">
+      <div class="divider"></div>
+    </div>
+  </div>
+  </div>
+  
+  <section class="posts">
+    {% for post in posts %}
+      <div class="post-panel">
+          <a href="/posts/{{ post.slug }}">
+              {% if "placeholder" in post.featured_image.url %}
+              <img  alt="{{ post.title }}" src="https://res.cloudinary.com/dsmlahszj/image/upload/v1679261024/e6gpexfcgmaneqv7bvcf.png">
+              {% else %}
+              <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+              {% endif %}
+              <div class="post-info">
+                <div class="post-topic">{{ post.topic }}</div>
+                  <div class="post-info-inner">
+                      <h4 class="heading">{{ post.title }}</h4>
+                      <p>
+                          {{ post.excerpt }}
+                      </p>
+                  </div>
+              </div>
+          </a>
+      </div>
+    {% endfor %}
+  </section>
 {%endblock%}

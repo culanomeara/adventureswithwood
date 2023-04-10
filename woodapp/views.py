@@ -7,7 +7,8 @@ from django.utils.text import slugify
 from django.http import HttpResponseNotFound, HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.views.generic import (ListView,
+from django.views.generic import (View,
+                                  ListView,
                                   DetailView,
                                   CreateView,
                                   DeleteView,
@@ -16,20 +17,47 @@ from .models import Post, Project, Category
 from .forms import CommentForm, PostForm, ProjectForm
 
 
+class Home(View):
+    """
+    A class for the Home page view
+    """
+    def get(self, request, *args, **kwargs):
+        
+        most_popular = Project.objects.all().order_by('likes')[:3]
+        most_recent = Category.objects.all().order_by('type')[:6]
+        posts = Post.objects.all().order_by('-created_on')[:2]
+
+        context = {
+            
+            'most_popular': most_popular,
+            'most_recent': most_recent,
+            'posts': posts
+        }
+        return render(request, 'index.html', context)
+
+
 class ProjectList(ListView):
+    """
+    A class for the ProjectList view
+    """
     model = Project
     queryset = Project.objects.filter(status=1).order_by('-created_on')
     template_name = 'projects.html'
 
 
 class PostList(ListView):
+    """
+    A class for the PostList view
+    """
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'posts.html'
 
 
 class PostDetail(DetailView):
-
+    """
+    A class for the PostDetail view
+    """
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -50,7 +78,9 @@ class PostDetail(DetailView):
 
 
 class ProjectDetail(DetailView):
-
+    """
+    A class for the ProjectDetail view
+    """
     def get(self, request, slug, *args, **kwargs):
         queryset = Project.objects.filter(status=1)
         project = get_object_or_404(queryset, slug=slug)
@@ -105,6 +135,9 @@ class ProjectDetail(DetailView):
 
 
 class ProjectLike(ListView):
+    """
+    A class for the ProjectLike view
+    """
     def post(self, request, slug, *args, **kwargs):
         project = get_object_or_404(Project, slug=slug)
         if project.likes.filter(id=self.request.user.id).exists():
@@ -117,6 +150,9 @@ class ProjectLike(ListView):
 # https://docs.djangoproject.com/en/4.1/topics/auth/default/#django.contrib.auth.mixins.LoginRequiredMixin
 # https://stackoverflow.com/questions/66438829/how-can-i-connect-the-user-to-a-post-he-created-in-django
 class PostCreate(LoginRequiredMixin, CreateView):
+    """
+    A class for the PostCreate view
+    """
     model = Post
     fields = ('title', 'category', 'excerpt', 'featured_image', 'content')
     template_name = "post_create.html"
@@ -138,6 +174,9 @@ class PostCreate(LoginRequiredMixin, CreateView):
 
 
 class ProjectCreate(LoginRequiredMixin, CreateView):
+    """
+    A class for the ProjectCreate view
+    """
     model = Project
     fields = ('title', 'category', 'summary_text', 'featured_image', 'tools',
               'materials', 'instructions')
@@ -160,6 +199,9 @@ class ProjectCreate(LoginRequiredMixin, CreateView):
 
 
 class PostUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """
+    A class for the PostUdpate view
+    """
     model = Post
     fields = ('title', 'category', 'excerpt', 'featured_image', 'content')
     template_name = "post_update.html"
@@ -192,6 +234,9 @@ class PostUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 
 class ProjectUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """
+    A class for the ProjectUpdate view
+    """
     model = Project
     fields = ('title', 'category', 'summary_text', 'featured_image', 'tools',
               'materials', 'instructions')
@@ -221,6 +266,9 @@ class ProjectUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 
 class PostDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """
+    A class for the PostDelete view
+    """
     model = Post
     template_name = "confirm_delete.html"
     success_url = reverse_lazy('posts')
@@ -244,6 +292,9 @@ class PostDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 
 class ProjectDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """
+    A class for the ProjectDelete view
+    """
     model = Project
     template_name = "confirm_delete.html"
     success_url = reverse_lazy('projects')
@@ -264,5 +315,3 @@ class ProjectDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         if self.request.user == project.author:
             return True
         return False
-
-
