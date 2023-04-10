@@ -47,6 +47,12 @@ body {
     margin: 4px;
 }
 
+.heading {
+    margin-top: 3rem;
+    font-size: 3.6rem;
+    font-weight: 700;
+}
+
 .masthead {
     margin-top: 10px;
     overflow: hidden;
@@ -151,4 +157,96 @@ body {
     color: #E84610;
     background: transparent;
     border: none;
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 2rem;
+}
+
+.intro {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	justify-content: space-between;
+	align-items: center;
+}
+
+.intro img {
+	width: 100%;
+	padding: 1rem;
+}
+
+.main-panel {
+	grid-row: span 2;
+}
+
+.side-panels {
+	display: flex;
+	flex-direction: column;
+}
+
+.hero img,
+.proj img {
+    max-width: 100%;
+    height: 100%;
+    transform: scale(1.2);
+    transition: all 0.5s;
+}
+
+.top {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-areas:
+        'hero hero proj1'
+        'hero hero proj2';
+}
+
+.hero {
+    grid-area: hero;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 1.6rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-flash h3 {
+    padding: 0.8rem 1.6rem;
+    color: white;
+    font-weight: 200;
+    font-size: 1.6rem;
+}
+
+.hero-flash {
+    padding: 0.8rem 1.6rem;
+    color: white;
+    font-weight: 200;
+    font-size: 1.6rem;
+    background-color: #535252;
+}
+
+.proj {
+    font-size: 1.4rem;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero a:hover img,
+.proj a:hover img {
+    transform: scale(1.1);
+}
+
+.proj1 {
+    grid-template-areas: proj1;
+}
+
+.proj2 {
+    grid-template-areas: proj2;
 }

@@ -22,13 +22,15 @@ class Home(View):
     A class for the Home page view
     """
     def get(self, request, *args, **kwargs):
-        
+        featured_projects = (
+            Project.objects.all().order_by('-created_on')[:5]
+        )
         most_popular = Project.objects.all().order_by('likes')[:3]
         most_recent = Category.objects.all().order_by('type')[:6]
         posts = Post.objects.all().order_by('-created_on')[:2]
 
         context = {
-            
+            'featured_projects': featured_projects,
             'most_popular': most_popular,
             'most_recent': most_recent,
             'posts': posts
