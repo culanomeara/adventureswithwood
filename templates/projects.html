@@ -10,6 +10,7 @@
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
+                            <a href="{% url 'project_detail' project.slug %}" class="p-link">
                             <div class="image-container">
                                 {% if "placeholder" in project.featured_image.url %}
                                 <img class="card-img-top img-thumbnail"
@@ -21,9 +22,7 @@
                                     <p class="author">Author: {{ project.author }}</p>
                                 </div>
                             </div>
-                            <a href="{% url 'project_detail' project.slug %}" class="p-link">
-                                <h2 class="card-title">{{ project.title }}</h2> 
-                            </a>
+                            <h2 class="card-title">{{ project.title }}</h2> 
                             <p class="card-text">{{ project.summary_text }}</p>
                             {% if project.author == request.user %}
                                 <p><a href="{% url 'project_update' project.slug %}" class="p-link">Update</a>
@@ -33,6 +32,7 @@
                             <hr/>
                             <p class="card-text text-muted h6">{{ project.created_on}} <i class="far fa-heart"></i>
                                 {{ project.number_of_likes }}</p>
+                            </a>
                         </div>
                     </div>
                 </div>

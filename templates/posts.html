@@ -10,6 +10,7 @@
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
+                            <a href="{% url 'post_detail' post.slug %}" class="p-link">
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top"
@@ -21,9 +22,8 @@
                                     <p class="author">Author: {{ post.author }}</p>
                                 </div>
                             </div>
-                            <a href="{% url 'post_detail' post.slug %}" class="p-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
-                            </a>
+                            <h2 class="card-title">{{ post.title }}</h2>
+                            
                             <p class="card-text">{{ post.excerpt }}</p>
                             {% if post.author == request.user %}
                                 <p><a href="{% url 'post_update' post.slug %}" class="p-link">Update</a> 
@@ -31,8 +31,8 @@
                                 </p> 
                             {% endif %}
                             <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
-                                {{ post.number_of_likes }}</p>
+                            <p class="card-text text-muted h6">{{ post.created_on}}</p>
+                            </a>
                         </div>
                     </div>
                 </div>
