@@ -32,8 +32,6 @@ body {
 
 .image-container {
     position: relative;
-    width: 20px;
-    height: 20px;
 }
 
 .image-flash {
@@ -84,40 +82,35 @@ body {
     z-index: 100;
 }
 
-.blog-image {
-    width: 50vh;
-    height: 50vh;
-    }
-
-.post-link {
+.p-link {
     text-decoration: none;
     color: #445261;
 }
 
-.post-link:hover,
+.p-link:hover,
 .page-link {
     color: #E84610;
 }
 
-.post-update {
+.p-update {
     text-decoration: none;
     color: lightgray;
 }
 
-.post-update:hover,
-.page-update {
+.p-update:hover,
+.p-update {
     color: #E84610;
 }
 
 
-.post-title {
+.p-title {
     margin-top: 20%;
     margin-left: 5%;
 }
 
-.post-subtitle {
+.p-subtitle {
     margin-left: 5%;
-    color: lightgray;
+    color: rgb(227, 94, 94);
 }
 
 .btn-signup {

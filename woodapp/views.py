@@ -121,16 +121,16 @@ class PostCreate(LoginRequiredMixin, CreateView):
     fields = ('title', 'category', 'excerpt', 'featured_image', 'content')
     template_name = "post_create.html"
 
-    def post(self, request, slug, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
-            # post = form.save(commit=False)
-            post.title = request.POST.get('title')
-            post.featured_image = request.POST.get('featured_image')
+            post = form.save(commit=False)
+            post.author = request.user
+            post.slug = slugify(post.title)
             post.save()
             messages.success(request,
                              'You have submitted '
-                             'your post: <strong>%s</strong> for approval!'
+                             'your post: <strong>%s</strong>!'
                              % post.title)
         else:
             form = PostForm()
@@ -152,7 +152,7 @@ class ProjectCreate(LoginRequiredMixin, CreateView):
             project.save()
             messages.success(request,
                              'You have submitted '
-                             'your project: <strong>%s</strong> for approval!'
+                             'your project: <strong>%s</strong>!'
                              % project.title)
         else:
             form = ProjectForm()

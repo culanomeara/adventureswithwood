@@ -4,8 +4,13 @@
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
-                <h1 class="post-title">{{ post.title }}</h1>
-                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }} | <a href="{% url 'post_update' post.slug %}" class="post-update">Update</a></p>
+                <h1 class="p-title">{{ post.title }}</h1>
+                <p class="p-subtitle">{{ post.author }} | {{ post.created_on }}
+                {% if post.author == request.user %}
+                    | <a href="{% url 'post_update' post.slug %}" class="p-link">Update</a> 
+                    | <a href="{% url 'confirm_delete' post.slug %}" class="p-link">Delete</a>  
+                {% endif %}
+                </p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 {% if "placeholder" in post.featured_image.url %}
