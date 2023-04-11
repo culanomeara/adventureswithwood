@@ -3,7 +3,6 @@ from .models import Post, Project, Category, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
 
-@admin.register(Project)
 class ProjectAdmin(SummernoteModelAdmin):
 
     list_display = ('title', 'slug', 'category', 'created_on')
@@ -13,7 +12,9 @@ class ProjectAdmin(SummernoteModelAdmin):
     summernote_fields = ('tools', 'materials', 'instructions')
 
 
-@admin.register(Post)
+admin.site.register(Project, ProjectAdmin)
+
+
 class PostAdmin(SummernoteModelAdmin):
 
     list_display = ('title', 'slug', 'category', 'created_on')
@@ -26,7 +27,9 @@ class PostAdmin(SummernoteModelAdmin):
         return Category.objects.filter(type=1)
 
 
-@admin.register(Comment)
+admin.site.register(Post, PostAdmin)
+
+
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('name', 'content', 'project', 'created_on', 'approved')
     list_filter = ('approved', 'created_on')
@@ -37,7 +40,12 @@ class CommentAdmin(admin.ModelAdmin):
         queryset.update(approved=True)
 
 
-@admin.register(Category)
+admin.site.register(Comment, CommentAdmin)
+
+
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'type')
     search_fields = ('name', 'type')
+
+
+admin.site.register(Category, CategoryAdmin)

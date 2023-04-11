@@ -1,5 +1,5 @@
 body {
-    background-color: #F9FAFC;
+    background-color: #aa3434;
 }
 
 .brand {
@@ -257,12 +257,14 @@ body {
 }
 
 .signup input,
+.create_p input,
 .login input {
     width: 100%;
 }
 
 #signup_form,
 #login_form,
+#create_p_form,
 #contactus_form {
     width: 80%;
     min-height: 50rem;

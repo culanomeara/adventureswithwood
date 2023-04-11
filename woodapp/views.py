@@ -156,7 +156,7 @@ class PostCreate(LoginRequiredMixin, CreateView):
     A class for the PostCreate view
     """
     model = Post
-    fields = ('title', 'category', 'excerpt', 'featured_image', 'content')
+    form_class = PostForm
     template_name = "post_create.html"
 
     def post(self, request, *args, **kwargs):
@@ -180,8 +180,7 @@ class ProjectCreate(LoginRequiredMixin, CreateView):
     A class for the ProjectCreate view
     """
     model = Project
-    fields = ('title', 'category', 'summary_text', 'featured_image', 'tools',
-              'materials', 'instructions')
+    form_class = ProjectForm
     template_name = "project_create.html"
 
     def post(self, request, *args, **kwargs):
@@ -205,7 +204,7 @@ class PostUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     A class for the PostUdpate view
     """
     model = Post
-    fields = ('title', 'category', 'excerpt', 'featured_image', 'content')
+    form_class = PostForm
     template_name = "post_update.html"
 
     def post(self, request, slug, *args, **kwargs):
@@ -240,8 +239,7 @@ class ProjectUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     A class for the ProjectUpdate view
     """
     model = Project
-    fields = ('title', 'category', 'summary_text', 'featured_image', 'tools',
-              'materials', 'instructions')
+    form_class = ProjectForm
     template_name = "project_update.html"
 
     def post(self, request, slug, *args, **kwargs):

@@ -1,5 +1,6 @@
 from .models import Comment, Post, Project
 from django import forms
+from django_summernote.widgets import SummernoteWidget
 
 
 class CommentForm(forms.ModelForm):
@@ -19,6 +20,9 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ('title', 'category', 'excerpt',
                   'featured_image', 'content')
+        widgets = {
+            'content': SummernoteWidget(),
+        }
 
 
 class ProjectForm(forms.ModelForm):
@@ -29,24 +33,8 @@ class ProjectForm(forms.ModelForm):
         model = Project
         fields = ('title', 'category', 'summary_text', 'featured_image',
                   'tools', 'materials', 'instructions')
-
-
-    # class UpdatePostForm(forms.ModelForm):
-    #     """
-    #     Update post
-    #     """
-    #     class Meta:
-    #         model = Post
-    #         fields = ('title', 'category', 'excerpt',
-    #                 'featured_image', 'content')
-
-
-    # class UpdateProjectForm(forms.ModelForm):
-    #     """
-    #     Update project
-    #     """
-    #     class Meta:
-    #         model = Project
-    #         fields = ('title', 'category', 'summary_text', 'featured_image',
-    #                 'tools', 'materials', 'instructions')
-    # """
+        widgets = {
+            'tools': SummernoteWidget(),
+            'materials': SummernoteWidget(),
+            'instructions': SummernoteWidget(),
+        }
