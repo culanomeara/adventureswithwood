@@ -13,27 +13,22 @@ Link to the live site -
 
 * [**Project**](<#project>)
     * [Objective](<#objective>)
-    * [Site User Goal](<#site-user-goal>)
-    * [Site Owner Goal](<#site-owner-goal>)
+    * [Site User Goals](<#site-user-goals>)
+    * [Site Owner Goals](<#site-owner-goals>)
     * [**Project Management**](<#project-management>)
         * [GitHub Project Board](<#github-project-board>)
         * [Database Schema](<#database-schema>)
 * [**User Experience UX**](<#user-experience-ux>)
-    * [Wireframes](<#wireframes>)
     * [User Stories](<#user-stories>)
     * [Site Structure](<#site-structure>)
-    * [Colour Scheme](<#colour-scheme>)
     * [Typography](<#typography>)
 * [**Features**](<#features>)
     * [**Existing Features**](<#existing-features>)
         * [**Homepage**](<#homepage>)
             * [Navigation](<#navigation>)
-            * [Hero](<#hero>)
+            * [Carousel](<#carousel>)
             * [Intro](<#intro>)
-            * [Featured project](<#featured-project>)
-            * [Latest projects List](<#latest-projects-list>)
             * [Most Popular projects List](<#most-popular-projects-list>)
-            * [Footer](<#footer>)
         * [**Authorisation**](<#authorisation>)
             * [Sign Up](<#sign-up>)
             * [Log In](<#log-in>)
@@ -124,14 +119,27 @@ This project was created as a fourth portfolio project submission for the Full S
 
 [Back to top](<#contents>)
 
-## Site User Goal
+## Site User Goals
 
+- To get inspiration for DIY wooden projects
+- To view all projects and posts
+- To view details or projects and posts
+- To view the most popular projects
+- To be able to register/sign up to the site
+- To comment on and like projects
+- To log in to the site
+- To create new Projects and Posts
+- To update/edit/delete their projects/posts
 
 [Back to top](<#contents>)
 
-## Site Owner Goal
+## Site Owner Goals
 
-As the site owner, the goal is to provide a stable and enjoyable user experience that encourages interaction and participation. The platform should be accessibile, welcoming and appealing to new users. Content should be high quality and well structured. User interactions should be monitored to maintain community standards. 
+- Provide a stable and enjoyable user experience that encourages interaction and participation.
+- The platform should be accessibile, welcoming and appealing to new users.
+- Content should be high quality and well structured.
+- Provide fully responsive application with straightforward navigation
+- Ensure only authenticated and valid users have access to CRUD functionality
 
 [Back to top](<#contents>)
 
@@ -139,95 +147,42 @@ As the site owner, the goal is to provide a stable and enjoyable user experience
 
 ### Github Project Board
 
-An agile methodology was used to plan and design the Adventures with Wood application. A large part of this planning was done via the [. User stories were created on GitHub and added to the board in the todo section. They then moved across the board into in progress when they were being actioned, and then into the done section when they were completed. This helped greatly in tracking progress and organising and allocating work.
-
-
+An agile methodology was used to plan and design the Adventures with Wood application. User stories were created on GitHub and added to the board in the TODO section. They then moved across the board into IN PROGRESS when they were being actioned, and then into the DONE section when they were completed. This helped greatly in tracking progress and organising and allocating work.
 
 [Back to top](<#contents>)
 
 ### Database Schema
 
-Database schemas were drawn up using [App Diagrams.net](https://app.diagrams.net/). The schemas were used to plan the database models and fields. It also helps to display the relationships between the models and how they interact. Adventures With Wood consists of three models - project, Comment and User.
-
-![Adventures With Wood Database Schemas](readme/assets/images/adventures-database-schemas.png)
+Database schemas were drawn up using [App Diagrams.net](https://app.diagrams.net/). The schemas were used to plan the database models and fields. It also helps to display the relationships between the models and how they interact. Adventures With Wood consists of four custom models and one generic - Project, Post, Category, Comment and User. I did not include Keywords or Userlevels in my final design
+<details><summary>See Database Image</summary>
+![Adventures With Wood Database Schemas](media/readme/images/DBmodeldesign.jpg)
+</details>
 
 [Back to top](<#contents>)
 
 # User Experience UX
 
-## Wireframes
-
-Wireframes were created using [Balsamiq](https://balsamiq.com/) to plan content flow and styling for Adventures With Wood. Some differences can be seen between the original wireframes and the finished product, and this is due to design choices made during the creative process.
-
-### Home Page 
-![Home Page Wireframe](readme/assets/images/home-page-wireframe.png)
-
-### project Details
-![project Details Wireframe](readme/assets/images/project-details-wireframe.png)
-
-### Create Account
-![Create Account Wireframe](readme/assets/images/create-account-wireframe.png)
-
-### Log In
-![Log In Wireframe](readme/assets/images/log-in-wireframe.png)
-
-### Log Out
-![Log Out Wireframe](readme/assets/images/log-out-wireframe.png)
-
-### My projects
-![My projects Wireframe](readme/assets/images/my-projects-wireframe.png)
-
-### My Favourites
-![My Favourites Wireframe](readme/assets/images/my-favourites-wireframe.png)
-
-### Post A project
-![Post A project Wireframe](readme/assets/images/post-a-project-wireframe.png)
-
-### Edit project
-![Edit project Wireframe](readme/assets/images/edit-project-wireframe.png)
-
-[Back to top](<#contents>)
-
 ## User Stories
 
-In terms of project management, user stories are an integral part of the software development creative process. Adventures With Wood consists of 43 user stories, each broken down into acceptance criteria and tasks. Each user story is also given a story points number relating to time/difficulty of the tasks and then is assigned a priority label of either 'must have', 'should have', 'could have' or 'wont have' to help organise work through iterations. User stories were created from 'Epics' which are larger over-arching features/concepts which are then refined down into smaller individual parts. Completed user stories were marked as closed. 
+In terms of project management, user stories are an integral part of the software development creative process. Adventures With Wood consists of 22 user stories. 
 
-A full list of user stories can be found in the [Adventures With Wood GitHub Project Board](https://github.com/users/Matthew-Hurrell/projects/2).
-
-![Like A project User Story](readme/assets/images/user-story-like-a-project.png)
+A full list of user stories can be found in the [Adventures With Wood GitHub Project Board](https://github.com/users/culanomeara/projects/1/views/1).
 
 [Back to top](<#contents>)
 
 ## Site Structure 
 
-The Adventures With Wood app features a simple and user friendly site structure that users will be quite familiar with. However, some content is hidden / restricted to users who are not logged in. The main pages / templates of Adventures With Wood include - the home page, project full details, my favourites, my projects, post project form, edit project form, all projects and the sign up, log in and log out templates. Site users can freely and easily browse the various pages using the site navigation bar which is visible at the top and bottom of each page. The nav bar options automatically change depending on whether a user is signed in or not to allow for easy and intuitive site navigation.
+The Adventures With Wood app features a simple and user friendly site structure that users will be quite familiar with. However, some content is hidden / restricted to users who are not logged in. The main pages / templates of Adventures With Wood include - the home page, projects lists, posts lists, project details, post details, update project, update post, delete project/post page templates. Site users can freely and easily browse the various pages using the site navigation bar which is visible at the top of each page. The nav bar options automatically change depending on whether a user is signed in or not to allow for easy and intuitive site navigation.
 
-![Header Nav Logged In](readme/assets/images/nav-bar-logged-in.png)
-
-![Header Nav Not Logged In](readme/assets/images/nav-bar-not-logged-in.png)
-
-![Footer Nav Logged In](readme/assets/images/footer-nav-logged-in.png)
-
-![Footer Nav Not Logged In](readme/assets/images/footer-nav-not-logged-in.png)
-
-
-[Back to top](<#contents>)
-
-## Colour Scheme
-
-The Adventures With Wood colour scheme was inspired by the [2016 WOW Fiesta Color Palette](https://www.color-hex.com/color-palette/17808) from [Color Hex](https://www.color-hex.com/). However, the actual colours used were from the selection of [Tailwind Colours](https://tailwindcss.com/docs/customizing-colors) from the [Tailwind Utility Framework](https://tailwindcss.com/) used to create the front-end of the site.
-
-![Adventures With Wood Colour Palette](readme/assets/images/adventures-colour-palette.png)
+<details><summary>See Database Image</summary>
+![Adventures With Wood Database Schemas](media/readme/images/DBmodeldesign.jpg)
+</details>
 
 [Back to top](<#contents>)
 
 ## Typography 
 
-Adventures With Wood uses [Google Fonts](https://fonts.google.com/) for the site typography. The specific fonts are [Port Lligat Slab](https://fonts.google.com/specimen/Port+Lligat+Slab?query=Port+Lligat+Slab) and [ASAP](https://fonts.google.com/specimen/Asap?query=asap). Port Lligat Slab is a display typeface. It is clear but defined with a clear Mexican inspired twist. It was chosen to add some character to the titles and links. It is a playful font and matches the theme well. Asap is a contemporary sans-serif font. It's modern looking and rounded, and it was used for the main bodies of text to make them easier to read. 
-
-![Port Lligat Slab Typeface](readme/assets/images/port-lligat-slab.png)
-
-![Asap Font](readme/assets/images/asap-font.png)
+Adventures With Wood uses [Google Fonts](https://fonts.google.com/) for the site typography. The specific fonts are [Antic](https://fonts.google.com/specimen/Antic). Antic is clear but defined with a clear, functional form.
 
 [Back to top](<#contents>)
 
@@ -239,31 +194,28 @@ Adventures With Wood uses [Google Fonts](https://fonts.google.com/) for the site
 
 The homepage is the first page of the site that a user will see when they navigate to the [Adventures With Wood URL](https://adventures.herokuapp.com/). It's designed to be eye catching to users and to quickly summarise the intention of the site. It is also a central location for all users to view projects. 
 
-![Adventures With Wood Main Image](readme/assets/images/adventures.png)
+![Adventures With Wood Main Image](adventures.png)
 
 [Back to top](<#contents>)
 
 #### Navigation
 
-Site navigation is present at all times on every page of the site in the form of footer and header nav bars. These navigational elements change depending on whether a user is logged in or not. Non logged in users only have access to the home page, project detail pages, view all project page and the log in and sign up page. These elements are also fully responsive and the header collapses to become a mobile menu on small screen sizes. The header nav features the site logo which is also a link back to the home page. It also features a post a project button which is distinctly different from the other nav menu items. This is to draw the users eye and encourage them to sign up so that they can use this feature. All nav menu items feature a scale and underline hover effect. Navigation items are active on the current page and the underline remains in place as a visual aid to show the user where they are.
+Site navigation is present at all times on every page of the site in the form of header nav bars. These navigational elements change depending on whether a user is logged in or not. Non logged in users only have viewing access to projects and posts. They are unable to comment or like a project. These elements are also fully responsive and the header collapses to become a mobile menu on small screen sizes.
 
-![Header Nav Logged In](readme/assets/images/nav-bar-logged-in.png)
-
-![Header Nav Not Logged In](readme/assets/images/nav-bar-not-logged-in.png)
-
-![Mobile Nav Menu](readme/assets/images/mobile-nav-menu.png)
-
-![Footer Nav Logged In](readme/assets/images/footer-nav-logged-in.png)
-
-![Footer Nav Not Logged In](readme/assets/images/footer-nav-not-logged-in.png)
+<details><summary>See Database Image</summary>
+![Adventures With Wood Database Schemas](media/readme/images/DBmodeldesign.jpg)
+</details>
 
 [Back to top](<#contents>)
 
-#### Hero
+#### Carousel
 
-The homepage hero section is the large eye catching section which is just beneath the navigation bar. The hero is only displayed on the homepage. It is used to catch the users attention, and to clearly showcase the general topic of the site. It features a large, colourful full screen background image and a centralised text box with the site title and tagline. The hero section also features the mexican hat logo motif to reinforce the brand image.
+The homepage Carousel section is the large eye catching section which is just beneath the navigation bar. The carousel is only displayed on the homepage. It is used to catch the users attention, and to clearly showcase the general topic of the site. It features a large, colourful full screen image and a centralised text box with the project title.
 
-![Hero Homepage](readme/assets/images/hero-homepage.png)
+<details><summary>See Database Image</summary>
+![Adventures With Wood Database Schemas](media/readme/images/DBmodeldesign.jpg)
+</details>
+![Carousel Homepage](readme/assets/images/hero-homepage.png)
 
 [Back to top](<#contents>)
 

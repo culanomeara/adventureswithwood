@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Antic&family=IBM+Plex+Mono&display=swap');
+
 body {
+    font-family: 'Antic', sans-serif;
     background-color: #aa3434;
 }
 
 .brand {
-    font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
     color: #4A4A4F;
@@ -55,6 +57,7 @@ body {
 
 .masthead {
     margin-top: 10px;
+    margin-bottom: 10px;
     overflow: hidden;
     position: relative;
     display: inline-block;
@@ -121,6 +124,7 @@ body {
 
 .p-subtitle {
     margin-left: 5%;
+    margin-bottom: 20%;
     color: #445261;
 }
 
