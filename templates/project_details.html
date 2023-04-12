@@ -9,7 +9,7 @@
                 <p class="p-subtitle">{{ project.author }} | {{ project.created_on }}
                     {% if project.author == request.user %}
                          | <a href="{% url 'project_update' project.slug %}" class="p-link">Update</a> 
-                         | <a href="{% url 'confirm_delete' project.slug %}" class="p-link">Delete</a>  
+                         | <a href="{% url 'confirm_project_delete' project.slug %}" class="p-link">Delete</a>  
                     {% endif %}
                 </p>
             </div>

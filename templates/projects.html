@@ -26,7 +26,7 @@
                             <p class="card-text">{{ project.summary_text }}</p>
                             {% if project.author == request.user %}
                                 <p><a href="{% url 'project_update' project.slug %}" class="p-link">Update</a>
-                                     | <a href="{% url 'confirm_delete' project.slug %}" class="p-link">Delete</a>
+                                     | <a href="{% url 'confirm_project_delete' project.slug %}" class="p-link">Delete</a>
                                 </p>
                             {% endif %}
                             <hr/>

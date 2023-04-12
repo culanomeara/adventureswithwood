@@ -27,7 +27,7 @@
                             <p class="card-text">{{ post.excerpt }}</p>
                             {% if post.author == request.user %}
                                 <p><a href="{% url 'post_update' post.slug %}" class="p-link">Update</a> 
-                                 | <a href="{% url 'confirm_delete' post.slug %}" class="p-link">Delete</a>  
+                                 | <a href="{% url 'confirm_post_delete' post.slug %}" class="p-link">Delete</a>  
                                 </p> 
                             {% endif %}
                             <hr />

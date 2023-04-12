@@ -53,17 +53,19 @@ Link to the live site -
             * [Update Form](<#update-form>)
             * [Log In To Update](<#log-in-to-update>)
             * [Update Notification](<#update-notification>)
-         * [**Delete Project or Post**](<#delete-project-or-post>)
+        * [**Delete Project or Post**](<#delete-project-or-post>)
             * [Log In To Delete](<#log-in-to-delete->)
             * [Delete Notification](<#delete-notification>)   
-        * [**404 Page**](<#404-page>)
+        * [**403 Page**](<#403-page>)
+        * [**Log In To Update or Delete**](<#log-in-to-update-or-delete>)
     * [**Future Features**](<#future-features>)
         * [Admin Area](<#admin-area>)
         * [User Profile](<#user-profile>)
         * [User Change Password](<#user-change-password>)
-        * [Sign Up Email Confirmation](<#sign-up-email-confirmation>)
-        * [project Categories](<#project-categories>)
-        * [Search projects](<#search-projects>)
+        * [Subscription feature](<#subscription-feature>)
+        * [Categories](<#categories>)
+        * [Search feature](<#search-feature>)
+        * [Print Project instructions](<#print-project-instructions>)
 * [**Technologies Used**](<#technologies-used>)
     * [Languages](<#languages>)
     * [Frameworks](<#frameworks>)
@@ -90,8 +92,12 @@ Link to the live site -
     * [**Bugs**](<#bugs>)
         * [Resolved](<#resolved>)
         * [Unresolved](<#unresolved>)
-* [**Deployment**](<#deployment>)
-    * [**Project Deployment Via Heroku**](<#project-deployment-via-heroku>)
+* [**Setup and Deployment**](<#setup-and-deployment>)
+    * [**Setup**](<#setup>)
+    * [**Deployment to Heroku**](<#deployment-to-heroku>)
+    * [**Final Production Deployment**](<#final-production-deployment>)
+    * [**Forking**](<#forking>)
+    * [**Cloning**](<#cloning>)
 * [**Credits**](<#credits>)
     * [**Content**](<#content>)
     * [**Media**](<#media>)
@@ -376,14 +382,6 @@ A user can delete their project or post easily from the relevannt list page or d
 
 [Back to top](<#contents>)
 
-#### Log In To Delete project
-
-During the process of creating the edit project page it occurred to me that some site users might try to edit projects by manually entering the URL of the project into their browser URL bar. To defend against this I created a notification that hides the project form and displays a notification to the user if they visit the edit project page but they are not logged in. This notification prompts the user to sign up or log in to edit a project. It also provides them with a link to the home page to navigate away from the edit page. 
-
-![Delete Project/Post Logged In](readme/assets/images/edit-project-logged-in.png)
-
-[Back to top](<#contents>)
-
 #### Delete Notification
 
 If a user confirms the deletion of a project a notification is displayed to the user at the top of the page on refresh. This notification confirms the deletion of the project. The user can hide this notification by clicking the x icon. 
@@ -392,11 +390,17 @@ If a user confirms the deletion of a project a notification is displayed to the 
 
 [Back to top](<#contents>)
 
-### 404 Page
+### 403 Page
 
-The 404 page is triggered when a user navigates to a site URL which doesn't exist. This could be because of a number of reasons, including a faulty link or an expired URL. Most users will not see this page, but it is there as a backup for users who encounter these rare errors. The purpose of the 404 page is to notify the user that there has been an error, and the page that they have tried to access cannot be found. The Adventures With Wood 404 page provides a button link to the homepage for the user to easily navigate back home.
+The 403 page is triggered when a user navigates to a site URL which they don't have permission to access. This could be because of a number of reasons, mainly if they are not logged in or not the author of a particular project or post
 
-![404 Page](readme/assets/images/404-page.png)
+![403 Page]()
+
+#### Log In To Update or Delete
+
+Some site users might try to update or delete projects or posts by manually entering the URL into the browser URL bar. If a user tries this, they will be rdirected to the sign in page. If they log in correctly adn they are the author then the update/delete page will appear, if not, they will be gvein the 403(permission denied) page.
+
+![Delete Project/Post Logged In](readme/assets/images/edit-project-logged-in.png)
 
 [Back to top](<#contents>)
 
@@ -406,37 +410,43 @@ I believe the Adventures With Wood site has a lot of potential for expansion in 
 
 ### Admin Area
 
-I was advised by my mentor to add an admin area for administrators so they wouldn't have to log into the Django admin area. I would have liked to have implimented this prior to deadline but unfortunately due to time constraints I chose to prioritise other features. The basic concept would be to have an admin navigation option on the main site navigation bar that is only visible to users with admin privilages. Navigating to this page would open a dashboard for administrators to view the basic site stats like number of posts and comments and new users. They would also be able to execute basic tasks and actions like approving comments and adding a featured project. This page would have to be secured and hidden from other site users.
+I would like to add an admin area for administrators so they wouldn't have to log into the Django admin area. I would have liked to have implimented this prior to deadline but unfortunately due to time constraints I chose to prioritise other features. The basic concept would be to have an admin navigation option on the main site navigation bar that is only visible to users with admin privilages. Navigating to this page would open a dashboard for administrators to view the basic site stats like number of posts and comments and new users. They would also be able to execute basic tasks and actions like approving comments and adding a featured project. This page would have to be secured and hidden from other site users.
 
 [Back to top](<#contents>)
 
 ### User Profile
 
-Another feature that I believe would greatly improve on the site would be a customisable user profile section. In this section logged in / authorised users would be able to edit and update their profile details. They would also be able to add a profile picture / avatar for further profile customisation. This would greatly improve the social element of the app and the overall user experience. This was another feature I wanted to impliment but it was delayed due to other features taking priority. 
+Another feature that I believe would greatly improve on the site would be a customisable user profile section. In this section logged in / authorised users would be able to edit and update their profile details. They would also be able to add a profile picture / avatar for further profile customisation. This would greatly improve the social element of the app and the overall user experience. 
 
 [Back to top](<#contents>)
 
 ### User Change Password
 
-One of the first new features I will impliment in the future will be a user password change option for users who forget or want to change their password. Currently a user has no way to retrieve their password / profile if they forget their log in details. This will mean they will lose their access to their profile and projects. This is a big problem and could lead to users abandoning the site in the future. Hence this feature is a priority moving forwards.
+I woiuld like to offer password change option for users who forget or want to change their password. Currently a user has no way to retrieve their password / profile if they forget their log in details. This will mean they will lose their access to their profile and projects. This is a big problem and could lead to users abandoning the site in the future.
 
 [Back to top](<#contents>)
 
-### Sign Up Email Confirmation
+### Subscription Feature
 
-Another future feature I would like to impliment relating to authorisation is a user sign up email confirmation. I would like a user sign up to trigger an automated email into the user inbox prompting them to confirm their email address. This would help to prevent spam profiles. Users who sign up but don't confirm their email can still view the site but have limited access to site functionality such as posting and commenting.
+Another future feature I would like is a subscritpion option where users can sign up to email notifications when there is activity on the site(new project/post/comment on their work).
 
 [Back to top](<#contents>)
 
-### project Categories
+### Categories
 
 The Adventures With Wood site currently features project category fields which don't have any usable functionality. These fields were originally intended to group projects together to be displayed in project category lists / sections. This is definitely a feature I would like to integrate in the future. I would also like for a user to be able to search the site for a food category and be presented with projects that match that category.
 
 [Back to top](<#contents>)
 
-### Search projects
+### Search feature
 
-I did plan to have a search bar on the homepage in the original Adventures With Wood wireframe designs. Unfortunately this feature was delayed due to being a low priority in comparison to other features. In the future I would like a user to be able to use the search bar field on the homepage or the all projects page to search for specific projects / categories. Submitting this field would then return a search template page with a list of any matching results. This would be a better experience for the user rather than having to manually search for a particular project.
+I did plan to have a search bar on the homepage in the original Adventures With Wood plan. Unfortunately this feature was delayed due to being a low priority in comparison to other features. In the future I would like a user to be able to use the search bar field on the nav bar or the all projects page to search for specific projects, posts or keywords. Submitting this field would then return a search template page with a list of any matching results. This would be a better experience for the user rather than having to manually search for a particular project.
+
+[Back to top](<#contents>)
+
+### Print project instructions
+
+I did plan to incldue the ability to print out the project instructions so they could be more useable outdoors etc.
 
 [Back to top](<#contents>)
 
@@ -454,20 +464,18 @@ I did plan to have a search bar on the homepage in the original Adventures With 
 
 ## Frameworks
 
-* [Tailwind](https://tailwindcss.com/) - A front end CSS utility framework for rapidly building websites.
-* [Django](https://www.djangoproject.com/) - A high level Python web framework.
+* [Bootstrap](https://getbootstrap.com/) - Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains HTML, CSS and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components..
+* [Django](https://www.djangoproject.com/) - Django is a free and open-source, Python-based web framework that follows the model–template–views architectural pattern.
 
 [Back to top](<#contents>)
 
 ## Software
 
-* [Balsamiq](https://balsamiq.com/) - An online cloud based software used for creating the site wireframes.
 * [GitHub](https://github.com/) - An internet hosting service used for version control. Used to host the Adventures With Wood repository and for the project board used for project management and user stories.
 * [GitPod](https://www.gitpod.io/) - A cloud development environment used as the primary site code editor.
 * [Heroku](https://dashboard.heroku.com/) - A cloud platform used to host the Adventures With Wood full stack application.
 * [Cloudinary](https://cloudinary.com/?&utm_campaign=1329&utm_content=instapagelogocta-selfservetest) - A cloud based video and image management platform used to store the site images.
 * [Slack](https://slack.com/intl/en-gb/) - An online instant messaging program used for site feedback and guidance from the [Code Institute](https://codeinstitute.net/) community.
-* [Skype](https://www.skype.com/en/) - An online telecommunications application used for mentor sessions.
 * [App Diagrams](https://app.diagrams.net/) - An online diagram software used for the database schemas.
 * [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) - A set of web developer tools built directly into the chrome browser. Used for responsiveness tests and further testing.
 * [Google Fonts](https://fonts.google.com/) - A web based font service by Google used to supply the site typography.
@@ -482,518 +490,374 @@ I did plan to have a search bar on the homepage in the original Adventures With 
 
 This is a list of the Python / Django libraries used in this project.
 
-* [asgiref](https://github.com/django/asgiref) - A standard Python library to allow for asynchronous web apps and servers to communicate with each other. 
-* [binaryornot](https://pypi.org/project/binaryornot/) - An ultra lightweight Python package to guess whether a file is binary or text.
-* [chardet](https://pypi.org/project/chardet/) - A universal encoding detector for Python3.
-* [click](https://click.palletsprojects.com/en/8.1.x/) - A Python package for creating beautiful command line interfaces in a composable way with as little code as possible.
-* [cloudinary](https://pypi.org/project/cloudinary/) - A Python package allowing integration between the application and Cloudinary. 
-* [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/) - A Python package used to create projects from project templates.
+* [asgiref](https://github.com/django/asgiref) - A standard Python library to allow for asynchronous web apps and servers to communicate with each other.
+* [cloudinary](https://pypi.org/project/cloudinary/) - A Python package allowing integration between the application and Cloudinary.
 * [dj-database-url](https://pypi.org/project/dj-database-url/) - A Django utility to utilise the DATABASE_URL environment variable to configure the Django application. Used with PostgreSQL.
 * [dj3-cloudinary-storage](https://pypi.org/project/dj3-cloudinary-storage/) - A Django package that facilitates integration with Cloudinary storage.
 * [Django](https://www.djangoproject.com/) - A python package for the Django framework.
-* [django-active-link](https://pypi.org/project/django-active-link/) - A Django package used to highlight an active link in the site navigation bars.
 * [django-allauth](https://django-allauth.readthedocs.io/en/latest/) - An integrated set of Django applications addressing user authentication, registration and account management.
-* [django-browser-reload](https://github.com/adamchainz/django-browser-reload) - A Django package to automatically refresh the browser during development.
 * [django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/) - A Django package that provides tags and filters to control the rendering behaviour of Django forms.
 * [django-summernote](https://pypi.org/project/django-summernote/) - A Django package to allow for the embedding of the summernote text editor into Django.
-* [django-tailwind](https://django-tailwind.readthedocs.io/en/latest/installation.html) - A Django package to allow for the easy integration of the Tailwind CSS utility framework with Django.
 * [gunicorn](https://gunicorn.org/) - A Python WSGI HTTP Server for UNIX.
-* [jinja2-time](https://pypi.org/project/jinja2-time/) - A Jinja2 Python extension for dates and times.
 * [oauthlib](https://github.com/oauthlib/oauthlib) - A generic, spec-compliant, thorough implementation of the OAuth request-signing logic for Python 3.6+.
 * [psycopg2](https://pypi.org/project/psycopg2/) - A PostgreSQL database adapter for Python.
 * [PyJWT](https://pyjwt.readthedocs.io/en/latest/) - A Python library that allows for encoding and decoding of JSON Web Tokens (JWT).
-* [python-slugify](https://pypi.org/project/python-slugify/) - A Python application that generates slug fields from unicode strings.
 * [python3-openid](https://pypi.org/project/python3-openid/) - A set of Python packages to support use of the OpenID decentralized identity system.
 * [pytz](https://pypi.org/project/pytz/) - A Python package for world timezone definitions, modern and historical.
 * [requests-oauthlib](https://pypi.org/project/requests-oauthlib/) - A Python package for OAuthlib authentication support for Requests.
 * [sqlparse](https://pypi.org/project/sqlparse/) - A non-validating SQL parser for Python.
-* [text-unidecode](https://pypi.org/project/text-unidecode/) - The most basic Text::Unidecode port for Python.
 
 [Back to top](<#contents>)
 
-# Testing
-
-The Adventures With Wood site has been tested rigorously throughout the development process. This section will document those testing proceedures.
-
-## User Story Tests
-
-1. As a **user** I can **view a list of projects I have liked** so that **I can easily review my favourites**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: A 'my favourites' link should appear in the site nav for a logged in user
-* Acceptance Criteria 2: The link should open the 'my favourites' page which displays a list of all the current users liked projects
-* Acceptance Criteria 3: Each project should provide a link to the full project page
-
-### Tasks:
-- [x] Add MyFavourites class view with logic into views.py
-- [x] Add URL path for the MyFavourites view in urls.py
-- [x] Create template for my_favourites and add content, logic and styling
-- [x] Add template URL link to base template nav menus
-- [x] Test functionality
-
-2. As a **user** I can **delete one or more of my projects** so that **I can remove them from the site and from public view**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: When a user is logged in and has saved projects, the 'my projects' page should show a delete button beside all projects
-* Acceptance Criteria 2: When clicked by a user, the delete button should open a pop-up window asking the user to confirm their intention to delete their project. They should also be warned that this cannot be undone and the project will be lost. 
-* Acceptance Criteria 3: The user should be presented with a go-back button and a confirm deletion button. Clicking the go back button should close the pop-up window and return the user to the original 'my projects' view. 
-* Acceptance Criteria 4: Clicking the confirm deletion button should delete the project, remove it from the home page and refresh the 'my projects' page to show that the project is no longer on the list
-
-### Tasks:
-- [x] Add a Deleteproject view to views.py with logic 
-- [x] Add the Deleteproject view path to urls.py 
-- [x] Add the delete_project link url to the my_projects template 
-- [x] Test functionality
-
-3. As a **user** I can **view a list of the projects I have posted** so that **I can easily review them and edit them if necessary**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: A link called my projects should appear in the site nav bar 
-* Acceptance Criteria 2: The link should only appear to logged in users
-* Acceptance Criteria 3: The link should navigate the user to a 'my projects' page which displays the projects the user has posted
-* Acceptance Criteria 4: This page should display a message of 'sorry, you have no projects yet' if the user doesn't have any posted projects
-* Acceptance Criteria 5: The page should also feature a 'post a project' button which navigates the user to the post a project page form
-
-### Tasks:
-- [x] Add Myprojects class view with logic to views.py
-- [x] Add URL path for Myprojects class in urls.py
-- [x] Create template for my_projects and add logic, content and styling
-- [x] Add URL link to my_projects into base template navigation menus
-- [x] Test functionality
-
-4. As a **user** I can **edit my current projects** so that **I can add amendments to the project or publish the project if it is a draft**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: When a user is logged in and has saved projects, the 'my projects' page should show an edit button beside all projects
-* Acceptance Criteria 2: The edit button should open the edit project page with a pre-populated form for the current project fields
-* Acceptance Criteria 3: The user should be able to edit the content of the fields and click the submit button to overwrite the current form fields 
-* Acceptance Criteria 4: A 'go back' button should also be displayed on the page to redirect the user back to the 'my projects' page if they wish to cancel the amendments 
-* Acceptance Criteria 5: Upon submission the user should be redirected back to the 'my projects' page and a 'project successfully updated' alert should appear at the top of the screen to notify the user of the successful update
-
-### Tasks:
-- [x] Add an Editproject view class with logic to views.py 
-- [x] Add a URL path for Editproject in urls.py 
-- [x] Create edit_project template and add form and content to template
-- [x] Add URL link to my_projects template 
-- [x] Test functionality
-
-5. As a **user** I can **store my project post as a draft** so that **I can come back another time and add changes before publishing it online**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: The post a project form should feature a tick-box field that a user can tick to save the post as a draft
-* Acceptance Criteria 2: On submission, the user should be redirected to the 'my projects' page 
-* Acceptance Criteria 3: The project should appear on the 'my projects' page with a 'draft' label showing next to it
-
-### Tasks:
-- [x] Add logic to Myprojects class view to include draft projects
-- [x] Add status field to projectForm class in forms.py
-- [x] Style status field on post_project and edit_project templates
-- [x] Add draft tag and logic to my_projects template
-- [x] Test functionality
-
-6. As a **user** I can **post a project** so that **it can be shared online with the community**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: A 'post a project' link should appear in the site nav bar
-* Acceptance Criteria 2: The 'post a project' link should only appear for logged in users
-* Acceptance Criteria 3: The link should open the post a project page with the post a project form
-* Acceptance Criteria 4: On submission, the project should be added to the 'my projects' page and available to view on the home page and on the projects full details page. The user should also be redirected to 'my projects' page and a 'project successfully posted' alert should appear at the top of the page to notify the user of the successful posting
-
-### Tasks:
-- [x] Add projectForm class to forms.py 
-- [x] Add Postproject class view to views.py and link form
-- [x] Add URL path for Postproject to urls.py
-- [x] Create post_project template with form, logic and content
-- [x] Add post_project URL links to base template nav bars
-- [x] Test functionality
-
-7. As a **user** I can **like a project** so that **I can view that project in the project list on my 'my favourites' page at a later date**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: A heart icon should appear next to each project on the home page as well as on the individual project details pages
-* Acceptance Criteria 2: The heart icon should only function if a user is logged in
-* Acceptance Criteria 3: If a user clicks the heart icon when not logged in the icon doesn't change
-* Acceptance Criteria 4: If a user clicks the heart icon when logged in the page should refresh and an alert should be displayed to the user that the project has been added to the 'my favourites' page
-* Acceptance Criteria 5: When active, the heart icon should change colour to display that the project has been liked
-
-### Tasks:
-- [x] Add likes many-to-many field into project model
-- [x] Add projectLike view to views.py
-- [x] Add URL for projectLike to urls.py
-- [x] Add links to projectLike to project_details template
-- [x] Test functionality
-
-8. As a **user** I can **unlike a project** so that **I can remove the project list on the 'my favourites' page**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: A user should be able to unlike a project by clicking the heart icon next to the project
-* Acceptance Criteria 2: This functionality should only be available to users who are logged in
-* Acceptance Criteria 3: When a user clicks the heart icon of a project which is already liked, the current page should be refreshed and an alert should be displayed to the user that the project has been removed from the 'my favourites' page
-* Acceptance Criteria 4: The icon should return back to its original colour to signify it is no longer liked
-* Acceptance Criteria 5: This functionality should also be available from the 'my favourites' page
-
-### Tasks:
-- [x] Add Unlikeproject view with logic to views.py
-- [x] Add path for Unlikeproject view in urls.py
-- [x] Add links into my_favourites template
-- [x] Test functionality
-
-9. As a **user** I can **post a comment on a project** so that **I can interact with the author and community**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: A comment form should appear beneath each project on the individual project details pages
-* Acceptance Criteria 2: The comment field should only appear to logged in users
-* Acceptance Criteria 3: The comment form should feature a text area input field and a submit button
-* Acceptance Criteria 4: Upon submitting the comment the page should refresh and an alert should be displayed to the user with the message 'comment submitted and awaiting approval'
-* Acceptance Criteria 5: After admin approval the comment should appear on the project page
-
-### Tasks:
-- [x] Add CommentForm class to forms.py
-- [x] Add post comment function to projectDetails view
-- [x] Add comment form with logic and content to project_details template
-- [x] Test functionality
-
-10. As an **administrator** I can **delete a user account** so that **I can remove users that are violating the community standards**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: The administrator should be able to log into the site admin area and view a list of current users
-* Acceptance Criteria 2: Each user should feature an 'x' icon or delete button next to their username or email address
-* Acceptance Criteria 3: Upon clicking the delete button a pop-up window should open asking for the administrator to confirm their decision to delete the user. The window should display a message warning that the action cannot be undone.
-* Acceptance Criteria 4: A cancel button should be available for the administrator to cancel the action and return to the unedited list
-* Acceptance Criteria 5: Upon clicking the window delete button the user should be deleted along with all their comments and projects. The admin area should be refreshed showing the updated user list with the deleted user removed
-
-### Tasks:
-- [x] Set up allauth with django
-- [x] Add users to database
-- [x] Test functionality
-
-11. As a **user** I can **log into my account** so that **I can access my projects and interact with the community**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: A login link should appear in the site nav bar
-* Acceptance Criteria 2: The link should only appear to users who aren't logged in
-* Acceptance Criteria 3: The link should lead to a login page and redirect back to the homepage after the user logs in
-
-### Tasks:
-- [x] Install allauth package to django
-- [x] Add allauth settings into settings.py
-- [x] Copy login allauth template and add content and custom styling
-- [x] Add URL to login template to base template navigation menus
-- [x] Test functionality
-
-12. As a **user** I can **sign out of my account** so that **I can close the application and navigate away from the page**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: A log out link should appear in the site nav bar
-* Acceptance Criteria 2: The link should only appear to users who are logged in 
-* Acceptance Criteria 3: When clicked the link should log the user out and redirect them to the home page
-
-### Tasks:
-- [x] Implement allauth account_logout functionality
-- [x] Add custom styling to logout template
-- [x] Add URL link to logout template to base template navigation menus
-- [x] Test logout functionality
-
-13. As a **user** I can **register my details** so that **I can create an account and access all the app features**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: A sign up link should appear in the site nav bar
-* Acceptance Criteria 2: The link should open the create an account page with a form for a user to enter their email and password
-* Acceptance Criteria 3: Upon submission the user should be automatically logged in and redirected to the home page
-
-### Tasks:
-- [x] Add python allauth package
-- [x] Add allauth settings into settings.py 
-- [x] All allauth URL path into urls.py
-- [x] Test register functionality
-- [x] Copy template files into templates directory and add custom content and styling
-- [x] Add register URL links to base template navigation menus
-
-14. As a **user** I can **view at least one image of the project** so that **I can see what the finished project looks like**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: Post a project forms should have a required featured image input field and three optional extra image fields
-* Acceptance Criteria 2: The featured image for each project should display on the home page 
-* Acceptance Criteria 3: The featured image and any further images should display on the full project page
-* Acceptance Criteria 4: Gallery images on the project page should be clickable to display the full-size image
-
-### Tasks:
-- [x] Install cloudinary
-- [x] Add cloudinary settings into settings.py
-- [x] Import cloudinary into models.py
-- [x] Add featured image and three gallery image fields to project model using cloudinary fields
-- [x] Add image fields to projectForm in forms.py
-- [x] Add project image tags to project_details template 
-- [x] Add content and styling for project images to project_details template along with logic for a placeholder if an image isn't used
-- [x] Test functionality
-
-15. As a **user** I can **see the preparation and approximate cooking times for all projects** so that **I can asses what projects are right for me and plan my cooking time**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: Post a project forms should have required preparation and approximate cooking time number fields 
-* Acceptance Criteria 2: Preparation and approximate cooking times should display on the full project page details 
-* Acceptance Criteria 3: The cooking and preparation times should display as coloured badges 
-
-### Tasks:
-- [x] Add prep_time field and cooking_time field to project model
-- [x] Add fields to projectForm in forms.py
-- [x] Add project prep time and cooking time tags to project_details template 
-- [x] Add content and styling for project prep time and cooking time to project_details template
-- [x] Test functionality
-
-16. As a **user** I can **see a difficulty rating for each project** so that **I can quickly tell if a project is too difficult for me**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: Post a project forms should display required select fields for easy, medium, hard or expert
-* Acceptance Criteria 2: The difficulty rating should appear on every project as a coloured label
-* Acceptance Criteria 3: Difficulty ratings should appear on all projects on the home page as well as the individual project details pages
-
-### Tasks:
-- [x] Add difficulty field to project model
-- [x] Add custom difficulties choices to field options
-- [x] Add difficulty field to projectForm in forms.py
-- [x] Add project difficulty tag to project_details template with logic
-- [x] Add content and styling for project difficulty to project_details template
-- [x] Test functionality
-
-17. As a **user** I can **see the approximate amount of people that the projects can serve** so that **I can easily adjust the ingredient amounts to match the number of people I am cooking for**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: The post a project form should have a required serving number field
-* Acceptance Criteria 2: The serving number should appear on the details page for every project
-* Acceptance Criteria 3: The serving number should appear in a coloured label 
-
-### Tasks:
-- [x] Add serves field to project model
-- [x] Add serves field to projectForm in forms.py
-- [x] Add project serves tag to project_details template 
-- [x] Add content and styling for project serves to project_details template
-- [x] Test functionality
-
-18. As a **user** I can **see a list of allergens for the projects** so that **I can avoid any projects that contain certain allergens**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: The post a project form should contain a required tick-box field for allergens
-* Acceptance Criteria 2: The allergens for each project should be displayed on the individual project full details pages
-* Acceptance Criteria 3: The allergens should all be displayed in an easy to view list format which is clearly displayed
-
-### Tasks:
-- [x] Add allergens array field to project model
-- [x] Add model method string_of_allergens to return a string of the allergens array field 
-- [x] Add custom array field class to allow multiple checkbox inputs
-- [x] Add allergens field to projectForm in forms.py
-- [x] Add project allergens tag to project_details template 
-- [x] Add content and styling for project allergens to project_details template
-- [x] Test functionality
-
-19. As a **user** I can **see a summarised list of ingredients for each project** so that **I can quickly and easily read through the ingredients to get an idea of the amounts required**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: Post a project forms should have a required text field for an unordered list of ingredients and amounts with visual instructions on how to format the text
-* Acceptance Criteria 2: Full ingredient lists should be displayed on each project's full details page
-* Acceptance Criteria 3: The ingredients should be displayed as an unordered list with nicely formatted spacing and margins to make them easy to read
-
-### Tasks:
-- [x] Add ingredients field to project model
-- [x] Add ingredients field to projectForm in forms.py
-- [x] Import summernote to projectForm and add widget to field
-- [x] Add project ingredients tag to project_details template 
-- [x] Add content and styling for project ingredients to project_details template
-- [x] Test functionality
-
-20. As a **user** I can **see a numbered list of steps to follow for the project methods** so that **I can easily follow the instructions one by one**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: Post a project forms should feature a required project method text input field. 
-* Acceptance Criteria 2: project methods should be displayed on each projects full details page in a numbered list of steps
-* Acceptance Criteria 3: Steps should be easy to read and formatted well with spacing and margins 
-
-### Tasks:
-- [x] Add method field to project model
-- [x] Add method field to projectForm in forms.py
-- [x] Import summernote to projectForm and add widget to field
-- [x] Add project method tag to project_details template 
-- [x] Add content and styling for project method to project_details template
-- [x] Test functionality
-
-21. As a **user** I can **click on a project link on the home page and be directed to a full page for the project** so that **I can see the full project details and find out more information**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: A user should be able to click on any project displayed on the home page and be redirected to that projects full page project details
-* Acceptance Criteria 2: The page should feature the projects full details as well as a back button to navigate the user back to the home page
-
-### Tasks:
-- [x] Add projectDetails class view with logic to views.py
-- [x] Add URL path projectDetails in urls.py 
-- [x] Create project_details template with content and logic 
-- [x] Add URL links to project_details to each project on the index template, as well as the my_favourites template and all projects that are published on the my_projects template
-- [x] Test functionality
-
-22. As a **user** I can **view comments on a project** so that **I can see what members of the community have said about the project**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: Any comments posted by users and approved by admin should appear as an ordered list arranged by date posted
-* Acceptance Criteria 2: Comments should appear at the bottom of each projects full details page
-* Acceptance Criteria 3: Each comment should display the comment text body, date posted and author
-
-### Tasks:
-- [x] Import Comments model into views.py
-- [x] Add comments queryset with logic to projectDetails view
-- [x] Add comments loop and logic into project_details template
-- [x] Test functionality
-
-23. As a **user** I can **view a list of the most popular projects on the home page** so that **I can look at an ordered list of the most popular projects within the community**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: A list of the most liked projects should appear on the home page
-* Acceptance Criteria 2: The list should be arranged and ordered by most liked
-* Acceptance Criteria 3: The list should display a maximum of six projects
-
-### Tasks:
-- [x] Amend projectList class view to add queryset for most liked projects
-- [x] Add most popular projects section with loop logic, content and styling to index template
-- [x] Test functionality
-
-24. As an **administrator** I can **post a project in the admin area** so that **I can add my own project posts**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: The administrator should be able to log into the admin area and view a list of current projects saved in the database
-* Acceptance Criteria 2: There should be an 'add' button which opens a new page with a project form
-* Acceptance Criteria 3: The administrator should be able to fill out the form and click the save button to add a project
-* Acceptance Criteria 4: The project should appear in the project list in the admin area when the page refreshes 
-
-### Tasks:
-- [x] Add admin URLS in urls.py
-- [x] Configure settings in settings.py
-- [x] Import models to admin.py and add classes for each model
-- [x] Test functionality
-
-25. As an **administrator** I can **approve a user comment** so that **it can be posted online**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: All comments should first appear as notifications in the site admin area before going live
-* Acceptance Criteria 2: The administrator should be able to log into the admin area and review comments listed in order of date posted
-* Acceptance Criteria 3: Each comment should feature an approve button which approves the comment and posts the comment live
-* Acceptance Criteria 4: Upon approval the comment should be removed from the admin comment approval list 
-
-### Tasks:
-- [x]  Add approve_comments action to commentadmin class in admin.py
-- [x] Add approve_coments function to update comment approved field to true
-- [x] Test functionality
-
-26. As an **administrator** I can **disapprove a comment** so that **it is deleted and doesn't go live on the site if it violates the community standards**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: All comments should first appear as notifications in the site admin area before going live
-* Acceptance Criteria 2: The administrator should be able to log into the admin area and review comments listed in order of date posted
-* Acceptance Criteria 3: Each comment should feature a disapprove button which deletes the comment before it is posted 
-* Acceptance Criteria 4: Upon disapproval the comment should be deleted and removed from the admin comment approval list
-
-### Tasks:
-- [x] Add approve_comments action to commentadmin class in admin.py
-- [x] Add approve_coments function to update comment approved field to true 
-- [x] Test functionality
-
-27. As a **user** I can **view projects on the home page** so that **I can browse through them and find any that interest me**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: The projects should display as a list on the home page
-* Acceptance Criteria 2: The projects should provide a picture and basic summary of the project
-* Acceptance Criteria 3: The projects should be styled displayed in an appealing way 
-
-### Tasks:
-- [x] Add projectList class view to views.py with logic and queryset for projects
-- [x] Add URL path for the projectList view to urls.py
-- [x] Create index/homepage template with content, logic and styling
-- [x] Create base template with header and footer navigation
-- [x] Add links to homepage in base template navigation menus
-- [x] Test functionality
-
-28. As a **user** I can **view the featured project on the home page** so that **I can see what the recommended project of the week is**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: A featured project should be available to view at the top of the home page
-* Acceptance Criteria 2: The project should include a large picture and summary and look eye-catching
-
-### Tasks:
-- [x] Amend projectList class view in views.py to include a queryset for the featured project
-- [x] Add featured project tags, logic and styling into the index/homepage template
-- [x] Test functionality
-
-29. As a **user** I can **view a list of the latest projects on the home page** so that **I can see if there's anything new that I have missed**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: A list of the latest projects should display on the home page in a separate category section
-* Acceptance Criteria 2: The list should be arranged by date posted 
-* Acceptance Criteria 3: The list should display a maximum of six projects
-
-### Tasks:
-- [x] Add created_on date field to project model in models.py
-- [x] Add projectList class view with queryset logic for latest projects
-- [x] Add URL path for projectList to urls.py 
-- [x] Create template for home page called index 
-- [x] Add extends base and block content tags into template
-- [x] Add URL links to the index page into the navigation menus in the base template
-- [x] Add latest projects section with loop logic, content and styling into the home template
-- [x] Test functionality
-
-30. As an **administrator** I can **edit user projects** so that **I can correct grammar or styling issues**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: The administrator should be able to log into the admin area and see a list of all the current projects
-* Acceptance Criteria 2: Each project should have an edit button or a pencil icon 
-* Acceptance Criteria 3: Upon clicking the edit button or pencil icon the fields for that project post should be displayed with the pre-populated field contents
-* Acceptance Criteria 4: Contents on the project fields should be editable, and clicking the submit button after making field changes should alter the project content on the live site on the home page and on the full project details page
-* Acceptance Criteria 5: It should be possible to cancel the edit action by clicking a cancel or back button on the edit form to return the administrator back to the list without editing the project content
-
-### Tasks:
-- [x] Import models into admin.py
-- [x] Add admin classes for each database model
-- [x] Test functionality
-
-31. As an **administrator** I can **delete user projects** so that **I can remove them from the site if they do against the community standards**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: The administrator should be able to log into the admin area and see a list of all the current projects
-* Acceptance Criteria 2: Each project in the list should have an delete button or an 'x' icon
-* Acceptance Criteria 3: Upon clicking the delete button or 'x' icon a pop-up window should display on the screen asking the administrator to confirm their intention to delete the project. The window should contain text content to inform the administrator that the delete action cannot be undone.
-* Acceptance Criteria 4: A cancel button should be available on the window to return the administrator to the unedited list if clicked
-* Acceptance Criteria 5: Clicking the confirm/delete button should delete the project and remove it from the site completely. The pop-up window should be closed and the window refreshed to show an updated list of projects with the deleted project removed
-
-### Tasks:
-- [x] Import models to admin.py
-- [x] Add admin classes for each database model
-- [x] Test functionality
-
-32. As an **admin** I can **make a project featured** so that **the project can be viewed as the featured project on the home page**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: Admin should be able to log into the admin area and view the list of current projects
-* Acceptance Criteria 2: The admin dashboard should feature an action to add/remove featured
-* Acceptance Criteria 3: Admin should be able to tick a project and turn the featured field on/off 
-* Acceptance Criteria 4: This project should then appear on the index page as a featured project
-
-### Tasks:
-- [x] Add featured field to project model in models.py
-- [x] Add add_featured and remove_featured actions and methods into the projectAdmin class in admin.py
-- [x] Add featured field into projectAdmin list display
-- [x] Test functionality
-
-33. As a **user** I can **view all the projects on one page** so that **I can browse all the projects in one list**
-
-### Acceptance Criteria:
-* Acceptance Criteria 1: A 'view all projects' button link should appear after each project list on the index page
-* Acceptance Criteria 2: When clicked, the link should open the 'all projects' page
-* Acceptance Criteria 3: All projects should be displayed as cards in a paginated list 
-
-### Tasks:
-- [x] Create Allprojects class view in views.py
-- [x] Add the URL path for the Allprojects view in urls.py
-- [x] Create the all_projects template with content, styling and logic
-- [x] Add URL links from the index template to the all_projects template
-- [x] Test functionality
-
-[Back to top](<#contents>)
+## Testing
+
+The testing approach is as follows:
+1. Manual testing of user stories
+2. Automated testing
+
+### Manual testing of user stories
+
+### Users
+1. I want to see the home page with explanation of the app
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com/ | Home page main body loads with application description | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/test-user-story-1.png">
+</details>
+
+
+2. As a site user, I can create an account to interact with recipes
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com/accounts/signup/ and fill submit form | account is created for the user with the submitted details | Works as expected |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com/accounts/signup/ and click sign up with Google button | account is created for the user with details from Google account | Works as expected |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com/accounts/signup/ and click sign up with Facebook button | account is created for the user with details from Facebook account | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/test-user-story-2a.png">
+<img src="docs/testing/test-user-story-2b.png">
+<img src="docs/testing/test-user-story-2c.png">
+<img src="docs/testing/test-user-story-2d.png">
+<img src="docs/testing/test-user-story-2e.png">
+</details>
+
+3. As a site user, I can view all recipes in one place
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com//recipes/ | Recipes page main body loads with all recipes displayed | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/test-user-story-3.png">
+
+</details>
+
+
+4. As a site user, I can view the most popular recipes on the home page
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com// and scroll to most popular recipes section | Recipes with likes appear in three panels on homepage | Works as expected |
+Click on most popular panel | Brought to recipe detail page for more information on recipe | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/test-user-story-4.png">
+</details>
+
+
+5. As a site user, I can view the featured recipes on the home page
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com// | 5 featured recipes appearing on homepage carousel | Works as expected |
+Click on most carousel slide | Brought to recipe detail page for more information on recipe | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/test-user-story-5a.png">
+<img src="docs/testing/test-user-story-5b.png">
+</details>
+
+
+6. As a site user, I can log in to comment on recipes and articles
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com/accounts/login/ and fill submit form | account is created for the user with the submitted details | Works as expected |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com/accounts/login/ and click log in with Google button | account is created for the user with details from Google account | Works as expected |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com/accounts/login/ and click log in with Github button | account is created for the user with details from Github account | Works as expected |
+Once logged in go to recipe page, scroll to comments section and leave a comment | Comment is submitted for approval | Works as expected
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/test-user-story-2a.png">
+<img src="docs/testing/test-user-story-2b.png">
+<img src="docs/testing/test-user-story-2c.png">
+<img src="docs/testing/test-user-story-2d.png">
+<img src="docs/testing/test-user-story-2e.png">
+<img src="docs/testing/test-user-story-6a.png">
+</details>
+
+
+
+7. As a site user, I can log in to like/unlike recipes
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com/accounts/login/ and fill submit form | account is created for the user with the submitted details | Works as expected |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com/accounts/login/ and click log in with Google button | account is created for the user with details from Google account | Works as expected |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com/accounts/login/ and click log in with Facebook button | account is created for the user with details from Facebook account | Works as expected |
+Once logged in go to recipe page, scroll to info section and click heart icon | Icon changes to solid heart and number of likes count increases by one | Works as expected
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/test-user-story-2a.png">
+<img src="docs/testing/test-user-story-2b.png">
+<img src="docs/testing/test-user-story-2c.png">
+<img src="docs/testing/test-user-story-2d.png">
+<img src="docs/testing/test-user-story-2e.png">
+<img src="docs/testing/test-user-story-7a.png">
+<img src="docs/testing/test-user-story-7b.png">
+</details>
+
+
+8. As a site user, I can log in using social media accounts/gmail to make registration easier
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com/accounts/login/ and click log in with Google button | account is created for the user with details from Google account | Works as expected |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com/accounts/login/ and click log in with Facebook button | account is created for the user with details from Facebook account | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/test-user-story-2a.png">
+<img src="docs/testing/test-user-story-2b.png">
+<img src="docs/testing/test-user-story-2c.png">
+<img src="docs/testing/test-user-story-2d.png">
+<img src="docs/testing/test-user-story-2e.png">
+</details>
+
+9. As a site user, I can view recipes organised by category to make finding particular recipes
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com//categories/ | Category page loads | Works as expected |
+Click on category panel tile for category detail page | Category detail page loads with related recipes displayed at the bottom of the page | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/test-user-story-8a.png">
+<img src="docs/testing/test-user-story-8b.png">
+</details>
+
+10. As a site user, I can view and leave comments on an individual recipe or article
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com//recipes/ | Recipe page loads | Works as expected |
+Click on recipe card for more information | Recipe detail page loads with comments section at the bottom of the page | Works as expected |
+Logged in users can fill out the comment form and click submit button | Comment is submitted for approval | Works as expected |
+Admin user approves comment in admin dashboard | Approved comments are displayed on the recipes page | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/test-user-story-2a.png">
+<img src="docs/testing/test-user-story-2b.png">
+<img src="docs/testing/test-user-story-2c.png">
+<img src="docs/testing/test-user-story-2d.png">
+<img src="docs/testing/test-user-story-2e.png">
+<img src="docs/testing/test-user-story-6a.png">
+</details>
+
+11. As a site user, I want to be aware of logged in status
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to any page and check nav bar | Logged in users see welcome message with personalised username and sign out link | Works as expected |
+Navigate to any page and check nav bar | Unauthenticated users see welcome message with register and sign in links | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/test-user-story-10a.png">
+<img src="docs/testing/test-user-story-10b.png">
+<img src="docs/testing/test-user-story-10c.png">
+</details>
+
+12. As a site user, I want contact form/email subscription prefilled with account info
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com/contact | Logged in users see username field of form prepopulated | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/test-user-story-12.png">
+
+</details>
+
+13. As a site user, I want to be able to search through the recipes, categories and articles
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click on search bar in navbar and enter search term | Search results are displayed on resulting page | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/test-user-story-13a.png">
+<img src="docs/testing/test-user-story-13b.png">
+<img src="docs/testing/test-user-story-13c.png">
+<img src="docs/testing/test-user-story-13d.png">
+</details>
+
+### Site admin
+14. As a site admin, I can create, read, update and delete my recipes and articles to manage site content
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
+Click on Recipe add + button | Recipe add form is presented to user in backend | Works as expected |
+Fill out form with relevant details and click save | New recipe is added to database | Works as expected |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com/recipes logged in as superuser | Add recipe button is displayed above recipe list | Works as expected |
+Click on Recipe add + button | Recipe add form is presented to user in frontend | Works as expected |
+Fill out form with relevant details and click save | New recipe is added to database | Works as expected |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
+Click on Article add + button | Article add form is presented to user in backend | Works as expected |
+Fill out form with relevant details and click save | New article is added to database | Works as expected |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com/articles logged in as superuser | Add article button is displayed above article list | Works as expected |
+Click on Article add + button | Article add form is presented to user in frontend | Works as expected |
+Fill out form with relevant details and click save | New article is added to database | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/test-user-story-14a.png">
+<img src="docs/testing/test-user-story-14b.png">
+<img src="docs/testing/test-user-story-14c.png">
+<img src="docs/testing/test-user-story-14d.png">
+<img src="docs/testing/test-user-story-14e.png">
+<img src="docs/testing/test-user-story-14f.png">
+<img src="docs/testing/test-user-story-14g.png">
+<img src="docs/testing/test-user-story-14h.png">
+<img src="docs/testing/test-user-story-14i.png">
+<img src="docs/testing/test-user-story-14j.png">
+<img src="docs/testing/test-user-story-14k.png">
+</details>
+
+15. As a site admin, I can approve or disapprove comments so that I can filter out objectionable comments
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
+Click on Comments table | A list of all comments is displayed | Works as expected |
+Select the commetns for approval from list and approve | Approved comments are displayed on the front end of the website | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/test-user-story-15a.png">
+<img src="docs/testing/test-user-story-15b.png">
+
+</details>
+
+16. As a site admin, I can create, read, update and delete categories to organise site content
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
+Click on Category add + button | Category add form is presented to user in backend | Works as expected |
+Fill out form with relevant details and click save | New category is added to database | Works as expected |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com/categories logged in as superuser | Add category button is displayed above category list | Works as expected |
+Click on Category add + button | Category add form is presented to user in frontend | Works as expected |
+Fill out form with relevant details and click save | New category is added to database | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/test-user-story-16a.png">
+<img src="docs/testing/test-user-story-16b.png">
+<img src="docs/testing/test-user-story-16c.png">
+<img src="docs/testing/test-user-story-16d.png">
+</details>
+
+17. As a site admin, I can choose which recipes are featured on the home page
+
+Navigate to https://ci-pp4-recipe-site.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
+Choose your recipe from the Recipes table | Recipe edit form is presented to user in backend | Works as expected |
+Select the featured recipe checkbox and click save | New recipe is appearing on the home page carousel | Works as expected |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com/recipes logged in as superuser | Add recipe button is displayed above recipe list | Works as expected |
+Choose your recipe from the Recipes table | Recipe edit form is presented to user in frontend | Works as expected |
+Select the featured recipe checkbox and click save | New recipe is appearing on the home page carousel | Works as expected |
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/test-user-story-16e.png">
+<img src="docs/testing/test-user-story-16f.png">
+
+</details>
+
+18. As a site admin, I want to be able to log into admin dashboard to edit recipes/categories/comments
+
+Navigate to https://ci-pp4-recipe-site.herokuapp.com/admin | Admin sign in form is displayed | Works as expected |
+Once logged in Recipes, Categories and articles tables are available | App tables are displayed | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/test-user-story-17a.png">
+<img src="docs/testing/test-user-story-17b.png">
+<img src="docs/testing/test-user-story-17c.png">
+
+</details>
+
+19. As a site admin, I want edit forms prefilled with relevant info
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to https://ci-pp4-recipe-site.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
+Choose a recipe from the Recipes table | Recipe edit form is presented with data prefilled | Works as expected |
+
+Navigate to https://ci-pp4-recipe-site.herokuapp.com/recipes logged in as superuser | Choose recipe from list | Works as expected |
+If logged in user is recipe author edit and delete buttons are available | Edit and Delete buttons are available to recipe author on recipe detail page | Works as expected |
+Click on edit button | Recipe edit form is presented with data prefilled | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/test-user-story-18a.png">
+<img src="docs/testing/test-user-story-18b.png">
+</details>
+
+### Site Owner
+20. As a site owner, I want to increase my social media presence
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to the any page, scroll to bottom of page | Links bring user to social media page where they can follow restaurant | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/test-user-story-20.png">
+
+</details>
+
+21. As a site owner, I want data entry to be validated on sign-up page
+
+22. As a site owner, I want the user to come to a 404 error page instead of having to use the browser back button if they enter a URL that does not exist
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Type the wrong page in the www address | Reroute to a customised 404 page | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/test-user-story-21.png">
+</details>
+
+23. As a site owner, I want user to be able to contact me and provide their feedback
+
+**Step** | **Expected Result** | **Actual Result**
+Navigate to the contact page, scroll down to contact form | Form allows user to make contact and provide feedback | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/test-user-story-23.png">
+
+</details>
+
+### Automated testing
+
+Automated testing was done using the Django's TestCase module. 
+
+### Performing tests on various devices
+
+The website was tested using Google Chrome Developer Tools Toggle Device Toolbar to simulate viewports of different devices.
+
+The website was tested on the following devices:
+- MacBook Pro with macOS 13.2
+- MS Surface Pro Windows 10
+- Samsung s20 with Android v13
 
 ## Validator Tests
 
@@ -1093,11 +957,198 @@ Due to the closure of the PEP8 Python Validation online site, I used the new [Co
 
 [Back to top](<#contents>)
 
-# Deployment
+## Setup and Deployment
 
-## Project Deployment via Heroku
+### Setup
 
-This is a guide on how to deploy a project via [Heroku](https://www.heroku.com).
+_In GITHUB:_
+
+ Once the repository has been created using the Code Institute student template....
+
+1. Install Django and supporting libraries. 
+    * Django and gunicorn --> pip3 install 'django<4' gunicorn
+    * Supporting libraries --> pip3 install dj_database_url psycopg2
+    * Cloudinary libraries --> pip3 install dj3-cloudinary-storage
+
+2. Create a requirements file --> pip3 freeze --local > requirements.txt
+
+3. Create your project: in this case for-the-love-of-food
+
+4. Create an app using command --> python3 manage.py startapp APP_NAME
+
+5. Add it to installed apps --> INSTALLED_APPS = [
+    …
+    'APP_NAME',
+]
+
+6. Save file and migrate changes using command --> python3 manage.py migrate
+
+7. Run server to test
+
+8. Commit and push changes to github
+
+[Back to top](<#contents>)
+
+### Deployment to Heroku
+
+1. Create Heroku Account
+2. In Heroku dashboard: go to Create new app.
+3. Give your app a unique name.
+4. Select region --> EUROPE
+5. Click create App.
+6. Go to Database App/Resources/ Add-ons and search and click 'Heroku Postgres'.
+7. Go to the Settings tab, scroll down to Config Vars and select Reveal Config Vars and copy text.
+
+
+_IN GITPOD..._
+
+8. Create env.py file on top of level directory.
+9. Import os library
+10. set environment variables --> os.environ["DATABASE_URL"] = "Paste in Heroku DATABASE_URL Link"
+11. Add in a secret key --> os.environ["SECRET_KEY"] = "Make up your own randomSecretKey"
+
+
+_IN HEROKU ..._
+
+12. Add secret Key to config vars --> SECRET_KEY, “randomSecretKey”
+
+
+_IN GITPOD / IN SETTINGS.PY_
+
+13. Reference env.py file -->
+import os
+import dj_database_url
+
+if os.path.isfile("env.py"):
+   import env
+
+14. Remove the secret key and replace it with the following variable--> SECRET_KEY = os.environ.get('SECRET_KEY')
+
+
+15. Comment out the DataBases section -->
+ DATABASES = {
+     'default': {
+         'ENGINE': 'django.db.backends.sqlite3',
+         'NAME': BASE_DIR / 'db.sqlite3',
+     }
+ }
+
+ 16. Add new database section -->
+ DATABASES = {
+   'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
+
+17. In the terminal, save files and make migrations --> python3 manage.py migrate
+
+
+_GETTING STATIC AND MEDIA FILES STORED ON CLOUDINARY..._
+
+
+18. Create a cloudinary account, and copy the CLOUDINARY_URL from the dashboard.
+
+19. Add url to env.py -->
+os.environ["CLOUDINARY_URL"] = "cloudinary://************************"
+
+
+_BACK IN HEROKU ..._
+
+20. Paste Cloudinary URL to Heroku Config Vars -->
+Add to Settings tab in Config Vars e.g. COUDINARY_URL, cloudinary://************************
+
+21. In config vars, add DISABLE_COLLECTSTATIC, 1. This will be rmeoved before final deployment.
+
+
+_IN GITPOD / SETTINGS.PY_
+
+22. Install Cloudinary libraries -->
+INSTALLED_APPS = [
+    …,
+    'cloudinary_storage',
+    'cloudinary',
+    …,
+]
+
+23. Tell Django to use Cloudinary to store media and static files -->
+STATIC_URL = '/static/'
+
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+23. Link file to templates -->
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+
+24. Change template directory to templates array -->
+TEMPLATES = [
+    {
+        …,
+        'DIRS': [TEMPLATES_DIR],
+       …,
+            ],
+        },
+    },
+]
+
+25. Add heroku hostname to ALLOWED_HOSTS-->
+ALLOWED_HOSTS = ["PROJ_NAME.herokuapp.com", "localhost"]
+
+
+_IN GITPOD..._
+
+26. Create 3 new folders: media, static and templates
+
+27. Create procfile and add code -->
+web: gunicorn PROJ_NAME.wsgi
+
+28. In terminal --> Add, Commit and Push
+
+_IN HEROKU ..._
+
+29. Deploy manually -->  Github as deployment method, on main branch
+
+[Back to top](<#contents>)
+
+### Final Production Deployment
+
+_IN GITPOD / SETTINGS.PY_
+
+1. Set DEBUG flag to False!! If not...
+    * Django will serve the static  files such as css files itself, instead of relying on Cloudinary.
+    * Django will continue to give us verbose error pages which can reveal credentials, and things you want to keeo secret. This will compromise your site!
+2. Add a few more settings--> X_FRAME_OPTIONS = 'SAMEORIGIN'
+    * Without this our summer note editor would no  longer work when we deploy the project. This is due to Cross-Origin Resource Sharing, which tells the browser which resources are permitted to be loaded.
+3. Save, add and commit as "deployment commit", and push to github.
+
+
+_IN HEROKU..._
+
+4. In reveal config vars, remove DISABLE_COLLECTSTATIC environment variable.
+
+5. Go to deploy tab, scroll down to the end and deplopy our branch! 
+
+6. Your app has been deployed to heroku!
+
+[Back to top](<#contents>)
+
+### Forking
+
+You can Fork the Repository. This makes a copy of the original repository on our Github account so you can make changes without affecting the original repository.
+1. Log into GitHub and locate the GitHub repository you want.
+2. Click on the "Fork" button which is located in the top right corner.
+3. You will now have a copy of the original repository in your GitHub account.
+
+[Back to top](<#contents>)
+
+### Cloning
+
+1. Log into GitHub and locate the GitHub repository you want.
+2. Under the repository name, click "Code" button which will come up with a dropdown menu.
+3. Where it says Clone, copy the link below.
+
+[Link to deployed site](https://adventureswithwood.herokuapp.com/)
 
 [Back to top](<#contents>)
 
@@ -1105,19 +1156,29 @@ This is a guide on how to deploy a project via [Heroku](https://www.heroku.com).
 
 ## Content
 
-readme structure adapted from [Matthew Hurrell] https://github.com/Matthew-Hurrell/viva-la-nacho/blob/main/README.md
+[Back to top](<#contents>)
+
+## Readme
+Readme structure adapted from:
+- [Matthew Hurrell] https://github.com/Matthew-Hurrell/viva-la-nacho/blob/main/README.md
+- [John Constant] https://github.com/johnConstant/CI_PP4_recipe_site/blob/main/README.md
+- [Stephanie Crocker] https://github.com/stephaniecrocker91/for-the-love-of-food/blob/main/README.md
 
 [Back to top](<#contents>)
 
 ## Media
 
+Images were sourced on Google from various sites including Instructables and Pinterest. Creative commons images were used where possible.
+
 [Back to top](<#contents>)
 
 ## Code 
 
+I used the "I think therefore I blog" walk through project as a starting point and template. I created a blog like page that presented projects and posts. I added to the base code with custom views, models, html and css.
+
 [Back to top](<#contents>)
 
-# Acknowledgements
+## Acknowledgements
 
 [Back to top](<#contents>)
 
