@@ -1089,6 +1089,8 @@ You can Fork the Repository. This makes a copy of the original repository on our
 
 ## Content
 
+All content that was copied from other sites such as Instructables https://www.instructables.com/ has been credited on the relevant page itself on the site.
+
 [Back to top](<#contents>)
 
 ## Readme
@@ -1103,7 +1105,7 @@ Readme structure adapted from/inspired by:
 
 Images were sourced on Google from various sites including Instructables and Pinterest. Creative commons images were used where possible.
 
-I created the site logo/placeholder image using CANVA https://www.canva.com/
+The site logo/placeholder image was created using Canva https://www.canva.com/
 
 [Back to top](<#contents>)
 

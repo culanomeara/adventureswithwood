@@ -2,16 +2,16 @@
 
 body {
     font-family: 'Antic', sans-serif;
-    background-color: #aa3434;
+    background-color: #a52a2a;
 }
 
-.brand {
+.navbarText {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: #a52a2a;
 }
 
-.thin {
+/* .thin {
     font-weight: 300;
 }
 
@@ -20,16 +20,17 @@ body {
 }
 
 .dark-bg {
-    background-color: #445261;
+    background-color: #a52a2a;
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-color: #a52a2a;
 }
+ */
 
 .card {
     border: none;
-    background-color: transparent;
+    background-color: #a52a2a;
 }
 
 .image-container {
@@ -41,53 +42,12 @@ body {
     bottom: 5%;
     min-width: 20%;
     left: -2px;
-    background-color: #535252;
+    background-color: #a52a2a;
 }
 
 .author {
     color: white;
     margin: 4px;
-}
-
-.heading {
-    margin-top: 3rem;
-    font-size: 3.6rem;
-    font-weight: 700;
-}
-
-.masthead {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-    height: 33vh;
-    width: 100%;
-}
-
-.masthead-text {
-    background-color: lightgray ;
-    color: #445261;
-    position: relative;
-}
-
-.masthead-image {
-    position: relative;
-    overflow: hidden;
-}
-
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100;
 }
 
 .p-link {
@@ -96,26 +56,25 @@ body {
 }
 
 .p-link:hover {
-    color: #619dde;
+    color: #a52a2a;
 }
 
-.page-link {
+/* .page-link {
     color: #445261;
-}
+} */
 
 .p-update {
     text-decoration: none;
     color: #445261;
 }
-
+/* 
 .p-update:hover {
-    color: #619dde;
+    color: #a52a2a;
 }
 
 .p-update {
     color: #445261;
-}
-
+} */
 
 .p-title {
     margin-top: 20%;
@@ -129,18 +88,18 @@ body {
 }
 
 .btn-signup {
-    background-color: #23BBBB;
+    background-color: #a52a2a;
     color: #fff;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #23BBBB;
+    color: #a52a2a;
 }
 
 .link {
-    color: #23BBBB;
+    color: #a52a2a;
     text-decoration: none;
 }
 
@@ -228,7 +187,7 @@ body {
     color: white;
     font-weight: 200;
     font-size: 1.6rem;
-    background-color: #535252;
+    background-color: #a52a2a;
 }
 
 .proj {
