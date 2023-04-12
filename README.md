@@ -142,7 +142,7 @@ This project was created as a fourth portfolio project submission for the Full S
 
 ### Github Project Board
 
-An agile methodology was used to plan and design the Adventures with Wood application. User stories were created on GitHub and added to the board in the TODO section. They then moved across the board into IN PROGRESS when they were being actioned, and then into the DONE section when they were completed. This helped greatly in tracking progress and organising and allocating work.
+Agile methodology was used to plan and design the Adventures with Wood application. User stories were created on GitHub and added to the board in the TODO section. They then moved across the board into IN PROGRESS when they were being actioned, and then into the DONE section when they were completed. This helped greatly in tracking progress and organising and allocating work.
 
 [Back to top](<#contents>)
 
@@ -518,24 +518,22 @@ The testing approach is as follows:
 ### Manual testing of user stories
 
 ### Users
-1. I want to see the home page with explanation of the app
+1. I want to get inspiration for DIY wooden projects
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com/ | Home page main body loads with application description | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/ | Home page main body loads with carousel, site description and most popular posts | Works as expected |
 
 <details><summary>Screenshot</summary>
 <img src="docs/testing/test-user-story-1.png">
 </details>
 
 
-2. As a site user, I can create an account to interact with recipes
+2. As a user, I can view all projects
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com/accounts/signup/ and fill submit form | account is created for the user with the submitted details | Works as expected |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com/accounts/signup/ and click sign up with Google button | account is created for the user with details from Google account | Works as expected |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com/accounts/signup/ and click sign up with Facebook button | account is created for the user with details from Facebook account | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/projects | All projects should be visible | Works as expected |
 
 <details><summary>Screenshot</summary>
 <img src="docs/testing/test-user-story-2a.png">
@@ -545,11 +543,11 @@ Navigate to https://ci-pp4-recipe-site.herokuapp.com/accounts/signup/ and click 
 <img src="docs/testing/test-user-story-2e.png">
 </details>
 
-3. As a site user, I can view all recipes in one place
+3. As a user, I can view all projects 
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com//recipes/ | Recipes page main body loads with all recipes displayed | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/// | Projectss page main body loads with all Projectss displayed | Works as expected |
 
 <details><summary>Screenshot</summary>
 <img src="docs/testing/test-user-story-3.png">
@@ -557,39 +555,29 @@ Navigate to https://ci-pp4-recipe-site.herokuapp.com//recipes/ | Recipes page ma
 </details>
 
 
-4. As a site user, I can view the most popular recipes on the home page
+4. As a site user I wanrt to be able to view the most popular projects
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com// and scroll to most popular recipes section | Recipes with likes appear in three panels on homepage | Works as expected |
-Click on most popular panel | Brought to recipe detail page for more information on recipe | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com// and scroll to most popular Projectss section | Projectss with likes appear in three panels on homepage | Works as expected |
+Click on most popular panel | Brought to Projects detail page for more information on Projects | Works as expected |
 
 <details><summary>Screenshot</summary>
 <img src="docs/testing/test-user-story-4.png">
 </details>
 
 
-5. As a site user, I can view the featured recipes on the home page
+5. - As a user, I want to be able to view details of a particular project
+
+
+6. As a user, I want to be able to view details of a particular post
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com// | 5 featured recipes appearing on homepage carousel | Works as expected |
-Click on most carousel slide | Brought to recipe detail page for more information on recipe | Works as expected |
-
-<details><summary>Screenshot</summary>
-<img src="docs/testing/test-user-story-5a.png">
-<img src="docs/testing/test-user-story-5b.png">
-</details>
-
-
-6. As a site user, I can log in to comment on recipes and articles
-
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com/accounts/login/ and fill submit form | account is created for the user with the submitted details | Works as expected |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com/accounts/login/ and click log in with Google button | account is created for the user with details from Google account | Works as expected |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com/accounts/login/ and click log in with Github button | account is created for the user with details from Github account | Works as expected |
-Once logged in go to recipe page, scroll to comments section and leave a comment | Comment is submitted for approval | Works as expected
+Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ and fill submit form | account is created for the user with the submitted details | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ and click log in with Google button | account is created for the user with details from Google account | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ and click log in with Github button | account is created for the user with details from Github account | Works as expected |
+Once logged in go to Projects page, scroll to comments section and leave a comment | Comment is submitted for approval | Works as expected
 
 <details><summary>Screenshot</summary>
 <img src="docs/testing/test-user-story-2a.png">
@@ -600,16 +588,14 @@ Once logged in go to recipe page, scroll to comments section and leave a comment
 <img src="docs/testing/test-user-story-6a.png">
 </details>
 
-
-
-7. As a site user, I can log in to like/unlike recipes
+7. As a site user, I can log in to like/unlike projects
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com/accounts/login/ and fill submit form | account is created for the user with the submitted details | Works as expected |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com/accounts/login/ and click log in with Google button | account is created for the user with details from Google account | Works as expected |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com/accounts/login/ and click log in with Facebook button | account is created for the user with details from Facebook account | Works as expected |
-Once logged in go to recipe page, scroll to info section and click heart icon | Icon changes to solid heart and number of likes count increases by one | Works as expected
+Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ and fill submit form | account is created for the user with the submitted details | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ and click log in with Google button | account is created for the user with details from Google account | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ and click log in with Facebook button | account is created for the user with details from Facebook account | Works as expected |
+Once logged in go to Projects page, scroll to info section and click heart icon | Icon changes to solid heart and number of likes count increases by one | Works as expected
 
 <details><summary>Screenshot</summary>
 <img src="docs/testing/test-user-story-2a.png">
@@ -621,13 +607,12 @@ Once logged in go to recipe page, scroll to info section and click heart icon | 
 <img src="docs/testing/test-user-story-7b.png">
 </details>
 
-
-8. As a site user, I can log in using social media accounts/gmail to make registration easier
+8. As a site user, I want to be able to create new Projects and Posts
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com/accounts/login/ and click log in with Google button | account is created for the user with details from Google account | Works as expected |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com/accounts/login/ and click log in with Facebook button | account is created for the user with details from Facebook account | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ and click log in with Google button | account is created for the user with details from Google account | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ and click log in with Facebook button | account is created for the user with details from Facebook account | Works as expected |
 
 <details><summary>Screenshot</summary>
 <img src="docs/testing/test-user-story-2a.png">
@@ -637,26 +622,14 @@ Navigate to https://ci-pp4-recipe-site.herokuapp.com/accounts/login/ and click l
 <img src="docs/testing/test-user-story-2e.png">
 </details>
 
-9. As a site user, I can view recipes organised by category to make finding particular recipes
+10. As a site user, I can view comments on an individual project
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com//categories/ | Category page loads | Works as expected |
-Click on category panel tile for category detail page | Category detail page loads with related recipes displayed at the bottom of the page | Works as expected |
-
-<details><summary>Screenshot</summary>
-<img src="docs/testing/test-user-story-8a.png">
-<img src="docs/testing/test-user-story-8b.png">
-</details>
-
-10. As a site user, I can view and leave comments on an individual recipe or article
-
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com//recipes/ | Recipe page loads | Works as expected |
-Click on recipe card for more information | Recipe detail page loads with comments section at the bottom of the page | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com//Projectss/ | Projects page loads | Works as expected |
+Click on Projects card for more information | Projects detail page loads with comments section at the bottom of the page | Works as expected |
 Logged in users can fill out the comment form and click submit button | Comment is submitted for approval | Works as expected |
-Admin user approves comment in admin dashboard | Approved comments are displayed on the recipes page | Works as expected |
+Admin user approves comment in admin dashboard | Approved comments are displayed on the Projectss page | Works as expected |
 
 <details><summary>Screenshot</summary>
 <img src="docs/testing/test-user-story-2a.png">
@@ -667,7 +640,9 @@ Admin user approves comment in admin dashboard | Approved comments are displayed
 <img src="docs/testing/test-user-story-6a.png">
 </details>
 
-11. As a site user, I want to be aware of logged in status
+11. As a site user, I can log in to comment on projects
+
+12. As a site user, I want to be aware of logged in status
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -680,47 +655,34 @@ Navigate to any page and check nav bar | Unauthenticated users see welcome messa
 <img src="docs/testing/test-user-story-10c.png">
 </details>
 
-12. As a site user, I want contact form/email subscription prefilled with account info
+13. As a site user, I want to be able to update/edit/delete my projects/posts
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com/contact | Logged in users see username field of form prepopulated | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/contact | Logged in users see username field of form prepopulated | Works as expected |
 
 <details><summary>Screenshot</summary>
 <img src="docs/testing/test-user-story-12.png">
 
 </details>
 
-13. As a site user, I want to be able to search through the recipes, categories and articles
-
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-Click on search bar in navbar and enter search term | Search results are displayed on resulting page | Works as expected |
-
-<details><summary>Screenshot</summary>
-<img src="docs/testing/test-user-story-13a.png">
-<img src="docs/testing/test-user-story-13b.png">
-<img src="docs/testing/test-user-story-13c.png">
-<img src="docs/testing/test-user-story-13d.png">
-</details>
-
 ### Site admin
-14. As a site admin, I can create, read, update and delete my recipes and articles to manage site content
+14. As a site admin, I can create, read, update and delete any project or post to manage site content
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
-Click on Recipe add + button | Recipe add form is presented to user in backend | Works as expected |
-Fill out form with relevant details and click save | New recipe is added to database | Works as expected |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com/recipes logged in as superuser | Add recipe button is displayed above recipe list | Works as expected |
-Click on Recipe add + button | Recipe add form is presented to user in frontend | Works as expected |
-Fill out form with relevant details and click save | New recipe is added to database | Works as expected |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
-Click on Article add + button | Article add form is presented to user in backend | Works as expected |
-Fill out form with relevant details and click save | New article is added to database | Works as expected |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com/articles logged in as superuser | Add article button is displayed above article list | Works as expected |
-Click on Article add + button | Article add form is presented to user in frontend | Works as expected |
-Fill out form with relevant details and click save | New article is added to database | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
+Click on Project add + button | Project add form is presented to user in backend | Works as expected |
+Fill out form with relevant details and click save | New project is added to database | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/ logged in as user | Create New Project option is displayed on top nav bar | Works as expected |
+Click on Create New Project menu option  | Create New Project form is presented to user in frontend | Works as expected |
+Fill out form with relevant details and click save | New project is added to database | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
+Click on Post add + button | Post add form is presented to user in backend | Works as expected |
+Fill out form with relevant details and click save | New post is added to database | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/ logged in as user | Create post option is displayed on the nav bar| Works as expected |
+Click on Create New Post menu option  | Create New Post form is presented to user in frontend | Works as expected |
+Fill out form with relevant details and click save | New post is added to database | Works as expected |
 
 <details><summary>Screenshot</summary>
 <img src="docs/testing/test-user-story-14a.png">
@@ -740,7 +702,7 @@ Fill out form with relevant details and click save | New article is added to dat
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
 Click on Comments table | A list of all comments is displayed | Works as expected |
 Select the commetns for approval from list and approve | Approved comments are displayed on the front end of the website | Works as expected |
 
@@ -754,11 +716,8 @@ Select the commetns for approval from list and approve | Approved comments are d
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
 Click on Category add + button | Category add form is presented to user in backend | Works as expected |
-Fill out form with relevant details and click save | New category is added to database | Works as expected |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com/categories logged in as superuser | Add category button is displayed above category list | Works as expected |
-Click on Category add + button | Category add form is presented to user in frontend | Works as expected |
 Fill out form with relevant details and click save | New category is added to database | Works as expected |
 
 <details><summary>Screenshot</summary>
@@ -768,14 +727,14 @@ Fill out form with relevant details and click save | New category is added to da
 <img src="docs/testing/test-user-story-16d.png">
 </details>
 
-17. As a site admin, I can choose which recipes are featured on the home page
+17. As a site admin, I can choose which Projectss are featured on the home page
 
-Navigate to https://ci-pp4-recipe-site.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
-Choose your recipe from the Recipes table | Recipe edit form is presented to user in backend | Works as expected |
-Select the featured recipe checkbox and click save | New recipe is appearing on the home page carousel | Works as expected |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com/recipes logged in as superuser | Add recipe button is displayed above recipe list | Works as expected |
-Choose your recipe from the Recipes table | Recipe edit form is presented to user in frontend | Works as expected |
-Select the featured recipe checkbox and click save | New recipe is appearing on the home page carousel | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
+Choose your Projects from the Projectss table | Projects edit form is presented to user in backend | Works as expected |
+Select the featured Projects checkbox and click save | New Projects is appearing on the home page carousel | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/Projectss logged in as superuser | Add Projects button is displayed above Projects list | Works as expected |
+Choose your Projects from the Projectss table | Projects edit form is presented to user in frontend | Works as expected |
+Select the featured Projects checkbox and click save | New Projects is appearing on the home page carousel | Works as expected |
 
 
 <details><summary>Screenshot</summary>
@@ -784,10 +743,10 @@ Select the featured recipe checkbox and click save | New recipe is appearing on 
 
 </details>
 
-18. As a site admin, I want to be able to log into admin dashboard to edit recipes/categories/comments
+18. As a site admin, I want to be able to log into admin dashboard to edit projects/posts/categories/comments
 
-Navigate to https://ci-pp4-recipe-site.herokuapp.com/admin | Admin sign in form is displayed | Works as expected |
-Once logged in Recipes, Categories and articles tables are available | App tables are displayed | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/admin | Admin sign in form is displayed | Works as expected |
+Once logged in Projects, Posts, Categories, Comments tables are available | App tables are displayed | Works as expected |
 
 <details><summary>Screenshot</summary>
 <img src="docs/testing/test-user-story-17a.png">
@@ -796,37 +755,11 @@ Once logged in Recipes, Categories and articles tables are available | App table
 
 </details>
 
-19. As a site admin, I want edit forms prefilled with relevant info
-
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-Navigate to https://ci-pp4-recipe-site.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
-Choose a recipe from the Recipes table | Recipe edit form is presented with data prefilled | Works as expected |
-
-Navigate to https://ci-pp4-recipe-site.herokuapp.com/recipes logged in as superuser | Choose recipe from list | Works as expected |
-If logged in user is recipe author edit and delete buttons are available | Edit and Delete buttons are available to recipe author on recipe detail page | Works as expected |
-Click on edit button | Recipe edit form is presented with data prefilled | Works as expected |
-
-<details><summary>Screenshot</summary>
-<img src="docs/testing/test-user-story-18a.png">
-<img src="docs/testing/test-user-story-18b.png">
-</details>
-
 ### Site Owner
-20. As a site owner, I want to increase my social media presence
-
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-Navigate to the any page, scroll to bottom of page | Links bring user to social media page where they can follow restaurant | Works as expected |
-
-<details><summary>Screenshot</summary>
-<img src="docs/testing/test-user-story-20.png">
-
-</details>
 
 21. As a site owner, I want data entry to be validated on sign-up page
 
-22. As a site owner, I want the user to come to a 404 error page instead of having to use the browser back button if they enter a URL that does not exist
+22. As a site owner, I want the user to come to a custom 404 error page tha explains in simple language what has gone wrong if they enter a URL that does not exist
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -1159,10 +1092,10 @@ You can Fork the Repository. This makes a copy of the original repository on our
 [Back to top](<#contents>)
 
 ## Readme
-Readme structure adapted from:
-- [Matthew Hurrell] https://github.com/Matthew-Hurrell/viva-la-nacho/blob/main/README.md
-- [John Constant] https://github.com/johnConstant/CI_PP4_recipe_site/blob/main/README.md
-- [Stephanie Crocker] https://github.com/stephaniecrocker91/for-the-love-of-food/blob/main/README.md
+Readme structure adapted from/inspired by:
+- Matthew Hurrell https://github.com/Matthew-Hurrell/viva-la-nacho/blob/main/README.md
+- John Constant https://github.com/johnConstant/CI_PP4_Projects_site/blob/main/README.md
+- Stephanie Crocker https://github.com/stephaniecrocker91/for-the-love-of-food/blob/main/README.md
 
 [Back to top](<#contents>)
 
@@ -1170,11 +1103,17 @@ Readme structure adapted from:
 
 Images were sourced on Google from various sites including Instructables and Pinterest. Creative commons images were used where possible.
 
+I created the site logo/placeholder image using CANVA https://www.canva.com/
+
 [Back to top](<#contents>)
 
 ## Code 
 
 I used the "I think therefore I blog" walk through project as a starting point and template. I created a blog like page that presented projects and posts. I added to the base code with custom views, models, html and css.
+
+I watched a good few of Codemy videos for Django blog building https://www.youtube.com/watch?v=m3efqF9abyg
+
+I got the idea for the MOST POPULAR projects in this CI PP4 project by John Constant https://ci-pp4-recipe-site.herokuapp.com/
 
 [Back to top](<#contents>)
 
