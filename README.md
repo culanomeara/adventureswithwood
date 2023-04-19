@@ -2,11 +2,11 @@
 
 Adventures With Wood is a full stack web application that gives users a platform to view, create and share projects in wood. The intention of the site is to provide a simple, intuitive, visually appealing and user friendly platform for users to share wood-inspired projects and interact with the community. The intended target audience is anyone with an interest in wood, DIY and making things. The target audience will mostly span across men and women from young adults to older generations. 
 
-The application impliments user authorisation and full CRUD functionality, allowing users to create, update, read and delete projects stored in a relational database management system. Users can also like projects to save them to their favourites list and interact with other users via project comments. 
+The application impliments user authorisation and full CRUD functionality, allowing users to create, update, read and delete projects stored in a relational database management system. Users can also like projects and be part of the site community by adding comments to projects. 
 
 The site also features a back end admin dashboard that allows an administrator to review and approve user comments, as well as monitor and edit projects, posts and users. 
 
-Link to the live site - 
+Link to the live site - https://adventures.herokuapp.com/
 
 
 # Contents
@@ -39,22 +39,15 @@ Link to the live site -
             * [Like Unlike Project](<#like-unlike-project>)
             * [Project Comments](<#project-comments>)
             * [Comment Form](<#comment-form>)
-            * [Comment Form Validation](<#comment-form-validation>)
+            * [Form Validation](<#form-validation>)
             * [Post Comment Notification](<#post-comment-notification>)
-        * [**Create A Project**](<#create-a-project>)
-            * [Create project Form](<#post-project-form>)
-            * [Log In To Create project](<#log-in-to-post-project>)
-            * [Create project Notification](<#post-project-notification>)
-        * [**Create A Post**](<#create-a-post>)
-            * [Create post Form](<#post-project-form>)
-            * [Log In To Create post](<#log-in-to-create-post>)
-            * [Create post Notification](<#create-project-notification>)
+        * [**Create A Project or Post**](<#create-a-project-or-post>)
+            * [Create Form](<#create-form>)
+            * [Create Notification](<#create-notification>)
         * [**Update Project or Post**](<#update-project-or-post>)
             * [Update Form](<#update-form>)
-            * [Log In To Update](<#log-in-to-update>)
             * [Update Notification](<#update-notification>)
         * [**Delete Project or Post**](<#delete-project-or-post>)
-            * [Log In To Delete](<#log-in-to-delete->)
             * [Delete Notification](<#delete-notification>)   
         * [**403 Page**](<#403-page>)
         * [**Log In To Update or Delete**](<#log-in-to-update-or-delete>)
@@ -108,7 +101,7 @@ Link to the live site -
 
 ## Objective
 
-This project was created as a fourth portfolio project submission for the Full Stack Software Development Higher National Diploma at [Code Institute](https://codeinstitute.net/). Amoungst other assessment criteria, the project had to be built using HTML, CSS, JavaScript, Python and Django and feature full CRUD functionality and user authorisation. The project had to also be planned and designed using agile methodologies. 
+This project was created for Portfolio Project Four submission for the Full Stack Software Development Higher National Diploma at [Code Institute](https://codeinstitute.net/). Amoungst other assessment criteria, the project had to be built using HTML, CSS, JavaScript, Python and Django and feature full CRUD functionality and user authorisation. The project also had to be planned and designed using Agile methodologies. 
 
 
 
@@ -148,9 +141,9 @@ Agile methodology was used to plan and design the Adventures with Wood applicati
 
 ### Database Schema
 
-Database schemas were drawn up using [App Diagrams.net](https://app.diagrams.net/). The schemas were used to plan the database models and fields. It also helps to display the relationships between the models and how they interact. Adventures With Wood consists of four custom models and one generic - Project, Post, Category, Comment and User. I did not include Keywords or Userlevels in my final design
+Database scheme was drawn up using [App Diagrams.net](https://app.diagrams.net/). The scheme was used to plan the database models and fields. It also helped to display the relationships between the models and how they interact. Adventures With Wood consists of four custom models and one generic - Project, Post, Category, Comment and User. I did not include Keywords or Userlevels in my final design
 <details><summary>See Database Image</summary>
-![Adventures With Wood Database Schemas](media/readme/images/DBmodeldesign.jpg)
+![Adventures With Wood Database Scheme](media/readme/images/DBmodeldesign.jpg)
 </details>
 
 [Back to top](<#contents>)
@@ -168,10 +161,6 @@ A full list of user stories can be found in the [Adventures With Wood GitHub Pro
 ## Site Structure 
 
 The Adventures With Wood app features a simple and user friendly site structure that users will be quite familiar with. However, some content is hidden / restricted to users who are not logged in. The main pages / templates of Adventures With Wood include - the home page, projects lists, posts lists, project details, post details, update project, update post, delete project/post page templates. Site users can freely and easily browse the various pages using the site navigation bar which is visible at the top of each page. The nav bar options automatically change depending on whether a user is signed in or not to allow for easy and intuitive site navigation.
-
-<details><summary>See Database Image</summary>
-![Adventures With Wood Database Schemas](media/readme/images/DBmodeldesign.jpg)
-</details>
 
 [Back to top](<#contents>)
 
@@ -197,8 +186,9 @@ The homepage is the first page of the site that a user will see when they naviga
 
 Site navigation is present at all times on every page of the site in the form of header nav bars. These navigational elements change depending on whether a user is logged in or not. Non logged in users only have viewing access to projects and posts. They are unable to comment or like a project. These elements are also fully responsive and the header collapses to become a mobile menu on small screen sizes.
 
-<details><summary>See Database Image</summary>
-![Adventures With Wood Database Schemas](media/readme/images/DBmodeldesign.jpg)
+<details><summary>See Navigation bar</summary>
+![Adventures With Wood Navigation Bar - Full](media/readme/images/DBmodeldesign.jpg)
+![Adventures With Wood Navigation Bar - Mobile](media/readme/images/DBmodeldesign.jpg)
 </details>
 
 [Back to top](<#contents>)
@@ -207,8 +197,8 @@ Site navigation is present at all times on every page of the site in the form of
 
 The homepage Carousel section is the large eye catching section which is just beneath the navigation bar. The carousel is only displayed on the homepage. It is used to catch the users attention, and to clearly showcase the general topic of the site. It features a large, colourful full screen image and a centralised text box with the project title.
 
-<details><summary>See Database Image</summary>
-![Adventures With Wood Database Schemas](media/readme/images/DBmodeldesign.jpg)
+<details><summary>See Carousel Image</summary>
+![Adventures With Wood Carousel Image](media/readme/images/DBmodeldesign.jpg)
 </details>
 ![Carousel Homepage](readme/assets/images/hero-homepage.png)
 
@@ -216,7 +206,7 @@ The homepage Carousel section is the large eye catching section which is just be
 
 #### Intro
 
-The homepage intro section is a brief introductory text paragraph that explains the purpose of the site and how to use it to new users. The section also features a divider above and below to clearly define and separate the sections. These stylised dividers are used frequently throughout the site and help to solidify the theme. A lighter shade of the green theme colour is used as a background colour.
+The homepage Introduction section is a brief introductory text paragraph that explains the purpose of the site and how to use it to new users.
 
 ![Intro Homepage](readme/assets/images/homepage-intro.png)
 
@@ -242,7 +232,7 @@ A user can navigate to the sign up page via the site navigation bars if they are
 
 #### Sign In
 
-A user can navigate to the Sign in page via the site navigation bars if they are not already signed in. The styling of the sign in page is very similar to the rest of the user authorisation pages. The colour scheme and background image are consistent, but the form and page heading are different. Once the sign in form is submitted correctly the user is redirected to the homepage as a logged in user.
+A user can navigate to the Sign in page via the site navigation bars if they are not already signed in. The styling of the sign in page is very similar to the rest of the user authorisation pages. The colour scheme and layout are consistent, but the form and page heading are different. Once the sign in form is submitted correctly the user is redirected to the homepage as a logged in user.
 
 ![Sign In](readme/assets/images/log-in.png)
 
@@ -250,7 +240,7 @@ A user can navigate to the Sign in page via the site navigation bars if they are
 
 #### Sign Out
 
-A user can navigate to the log out page via the site navigation bars if they are logged in. They are prompted on this page to confirm if wish to log out. Upon confirmation the user is logged out and redirected to the homepage. The styling and background image is consistent with the other authorisation pages for consistency. 
+A user can navigate to the log out page via the site navigation bars if they are logged in. They are prompted on this page to confirm if wish to log out. Upon confirmation the user is logged out and redirected to the homepage. 
 
 ![Sign Out](readme/assets/images/log-out.png)
 
@@ -259,7 +249,7 @@ A user can navigate to the log out page via the site navigation bars if they are
 ### Project and Post Details
 
 #### Project Details
-The project details page is a template used to display the full information on a project. Each published project has a details page. Theses pages are available for all users to view, including non logged in users. The main purpose of the page is to display the full project tools, amterials and instructions. Users will generally navigate to a full project page by clicking the view project button on the project card either on the home page or the projects page. As the user has now shown a specific interest in the project, all the information about the project is displayed here.
+The project details page is a template used to display the full information on a project. Each published project has a details page. Theses pages are available for all users to view, including non logged in users. The main purpose of the page is to display the project tools, amterials and instructions. Users will generally navigate to a full project page by clicking the view project button on the project card either on the home page or the projects page. As the user has now shown a specific interest in the project, all the information about the project is displayed here.
 
 ![project Details](readme/assets/images/project-details-1.png)
 
@@ -274,7 +264,7 @@ The post details page is a template used to display the full information on a po
 
 #### Like Unlike Project
 
-A user can like and unlike a project from that projects specific project page. Each project features a heart icon at the bottom of the project that can be clicked to like it. It can also be clicked again to unlike a project. When a project is liked by a user, the icon changes to a red heart. Unregistered users cannot like a project. A user who is not logged in only sees how many likes it has. Clicking the icon is disabled for an unregistered user and has no effect. 
+A user can like and unlike a project from that project's specific project page. Each project features a heart icon at the bottom of the project that can be clicked to like it. It can also be clicked again to unlike a project. When a project is liked by a user, the icon changes to a red heart. Unregistered users cannot like a project. A user who is not logged in only sees how many likes it has. Clicking the icon is disabled for an unregistered user and has no effect. 
 
 ![Like project](readme/assets/images/like-project.png)
 
@@ -292,7 +282,7 @@ At the bottom of each project details page there is a comments section for users
 
 #### Comment Form
 
-The project comment form is what the user uses to post a comment on a project. This comment form is only visible to logged in users. The comment form comprises of one text body field for the comment and a submit button. The author is assigned automatically as well as the "created on" date. 
+The project comment form is what the user uses to post a comment on a project. This comment form is only visible to logged in users. The comment form comprises of one text body field for the comment and a submit button. The author and "created on" date are assigned automatically. 
 
 ![Comment Form](readme/assets/images/comment-form.png)
 
@@ -300,11 +290,11 @@ The project comment form is what the user uses to post a comment on a project. T
 
 [Back to top](<#contents>)
 
-#### Comment Form Validation
+#### Form Validation
 
 Javascript is used to validate the comment form. The form is checked for empty space as well as whitespace. Javascript provents the form from being submitted until the comment field passes the test. If the test fails, a pop-up notification appears on the users screen to advise them about the failure. The user can then rectify their mistake and submit the form again. When the comment form is filled out correctly the form submits successfully and the page is refreshed.
 
-![Comment Form Validation](readme/assets/images/comment-validation.png)
+![Form Validation](readme/assets/images/comment-validation.png)
 
 [Back to top](<#contents>)
 
@@ -320,27 +310,17 @@ Upon the successful submission of the comment form, the page will refresh and a 
 
 ### Create a new project or post
 
-#### Create a project
+#### Create form
 
-The Create template is a page which features a project form to enable users to submit a project to the Adventures With Wood site. This page is only visible to logged in users and appears in the navigation menu. The page features similar styling to the rest of the site for consistency.
+The Create template form is a page which features a project/post form to enable users to submit a project/post to the Adventures With Wood site. This page is only visible to logged in users and appears in the navigation menu. The page features similar styling to the rest of the site for consistency.
 
 ![Create A Project Page](readme/assets/images/post-a-project-page.png)
-
-![Create A Project Page](readme/assets/images/post-a-project-page-2.png)
-
-[Back to top](<#contents>)
-
-#### Create a post
-
-The Create template is a page which features a post form to enable users to submit a post to the Adventures With Wood site. This page is only visible to logged in users and appears in the navigation menu. The page features similar styling to the rest of the site for consistency.
-
-![Create A Post Page](readme/assets/images/post-a-project-page.png)
 
 ![Create A Post Page](readme/assets/images/post-a-project-page-2.png)
 
 [Back to top](<#contents>)
 
-#### Create project or post notification
+#### Create notification
 
 When a user submits a project/post successfully, a message apears confirming the submission of the project/post.
 
@@ -355,14 +335,6 @@ The edit project/post page is available to logged in users. The edit button appe
 ![Edit project Page](readme/assets/images/edit-project-page.png)
 
 ![Edit project Page](readme/assets/images/edit-project-page-2.png)
-
-[Back to top](<#contents>)
-
-#### Log In To Update
-
-?
-
-![Update Project/Post Logged In](readme/assets/images/edit-project-logged-in.png)
 
 [Back to top](<#contents>)
 
@@ -398,7 +370,7 @@ The 403 page is triggered when a user navigates to a site URL which they don't h
 
 #### Log In To Update or Delete
 
-Some site users might try to update or delete projects or posts by manually entering the URL into the browser URL bar. If a user tries this, they will be rdirected to the sign in page. If they log in correctly adn they are the author then the update/delete page will appear, if not, they will be gvein the 403(permission denied) page.
+Users must be logged in and be the author to update or delete a post/project. Some site users might try to update or delete projects or posts by manually entering the URL into the browser URL bar. If a user tries this, they will be rdirected to the sign in page. If they log in correctly and they are the author then the update/delete page will appear. If not, they will be gvein the 403(permission denied) page.
 
 ![Delete Project/Post Logged In](readme/assets/images/edit-project-logged-in.png)
 
@@ -522,7 +494,7 @@ The testing approach is as follows:
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://adventureswithwood.herokuapp.com/ | Home page main body loads with carousel, site description and most popular posts | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/ | Home page main body loads with carousel, site description and most popular projects | Works as expected |
 
 <details><summary>Screenshot</summary>
 <img src="docs/testing/test-user-story-1.png">
@@ -547,55 +519,49 @@ Navigate to https://adventureswithwood.herokuapp.com/projects | All projects sho
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://adventureswithwood.herokuapp.com/// | Projectss page main body loads with all Projectss displayed | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/ | Projectss page main body loads with all Projectss displayed | Works as expected |
 
 <details><summary>Screenshot</summary>
 <img src="docs/testing/test-user-story-3.png">
-
 </details>
 
 
-4. As a site user I wanrt to be able to view the most popular projects
+4. As a site user I want to be able to view the most popular Projects
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://adventureswithwood.herokuapp.com// and scroll to most popular Projectss section | Projectss with likes appear in three panels on homepage | Works as expected |
-Click on most popular panel | Brought to Projects detail page for more information on Projects | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/ and scroll to most popular Projects section | Projects with likes appear in three panels on homepage | Works as expected |
 
 <details><summary>Screenshot</summary>
 <img src="docs/testing/test-user-story-4.png">
 </details>
 
-
 5. - As a user, I want to be able to view details of a particular project
 
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to https://adventureswithwood.herokuapp.com/ and click on project image | User can see projects dispalyed on carousel and click on any pciture to be be brought to details page | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/projects/ and click on a project to see project details page | User can see projects dispalyed and click on any pciture to be be brought to details page | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/test-user-story-3.png">
+</details>
 
 6. As a user, I want to be able to view details of a particular post
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ and fill submit form | account is created for the user with the submitted details | Works as expected |
-Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ and click log in with Google button | account is created for the user with details from Google account | Works as expected |
-Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ and click log in with Github button | account is created for the user with details from Github account | Works as expected |
-Once logged in go to Projects page, scroll to comments section and leave a comment | Comment is submitted for approval | Works as expected
+Navigate to https://adventureswithwood.herokuapp.com/posts/ and click on a post to see post details page | User can see posts dispalyed and click on any pciture to be be brought to details page | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/testing/test-user-story-2a.png">
-<img src="docs/testing/test-user-story-2b.png">
-<img src="docs/testing/test-user-story-2c.png">
-<img src="docs/testing/test-user-story-2d.png">
-<img src="docs/testing/test-user-story-2e.png">
-<img src="docs/testing/test-user-story-6a.png">
+<img src="docs/testing/test-user-story-3.png">
 </details>
 
-7. As a site user, I can log in to like/unlike projects
+7. As a site user, I can log in to like/unlike projects or make comments
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ and fill submit form | account is created for the user with the submitted details | Works as expected |
-Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ and click log in with Google button | account is created for the user with details from Google account | Works as expected |
-Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ and click log in with Facebook button | account is created for the user with details from Facebook account | Works as expected |
-Once logged in go to Projects page, scroll to info section and click heart icon | Icon changes to solid heart and number of likes count increases by one | Works as expected
+Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ and submit user details | User is logged in | Works as expected |
 
 <details><summary>Screenshot</summary>
 <img src="docs/testing/test-user-story-2a.png">
