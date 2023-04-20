@@ -6,7 +6,7 @@ The application impliments user authorisation and full CRUD functionality, allow
 
 The site also features a back end admin dashboard that allows an administrator to review and approve user comments, as well as monitor and edit projects, posts and users. 
 
-Link to the live site - https://adventures.herokuapp.com/
+Link to the live site - https://adventureswithwood.herokuapp.com/
 
 
 # Contents
@@ -20,6 +20,7 @@ Link to the live site - https://adventures.herokuapp.com/
         * [Database Schema](<#database-schema>)
 * [**User Experience UX**](<#user-experience-ux>)
     * [User Stories](<#user-stories>)
+    * [Site Design](<#site-design>)
     * [Site Structure](<#site-structure>)
     * [Typography](<#typography>)
 * [**Features**](<#features>)
@@ -70,7 +71,6 @@ Link to the live site - https://adventures.herokuapp.com/
         * [W3C (HTML)](<#w3c-html>)
         * [W3C (CSS)](<#w3c-css>)
         * [PEP8 (Python)](<#pep8-python>)
-        * [JSHint (JavaScript)](<#jshint-javascript>)
     * [**Input Validation Tests**](<#input-validation-tests>)
         * [Post project Form Tests](<#post-project-form-tests>)
         * [Edit project Form Tests](<#edit-project-form-tests>)
@@ -158,9 +158,15 @@ A full list of user stories can be found in the [Adventures With Wood GitHub Pro
 
 [Back to top](<#contents>)
 
+## Site Design 
+
+The Adventures With Wood app features a simple and user friendly design. Balsamiq was used to do some wireframe mock ups for the homepage and projects/posts pages.
+
+![Adventures With Wood Main Image](adventures.png)
+
 ## Site Structure 
 
-The Adventures With Wood app features a simple and user friendly site structure that users will be quite familiar with. However, some content is hidden / restricted to users who are not logged in. The main pages / templates of Adventures With Wood include - the home page, projects lists, posts lists, project details, post details, update project, update post, delete project/post page templates. Site users can freely and easily browse the various pages using the site navigation bar which is visible at the top of each page. The nav bar options automatically change depending on whether a user is signed in or not to allow for easy and intuitive site navigation.
+Site structure is one that users will be quite familiar with a top navigation bar. However, some content is hidden / restricted to users who are not logged in. The main pages / templates of Adventures With Wood include - the home page, projects lists, posts lists, project details, post details, update project, update post, delete project/post page templates. Site users can freely and easily browse the various pages using the site navigation bar which is visible at the top of each page. The nav bar options automatically change depending on whether a user is signed in or not to allow for easy and intuitive site navigation.
 
 [Back to top](<#contents>)
 
@@ -176,7 +182,7 @@ Adventures With Wood uses [Google Fonts](https://fonts.google.com/) for the site
 
 ### Homepage
 
-The homepage is the first page of the site that a user will see when they navigate to the [Adventures With Wood URL](https://adventures.herokuapp.com/). It's designed to be eye catching to users and to quickly summarise the intention of the site. It is also a central location for all users to view projects. 
+The homepage is the first page of the site that a user will see when they navigate to the [Adventures With Wood URL](https://adventureswithwood.herokuapp.com/). It's designed to be eye catching to users and to quickly summarise the intention of the site. It is also a central location for all users to view projects. 
 
 ![Adventures With Wood Main Image](adventures.png)
 
@@ -762,7 +768,7 @@ The website was tested on the following devices:
 
 ### W3C (HTML)
 
-When the Adventures With Wood site was first tested with the [W3C HTML Markup Validation Service](https://validator.w3.org/) it showed one error and some warnings. The error was a stray unordered list closing tag and the warnings were due to aria labels being used on non interactive icon elements. After I fixed these issues the test showed no errors or warnings.
+When the Adventures With Wood site was first tested with the [W3C HTML Markup Validation Service](https://validator.w3.org/) it showed two errors and some info messages. The errors were missing alts for images. The info messages were all related to a stray semi-colon.
 
 ![HTML Validation Test](readme/assets/images/html-validation.png)
 
@@ -770,7 +776,7 @@ When the Adventures With Wood site was first tested with the [W3C HTML Markup Va
 
 ### W3C (CSS)
 
-The Adventures With Wood CSS stylesheet has been tested using the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) by direct input. Unfortunately there were some errors shown for the @tailwind selectors at the top of the CSS file. These selectors are for the tailwind utility framework that Adventures With Wood uses for styling. However, with these selectors commented out the CSS test passed with no errors or warnings.
+The Adventures With Wood CSS stylesheet has been tested using the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) by direct input. Unfortunately there were two errors shown for grid template areas proj1 and proj2. I removed the offending references and the site passed the test.
 
 ![CSS Validation Errors](readme/assets/images/css-validation-errors.png)
 
@@ -782,33 +788,32 @@ The Adventures With Wood CSS stylesheet has been tested using the [W3C CSS Valid
 
 Due to the closure of the PEP8 Python Validation online site, I used the new [Code Institute Python Linter](https://pep8ci.herokuapp.com/) to test all of the Adventures With Wood python code files. 
 
-#### admin.py
-![Admin Python Test](readme/assets/images/admin-python-test.png)
+#### urls.py
+Passed without error
 
 #### settings.py
-![Settings Python Test](readme/assets/images/settings-python-test.png)
+Has two max line length errors
 
 #### forms.py
-![Forms Python Test](readme/assets/images/forms-python-test.png)
+Passed without error
 
 #### models.py
-![Models Python Test](readme/assets/images/models-python-test.png)
+Passed without error
 
-#### urls.py
-![URLs Python Test](readme/assets/images/urls-python-test.png)
+#### admin.py
+Passed without error
 
 #### views.py
-![Views Python Test](readme/assets/images/views-python-test.png)
+Passed without error
 
-[Back to top](<#contents>)
-
-### JSHint (JavaScript)
+#### tests.py
+Passed without error
 
 [Back to top](<#contents>)
 
 ## Input Validation Tests
 
-### Post project Form Tests
+### Create project Form Tests
 
 [Back to top](<#contents>)
 
@@ -827,6 +832,8 @@ Due to the closure of the PEP8 Python Validation online site, I used the new [Co
 [Back to top](<#contents>)
 
 ### Automated Tests
+
+Three automated tests were set up in the file tests.py
 
 [Back to top](<#contents>)
 
