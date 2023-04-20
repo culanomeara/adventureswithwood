@@ -4,31 +4,33 @@
 {% block content %}
 <header>
   <!-- https://getbootstrap.com/docs/4.0/components/carousel/ -->
-  <div id="carouselCaptions" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      {% for project in featured_projects %}
-      {% if forloop.first %}
-      <div class="carousel-item active">
-        {% else %}
-        <div class="carousel-item">
-          {% endif %}
-          <a href="projects/{{ project.slug }}">
-            <img src="{{ project.featured_image.url }}" class="w-100 center-block" alt="{{ project.title }}"
-              style="max-height:100vh;" />
-            <div class="carousel-caption d-none d-md-block hero-flash">
-              <h1>{{ project.title }}</h1>
-            </div>
-          </a>
+  <div class="container w-40">
+    <div id="carouselCaptions" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        {% for project in featured_projects %}
+        {% if forloop.first %}
+        <div class="carousel-item active">
+          {% else %}
+          <div class="carousel-item">
+            {% endif %}
+            <a href="projects/{{ project.slug }}">
+              <img src="{{ project.featured_image.url }}" class="w-100 center-block" alt="{{ project.title }}"
+                style="max-height:50vh;" />
+              <div class="carousel-caption d-none d-md-block hero-flash">
+                <h1>{{ project.title }}</h1>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        {% endfor %}
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
     </div>
 </header>
@@ -42,7 +44,10 @@
     <p>And if you are struggling for inspiration, you can check out our posts where expert users help you decide which
       project works best for you</p>
   </div>
-  <img src="{% static 'images/stacked_logs.jpg' %}" alt="Stack of wood" />
+
+    <img src="https://res.cloudinary.com/dsmlahszj/image/upload/v1679681231/bknldkayjbg8yrs58kzj.png"
+      alt="Adventures with Wood logo" style="max-height:350px;" ; />
+  
 </section>
 <section class="wrapper container">
   <h2 class="heading">Most Popular Projects</h2>
