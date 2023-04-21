@@ -843,6 +843,12 @@ Three automated tests were set up in the file tests.py
 
 ### Browser Tests
 
+#### Site tested in:
+![Google Chrome v112](readme/assets/images/css-validation.png)
+
+![Apple Safari v16.3](readme/assets/images/css-validation.png)
+
+
 [Back to top](<#contents>)
 
 ### Lighthouse Tests
@@ -1019,13 +1025,11 @@ _IN HEROKU ..._
 
 ### Final Production Deployment
 
-_IN GITPOD / SETTINGS.PY_
+_IN GITPOD / ENV.PY_
 
-1. Set DEBUG flag to False!! If not...
-    * Django will serve the static  files such as css files itself, instead of relying on Cloudinary.
-    * Django will continue to give us verbose error pages which can reveal credentials, and things you want to keeo secret. This will compromise your site!
+1. Set DEVELOPMENT varialbe to 0!
 2. Add a few more settings--> X_FRAME_OPTIONS = 'SAMEORIGIN'
-    * Without this our summer note editor would no  longer work when we deploy the project. This is due to Cross-Origin Resource Sharing, which tells the browser which resources are permitted to be loaded.
+    * Without this, the summer note editor would no longer work when we deploy the project. This is due to Cross-Origin Resource Sharing, which tells the browser which resources are permitted to be loaded.
 3. Save, add and commit as "deployment commit", and push to github.
 
 
@@ -1033,7 +1037,7 @@ _IN HEROKU..._
 
 4. In reveal config vars, remove DISABLE_COLLECTSTATIC environment variable.
 
-5. Go to deploy tab, scroll down to the end and deplopy our branch! 
+5. Go to deploy tab, scroll down to the end and deploy our branch! 
 
 6. Your app has been deployed to heroku!
 
