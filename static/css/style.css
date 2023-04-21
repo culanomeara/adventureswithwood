@@ -149,12 +149,17 @@ body {
     font-size: 1.6rem;
 }
 
-.hero-flash {
+.hero-flash,
+.button {
     padding: 0.8rem;
     color: white;
     font-weight: 150;
     font-size: 1.6rem;
     background-color: #a52a2a;
+}
+
+.button {
+    align-self: center;
 }
 
 .proj {
@@ -175,25 +180,9 @@ body {
     transform: scale(1.1);
 }
 
-/* .signup {
-    background-color: rgb(248,249,250);
-    min-height: 75vh;
-} */
-
 .signup input,
 .create_p input,
 .login input {
     width: 100%;
 }
-/* 
-#signup_form,
-#login_form,
-#create_p_form {
-    display: grid;
-    align-items: center;
-}
 
-.form_container {
-    box-shadow: 0 3rem 6rem rgb(0 0 0 / 30%);
-    width: 80%;
-} */
