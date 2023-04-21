@@ -38,7 +38,7 @@ body {
 }
 
 .p-link:hover {
-    color:#ba7506
+    color: #ba7506
 }
 
 .p-update {
@@ -103,15 +103,15 @@ body {
 }
 
 .intro {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	justify-content: space-between;
-	align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: space-between;
+    align-items: center;
 }
 
 .intro img {
-	width: 100%;
-	padding-top: 1rem;
+    width: 100%;
+    padding-top: 1rem;
     padding-left: 0;
 }
 
@@ -159,12 +159,17 @@ body {
 }
 
 .button {
+    padding: 0.4rem;
+    color: white;
+    font-weight: 120;
+    font-size: 1.2rem;
+    background-color: #a52a2a;
     align-self: center;
 }
 
 .proj {
     font-size: 1.3rem;
-    max-height:50vh;
+    max-height: 50vh;
     text-align: center;
     display: grid;
     justify-content: center;
@@ -185,4 +190,3 @@ body {
 .login input {
     width: 100%;
 }
-
