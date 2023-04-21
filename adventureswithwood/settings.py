@@ -37,7 +37,7 @@ DEBUG = False
 # DEBUG = int(os.environ.get("DEVELOPMENT", default=0))
 
 ALLOWED_HOSTS = ['adventureswithwood.herokuapp.com', 'localhost']
-
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 # Application definition
 
