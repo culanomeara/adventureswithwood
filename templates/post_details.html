@@ -1,12 +1,15 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+<!-- Block 'content' that can be overridden in child templates -->
+{% block content %} 
 
 <div class="masthead">
     <div class="container">
         <div class="card-body">
             <div class="image-container">
-                {% if "placeholder" in post.featured_image.url %}
+                <!-- If the featured image URL contains "placeholder", a default image is displayed. If not, the actual image URL is displayed -->
+                {% if "placeholder" in post.featured_image.url %} 
                 <img src="https://res.cloudinary.com/dsmlahszj/image/upload/v1679261024/e6gpexfcgmaneqv7bvcf.png"
-                    max-width="50%">
+                    max-width="50%"> 
                 {% else %}
                 <img src=" {{ post.featured_image.url }}" max-width="50%">
                 {% endif %}
@@ -16,6 +19,7 @@
             </div>
             <h2 class="card-title">{{ post.title }}</h2>
             <p class="card-text">{{ post.excerpt }}</p>
+            <!-- If the post author is the currently logged-in user, then Update and Delete buttons are displayed-->
             {% if post.author == request.user %}
             <p><a href="{% url 'post_update' post.slug %}" class="p-link">Update</a>
                 | <a href="{% url 'confirm_post_delete' post.slug %}" class="p-link">Delete</a>
@@ -34,7 +38,6 @@
             </div>
         </div>
     </div>
-
 </div>
 
 {% endblock content %}
