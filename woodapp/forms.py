@@ -27,7 +27,7 @@ class PostForm(forms.ModelForm):
 
 class ProjectForm(forms.ModelForm):
     """
-    Add new project
+    Add/Update project
     """
     class Meta:
         model = Project

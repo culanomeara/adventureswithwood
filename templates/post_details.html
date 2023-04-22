@@ -2,23 +2,26 @@
 
 <div class="masthead">
     <div class="container">
-        <div class="row g-0">
-            <div class="col-md-6 masthead-text">
-                <h1 class="p-title">{{ post.title }}</h1>
-                <p class="p-subtitle">{{ post.author }} | {{ post.created_on }}
-                {% if post.author == request.user %}
-                    | <a href="{% url 'post_update' post.slug %}" class="p-link">Update</a> 
-                    | <a href="{% url 'confirm_post_delete' post.slug %}" class="p-link">Delete</a>  
-                {% endif %}
-                </p>
-            </div>
-            <div class="d-none d-md-block col-md-5 masthead-image">
+        <div class="card-body">
+            <div class="image-container">
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="https://res.cloudinary.com/dsmlahszj/image/upload/v1679261024/e6gpexfcgmaneqv7bvcf.png" width="50%">
+                <img src="https://res.cloudinary.com/dsmlahszj/image/upload/v1679261024/e6gpexfcgmaneqv7bvcf.png"
+                    max-width="50%">
                 {% else %}
-                <img src="{{ post.featured_image.url }}" width="50%">
+                <img src=" {{ post.featured_image.url }}" max-width="50%">
                 {% endif %}
+                <div class="image-flash">
+                    <p class="author">{{ post.author }} | {{ post.created_on }}
+                </div>
             </div>
+            <h2 class="card-title">{{ post.title }}</h2>
+            <p class="card-text">{{ post.excerpt }}</p>
+            {% if post.author == request.user %}
+            <p><a href="{% url 'post_update' post.slug %}" class="p-link">Update</a>
+                | <a href="{% url 'confirm_post_delete' post.slug %}" class="p-link">Delete</a>
+            </p>
+            {% endif %}
+            <hr />
         </div>
     </div>
 </div>

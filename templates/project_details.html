@@ -3,27 +3,29 @@
 
 <div class="masthead">
     <div class="container">
-        <div class="row g-0">
-            <div class="col-md-6 masthead-text">
-                <h1 class="p-title">{{ project.title }}</h1>
-                <p class="p-subtitle">{{ project.author }} | {{ project.created_on }}
-                    {% if project.author == request.user %}
-                         | <a href="{% url 'project_update' project.slug %}" class="p-link">Update</a> 
-                         | <a href="{% url 'confirm_project_delete' project.slug %}" class="p-link">Delete</a>  
-                    {% endif %}
-                </p>
-            </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
+        <div class="card-body">
+            <div class="image-container">
                 {% if "placeholder" in project.featured_image.url %}
-                <img src="https://res.cloudinary.com/dsmlahszj/image/upload/v1677950722/ijwoqevbawjruy19i6bt.png" width="100%">
+                <img src="https://res.cloudinary.com/dsmlahszj/image/upload/v1679261024/e6gpexfcgmaneqv7bvcf.png"
+                    max-width="50%">
                 {% else %}
-                <img src=" {{ project.featured_image.url }}" width="100%">
+                <img src=" {{ project.featured_image.url }}" max-width="50%">
                 {% endif %}
+                <div class="image-flash">
+                    <p class="author">{{ project.author }} | {{ project.created_on }}
+                </div>
             </div>
+            <h2 class="card-title">{{ project.title }}</h2>
+            <p class="card-text">{{ project.summary_text }}</p>
+            {% if project.author == request.user %}
+            <p><a href="{% url 'project_update' project.slug %}" class="p-link">Update</a>
+                | <a href="{% url 'confirm_project_delete' project.slug %}" class="p-link">Delete</a>
+            </p>
+            {% endif %}
+            <hr />
         </div>
     </div>
 </div>
-
 <div class="container">
     <div class="row">
         <div class="col card mb-4 mt-3 left top">
@@ -47,15 +49,17 @@
                             <form class="d-inline" action="{% url 'project_like' project.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
-                                <button type="submit" name="project_id" value="{{project.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                                <button type="submit" name="project_id" value="{{project.slug}}" class="btn-like"><i
+                                        class="fas fa-heart"></i></button>
                                 {% else %}
-                                <button type="submit" name="project_id" value="{{project.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                                <button type="submit" name="project_id" value="{{project.slug}}" class="btn-like"><i
+                                        class="far fa-heart"></i></button>
                                 {% endif %}
                             </form>
                             {% else %}
                             <span class="text-secondary"><i class="far fa-heart"></i></span>
                             {% endif %}
-                        <span class="text-secondary">{{ project.number_of_likes }} </span>
+                            <span class="text-secondary">{{ project.number_of_likes }} </span>
                         </strong>
                     </div>
                     <div class="col-1">
@@ -94,11 +98,10 @@
             <div class="card-body">
                 {% if commented %}
                 <div class="alert alert-success" role="alert">
-                    Your comment is awaiting approval
+                    Thank you for submitting your comment!
                 </div>
                 {% else %}
                 {% if user.is_authenticated %}
-
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
                 <form method="POST" style="margin-top: 1.3em;">
