@@ -30,10 +30,9 @@ Link to the live site - https://adventureswithwood.herokuapp.com/
             * [Carousel](<#carousel>)
             * [Intro](<#intro>)
             * [Most Popular projects List](<#most-popular-projects-list>)
-        * [**Authorisation**](<#authorisation>)
-            * [Sign Up](<#sign-up>)
-            * [Sign In](<#sign-in>)
-            * [Sign Out](<#sign-out>)
+        * [**Project and Post Pages**](<#project-and-post-pages>)
+            * [Project](<#project>)
+            * [Post](<#post>)
         * [**Project and Post Details**](<#project-and-post-details>)
             * [Project Details](<#project-details>)
             * [Post Details](<#post-details>)
@@ -42,6 +41,10 @@ Link to the live site - https://adventureswithwood.herokuapp.com/
             * [Comment Form](<#comment-form>)
             * [Form Validation](<#form-validation>)
             * [Post Comment Notification](<#post-comment-notification>)
+        * [**Authorisation**](<#authorisation>)
+            * [Sign Up](<#sign-up>)
+            * [Sign In](<#sign-in>)
+            * [Sign Out](<#sign-out>)
         * [**Create A Project or Post**](<#create-a-project-or-post>)
             * [Create Form](<#create-form>)
             * [Create Notification](<#create-notification>)
@@ -162,8 +165,15 @@ A full list of user stories can be found in the [Adventures With Wood GitHub Pro
 
 The Adventures With Wood app features a simple and user friendly design. Balsamiq was used to do some wireframe mock ups for the homepage and projects/posts pages.
 
+-Index.html wireframe
+
 ![Adventures With Wood index.html](media/readme/images/aww_wireframe_index.png)
+
+-Projects.html wireframe
+
 ![Adventures With Wood projects.html](media/readme/images/aww_wireframe_projects_page.png)
+
+[Back to top](<#contents>)
 
 ## Site Structure 
 
@@ -186,9 +196,12 @@ Adventures With Wood uses [Google Fonts](https://fonts.google.com/) for the site
 The homepage is the first page of the site that a user will see when they navigate to the [Adventures With Wood URL](https://adventureswithwood.herokuapp.com/). It's designed to be eye catching to users and to quickly summarise the intention of the site. It is also a central location for all users to view projects. 
 
 - Nav bar and Carousel
+
 ![Nav bar and Carousel](media/readme/images/index_nav_carousel.png)
+
 - Who We are
 ![Who We are](media/readme/images/index_who_we_are.png)
+
 - Most Popular Projects
 ![Most Popular Projects](media/readme/images/index_most_popular.png)
 
@@ -199,11 +212,17 @@ The homepage is the first page of the site that a user will see when they naviga
 Site navigation is present at all times on every page of the site in the form of header nav bars. These navigational elements change depending on whether a user is logged in or not. Non logged in users only have viewing access to projects and posts. They are unable to comment or like a project. These elements are also fully responsive and the header collapses to become a mobile menu on small screen sizes.
 
 - Navigation Bar - Not Logged in - Full
+
 ![Navigation Bar - Not Logged in - Full](media/readme/images/navbar_not_logged_in_full.png)
+
 - Navigation Bar - Logged in - Full
+
 ![Navigation Bar - Logged in - Full](media/readme/images/navbar_logged_in_full.png)
+
 - Navigation Bar - Mobile
+
 ![Navigation Bar - Mobile](media/readme/images/navbar_mobile.png)
+
 
 [Back to top](<#contents>)
 
@@ -212,6 +231,7 @@ Site navigation is present at all times on every page of the site in the form of
 The homepage Carousel section is the large eye catching section which is just beneath the navigation bar. The carousel is only displayed on the homepage. It is used to catch the users attention, and to clearly showcase the general topic of the site. It features a large, colourful full screen image and a centralised text box with the project title. It auto scrolls but users also have the option of clicking left or right using the arrows on the image. If users click on an image they are brought to the Project details page for that project.
 
 - Carousel
+
 ![Carousel](media/readme/images/index_nav_carousel.png)
 
 [Back to top](<#contents>)
@@ -221,6 +241,7 @@ The homepage Carousel section is the large eye catching section which is just be
 The homepage Introduction section is a brief introductory text paragraph that explains the purpose of the site and 'Who We Are' and how to use it to new users.
 
 - Who We are
+
 ![Who We are](media/readme/images/index_who_we_are.png)
 
 [Back to top](<#contents>)
@@ -230,33 +251,25 @@ The homepage Introduction section is a brief introductory text paragraph that ex
 The most popular projects feature is another method used to draw in the site visitor and get engagement with the site. This area of the homepage is ordered by projects with the most likes. The list highlights the top three projects.
 
 - Most Popular Projects
+
 ![Most Popular Projects](media/readme/images/index_most_popular.png)
 
 [Back to top](<#contents>)
 
-### Authorisation
+### Projects and Posts Pages
 
-#### Sign Up
+#### Projects
+The project page is a template used to display the summary of a project. Each published project has a summary page. Theses pages are available for all users to view, including non logged in users. The main purpose of the page is to display the brief project overview. Users will generally navigate to a full project page by clicking on the project from the project card either on the home page via the Carousel or Most Popular Projects or the projects page. As the user has now shown a specific interest in the project, all the information about the project is displayed on the details page.
 
-A user can navigate to the sign up page via the site navigation bars if they are not logged in. The Adventures With Wood sign up page is a built-in template from the [Django Allauth Package](https://django-allauth.readthedocs.io/en/latest/installation.html). Allauth provides the basic functionality for the user authorisation used in Adventures With Wood. However, the basic allauth template have been customised and styled to match the site design. Once a user submits the form correctly they are redirected back to the homepage as a logged in user.
+- Projects Page
 
-![Sign Up](readme/assets/images/sign-up.png)
+![Projects page](media/readme/images/projects_page.png)
 
-[Back to top](<#contents>)
 
-#### Sign In
+#### Posts
+The posts page is a template used to display the summary of a post. Each published post has a summary page. Theses pages are available for all users to view, including non logged in users. The main purpose of the page is to display the brief post contents. Users will generally navigate to a full post page by clicking thru from this page. As the user has now shown a specific interest in the post, all the information about the post is displayed on the details page.
 
-A user can navigate to the Sign in page via the site navigation bars if they are not already signed in. The styling of the sign in page is very similar to the rest of the user authorisation pages. The colour scheme and layout are consistent, but the form and page heading are different. Once the sign in form is submitted correctly the user is redirected to the homepage as a logged in user.
-
-![Sign In](readme/assets/images/log-in.png)
-
-[Back to top](<#contents>)
-
-#### Sign Out
-
-A user can navigate to the log out page via the site navigation bars if they are logged in. They are prompted on this page to confirm if wish to log out. Upon confirmation the user is logged out and redirected to the homepage. 
-
-![Sign Out](readme/assets/images/log-out.png)
+![Posts Page](media/readme/images/projects_page.png)
 
 [Back to top](<#contents>)
 
@@ -265,24 +278,32 @@ A user can navigate to the log out page via the site navigation bars if they are
 #### Project Details
 The project details page is a template used to display the full information on a project. Each published project has a details page. Theses pages are available for all users to view, including non logged in users. The main purpose of the page is to display the project tools, amterials and instructions. Users will generally navigate to a full project page by clicking the view project button on the project card either on the home page or the projects page. As the user has now shown a specific interest in the project, all the information about the project is displayed here.
 
-![project Details](readme/assets/images/project-details-1.png)
+- Project Details
+
+![project Details](media/readme/images/project_details.png)
 
 [Back to top](<#contents>)
 
 #### Post Details
 The post details page is a template used to display the full information on a post. Each published post has a details page. Theses pages are available for all users to view, including non logged in users. The main purpose of the page is to display the full post contents. Users will generally navigate to a full post page by clicking thru from the Posts page. As the user has now shown a specific interest in the post, all the information about the post is displayed here.
 
-![Post Details](readme/assets/images/project-details-1.png)
+- Post Details
+
+![Post Details](media/readme/images/post_details.png)
 
 [Back to top](<#contents>)
 
 #### Like Unlike Project
 
-A user can like and unlike a project from that project's specific project page. Each project features a heart icon at the bottom of the project that can be clicked to like it. It can also be clicked again to unlike a project. When a project is liked by a user, the icon changes to a red heart. Unregistered users cannot like a project. A user who is not logged in only sees how many likes it has. Clicking the icon is disabled for an unregistered user and has no effect. 
+A logged user can add a like and remove their own like from a project on that project's page. Each project features a heart icon at the bottom of the project that can be clicked to like it. It can also be clicked again to remove a like from the project. When a project is liked by a user, the icon changes to a red heart. Unregistered users cannot like a project. A user who is not logged in only sees how many likes it has. Clicking the icon is disabled for an unregistered user and has no effect. 
 
-![Like project](readme/assets/images/like-project.png)
+- Like Project
 
-![Unlike project](readme/assets/images/unlike-project.png)
+![Like project](media/readme/images/like_project.png)
+
+- Unlike Project
+
+![Unlike project](media/readme/images/unlike_project.png)
 
 [Back to top](<#contents>)
 
@@ -290,7 +311,9 @@ A user can like and unlike a project from that project's specific project page. 
 
 At the bottom of each project details page there is a comments section for users to post comments. Logged in users can use the comment form to post a comment to that particular project. Comments are listed from the most recent at the top to the oldest at the bottom. The username of the comment author is displayed as well as the date and the body of the comment. 
 
-![project Comments](readme/assets/images/project-comments.png)
+-Project Comments
+
+![project Comments](media/readme/images/project_comments.png)
 
 [Back to top](<#contents>)
 
@@ -298,9 +321,13 @@ At the bottom of each project details page there is a comments section for users
 
 The project comment form is what the user uses to post a comment on a project. This comment form is only visible to logged in users. The comment form comprises of one text body field for the comment and a submit button. The author and "created on" date are assigned automatically. 
 
-![Comment Form](readme/assets/images/comment-form.png)
+- Comment Form
 
-![Comment Form](readme/assets/images/log-in-to-post-comment.png)
+![Comment Form](media/readme/images/comment_form.png)
+
+- Comment Form Submitted Message
+
+![Comment Form Submitted Message](media/readme/images/comment_msg.png)
 
 [Back to top](<#contents>)
 
@@ -319,6 +346,35 @@ Upon the successful submission of the comment form, the page will refresh and a 
 ![Comment Notification](readme/assets/images/comment-notification.png)
 
 ![Comment Success](readme/assets/images/comment-success.png)
+
+[Back to top](<#contents>)
+
+### Authorisation
+
+#### Sign Up
+
+A user can navigate to the sign up page via the site navigation bars if they are not logged in. The Adventures With Wood sign up page is a built-in template from the [Django Allauth Package](https://django-allauth.readthedocs.io/en/latest/installation.html). Allauth provides the basic functionality for the user authorisation used in Adventures With Wood. However, the basic allauth template have been customised and styled to match the site design. Once a user submits the form correctly they are redirected back to the homepage as a logged in user.
+
+- Sign Up Form
+![Sign Up](media/readme/images/sign_up_form.png)
+
+[Back to top](<#contents>)
+
+#### Sign In
+
+A user can navigate to the Sign in page via the site navigation bars if they are not already signed in. As with the Sign Up page, it's a built-in form. The styling of the sign in page is very similar to the rest of the user authorisation pages. The colour scheme and layout are consistent, but the form and page heading are different. Once the sign in form is submitted correctly the user is redirected to the homepage as a logged in user.
+
+- Sign In Form
+![Sign Up](media/readme/images/sign_in_form.png)
+
+[Back to top](<#contents>)
+
+#### Sign Out
+
+A user can navigate to the Sign Out page via the site navigation bars if they are logged in. They are prompted on this page to confirm if wish to log out. Upon confirmation the user is logged out and redirected to the homepage. If they click on Cancel, they are brought back to the previous page. 
+
+- Sign Out Confirmation Page
+![Sign Up](media/readme/images/sign_out_confirm.png)
 
 [Back to top](<#contents>)
 
