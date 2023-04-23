@@ -40,11 +40,13 @@ Link to the live site - https://adventureswithwood.herokuapp.com/
             * [Project Comments](<#project-comments>)
             * [Comment Form](<#comment-form>)
             * [Form Validation](<#form-validation>)
-            * [Post Comment Notification](<#post-comment-notification>)
         * [**Authorisation**](<#authorisation>)
             * [Sign Up](<#sign-up>)
+            * [Sign Up Notification](<#sign-up-notification>)
             * [Sign In](<#sign-in>)
+            * [Sign In Notification](<#sign-in-notification>)
             * [Sign Out](<#sign-out>)
+            * [Sign Out Notification](<#sign-out-notification>)
         * [**Create A Project or Post**](<#create-a-project-or-post>)
             * [Create Form](<#create-form>)
             * [Create Notification](<#create-notification>)
@@ -321,42 +323,48 @@ At the bottom of each project details page there is a comments section for users
 
 The project comment form is what the user uses to post a comment on a project. This comment form is only visible to logged in users. The comment form comprises of one text body field for the comment and a submit button. The author and "created on" date are assigned automatically. 
 
+- Comments
+
+![Comment](media/readme/images/comment.png)
+
 - Comment Form
 
 ![Comment Form](media/readme/images/comment_form.png)
 
 - Comment Form Submitted Message
 
-![Comment Form Submitted Message](media/readme/images/comment_msg.png)
+![Comment](media/readme/images/project_comment_submitted.png)
+
 
 [Back to top](<#contents>)
 
 #### Form Validation
 
-Javascript is used to validate the comment form. The form is checked for empty space as well as whitespace. Javascript provents the form from being submitted until the comment field passes the test. If the test fails, a pop-up notification appears on the users screen to advise them about the failure. The user can then rectify their mistake and submit the form again. When the comment form is filled out correctly the form submits successfully and the page is refreshed.
+The built-in valdiation is used to validate the comment form. The form is checked for required fields and passwords require a level of difficulty. A notification appears on the users screen to advise them about the failure. The user can then rectify their mistake and submit the form again. When the comment form is filled out correctly the form submits successfully and the page is refreshed.
 
-![Form Validation](readme/assets/images/comment-validation.png)
+- Form Validation: Field Required
 
-[Back to top](<#contents>)
+![Form Required Field](media/readme/images/form_validation_field_required.png)
 
-#### Post Comment Notification
+- Form Validation: Password
 
-Upon the successful submission of the comment form, the page will refresh and a notification will appear at the top of the page. This notification advises the user that their comment has been successfully posted. The notification can be removed from view by clicking the x icon. 
-
-![Comment Notification](readme/assets/images/comment-notification.png)
-
-![Comment Success](readme/assets/images/comment-success.png)
+![Form Password](media/readme/images/form_validation_password_issue.png)
 
 [Back to top](<#contents>)
+
 
 ### Authorisation
 
 #### Sign Up
 
-A user can navigate to the sign up page via the site navigation bars if they are not logged in. The Adventures With Wood sign up page is a built-in template from the [Django Allauth Package](https://django-allauth.readthedocs.io/en/latest/installation.html). Allauth provides the basic functionality for the user authorisation used in Adventures With Wood. However, the basic allauth template have been customised and styled to match the site design. Once a user submits the form correctly they are redirected back to the homepage as a logged in user.
+A user can navigate to the sign up page via the site navigation bars if they are not logged in. The Adventures With Wood sign up page is a built-in template from the [Django Allauth Package](https://django-allauth.readthedocs.io/en/latest/installation.html). Allauth provides the basic functionality for the user authorisation used in Adventures With Wood. However, the basic allauth template have been customised and styled to match the site design. Once a user submits the form correctly they are redirected back to the homepage as a logged in user. For each action, they are notified of that action: via a message at the top of the page. These messages can be removed by clicking on the X.
 
 - Sign Up Form
 ![Sign Up](media/readme/images/sign_up_form.png)
+
+- Sign Up Notification
+
+![Sign Up Notification](media/readme/images/sign_up_notification.png)
 
 [Back to top](<#contents>)
 
@@ -365,7 +373,12 @@ A user can navigate to the sign up page via the site navigation bars if they are
 A user can navigate to the Sign in page via the site navigation bars if they are not already signed in. As with the Sign Up page, it's a built-in form. The styling of the sign in page is very similar to the rest of the user authorisation pages. The colour scheme and layout are consistent, but the form and page heading are different. Once the sign in form is submitted correctly the user is redirected to the homepage as a logged in user.
 
 - Sign In Form
-![Sign Up](media/readme/images/sign_in_form.png)
+
+![Sign In](media/readme/images/sign_in_form.png)
+
+- Sign In Notification
+
+![Sign In Notification](media/readme/images/sign_in_notification.png)
 
 [Back to top](<#contents>)
 
@@ -374,7 +387,13 @@ A user can navigate to the Sign in page via the site navigation bars if they are
 A user can navigate to the Sign Out page via the site navigation bars if they are logged in. They are prompted on this page to confirm if wish to log out. Upon confirmation the user is logged out and redirected to the homepage. If they click on Cancel, they are brought back to the previous page. 
 
 - Sign Out Confirmation Page
+
 ![Sign Up](media/readme/images/sign_out_confirm.png)
+
+- Sign Out Notification
+
+![Sign Out Notification](media/readme/images/sign_out_notification.png)
+
 
 [Back to top](<#contents>)
 
@@ -382,19 +401,29 @@ A user can navigate to the Sign Out page via the site navigation bars if they ar
 
 #### Create form
 
-The Create template form is a page which features a project/post form to enable users to submit a project/post to the Adventures With Wood site. This page is only visible to logged in users and appears in the navigation menu. The page features similar styling to the rest of the site for consistency.
+The Create template form is a page which features a project/post form to enable users to submit a project/post to the Adventures With Wood site. This page is only visible to logged in users and appears in the navigation menu. The page features similar styling to the rest of the site for consistency. It uses SummerNote so that users can add formatting to their new project/posts
 
-![Create A Project Page](readme/assets/images/post-a-project-page.png)
+- Project Create Form
 
-![Create A Post Page](readme/assets/images/post-a-project-page-2.png)
+![Create A Project Form](media/readme/images/project_create_form.png)
+
+- Post Create Form
+
+![Create A Post Form](media/readme/images/post_create_form.png)
 
 [Back to top](<#contents>)
 
 #### Create notification
 
-When a user submits a project/post successfully, a message apears confirming the submission of the project/post.
+When a user submits a project/post successfully, a message apears at the top of the page confirming the submission of the project/post.
 
-![project Submission Confirmation](readme/assets/images/project-submission-confirmation.png)
+- Project Submission Notification
+
+![Project Submission Confirmation](media/readme/images/project_create_notification.png)
+
+- Post Submission Notification
+
+![Post Submission Confirmation](media/readme/images/post_create_notification.png)
 
 [Back to top](<#contents>)
 
