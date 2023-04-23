@@ -142,9 +142,9 @@ Agile methodology was used to plan and design the Adventures with Wood applicati
 ### Database Schema
 
 Database scheme was drawn up using [App Diagrams.net](https://app.diagrams.net/). The scheme was used to plan the database models and fields. It also helped to display the relationships between the models and how they interact. Adventures With Wood consists of four custom models and one generic - Project, Post, Category, Comment and User. I did not include Keywords or Userlevels in my final design
-<details><summary>See Database Image</summary>
-![Adventures With Wood Database Scheme](media/readme/images/DBmodeldesign.jpg)
-</details>
+
+![Adventures With Wood Database Scheme](media/readme/images/db_model_design.jpg)
+
 
 [Back to top](<#contents>)
 
@@ -162,7 +162,8 @@ A full list of user stories can be found in the [Adventures With Wood GitHub Pro
 
 The Adventures With Wood app features a simple and user friendly design. Balsamiq was used to do some wireframe mock ups for the homepage and projects/posts pages.
 
-![Adventures With Wood Main Image](adventures.png)
+![Adventures With Wood index.html](media/readme/images/aww_wireframe_index.png)
+![Adventures With Wood projects.html](media/readme/images/aww_wireframe_projects_page.png)
 
 ## Site Structure 
 
@@ -184,7 +185,12 @@ Adventures With Wood uses [Google Fonts](https://fonts.google.com/) for the site
 
 The homepage is the first page of the site that a user will see when they navigate to the [Adventures With Wood URL](https://adventureswithwood.herokuapp.com/). It's designed to be eye catching to users and to quickly summarise the intention of the site. It is also a central location for all users to view projects. 
 
-![Adventures With Wood Main Image](adventures.png)
+- Nav bar and Carousel
+![Nav bar and Carousel](media/readme/images/index_nav_carousel.png)
+- Who We are
+![Who We are](media/readme/images/index_who_we_are.png)
+- Most Popular Projects
+![Most Popular Projects](media/readme/images/index_most_popular.png)
 
 [Back to top](<#contents>)
 
@@ -192,29 +198,30 @@ The homepage is the first page of the site that a user will see when they naviga
 
 Site navigation is present at all times on every page of the site in the form of header nav bars. These navigational elements change depending on whether a user is logged in or not. Non logged in users only have viewing access to projects and posts. They are unable to comment or like a project. These elements are also fully responsive and the header collapses to become a mobile menu on small screen sizes.
 
-<details><summary>See Navigation bar</summary>
-![Adventures With Wood Navigation Bar - Full](media/readme/images/DBmodeldesign.jpg)
-![Adventures With Wood Navigation Bar - Mobile](media/readme/images/DBmodeldesign.jpg)
-</details>
+- Navigation Bar - Not Logged in - Full
+![Navigation Bar - Not Logged in - Full](media/readme/images/navbar_not_logged_in_full.png)
+- Navigation Bar - Logged in - Full
+![Navigation Bar - Logged in - Full](media/readme/images/navbar_logged_in_full.png)
+- Navigation Bar - Mobile
+![Navigation Bar - Mobile](media/readme/images/navbar_mobile.png)
 
 [Back to top](<#contents>)
 
 #### Carousel
 
-The homepage Carousel section is the large eye catching section which is just beneath the navigation bar. The carousel is only displayed on the homepage. It is used to catch the users attention, and to clearly showcase the general topic of the site. It features a large, colourful full screen image and a centralised text box with the project title.
+The homepage Carousel section is the large eye catching section which is just beneath the navigation bar. The carousel is only displayed on the homepage. It is used to catch the users attention, and to clearly showcase the general topic of the site. It features a large, colourful full screen image and a centralised text box with the project title. It auto scrolls but users also have the option of clicking left or right using the arrows on the image. If users click on an image they are brought to the Project details page for that project.
 
-<details><summary>See Carousel Image</summary>
-![Adventures With Wood Carousel Image](media/readme/images/DBmodeldesign.jpg)
-</details>
-![Carousel Homepage](readme/assets/images/hero-homepage.png)
+- Carousel
+![Carousel](media/readme/images/index_nav_carousel.png)
 
 [Back to top](<#contents>)
 
 #### Intro
 
-The homepage Introduction section is a brief introductory text paragraph that explains the purpose of the site and how to use it to new users.
+The homepage Introduction section is a brief introductory text paragraph that explains the purpose of the site and 'Who We Are' and how to use it to new users.
 
-![Intro Homepage](readme/assets/images/homepage-intro.png)
+- Who We are
+![Who We are](media/readme/images/index_who_we_are.png)
 
 [Back to top](<#contents>)
 
@@ -222,7 +229,8 @@ The homepage Introduction section is a brief introductory text paragraph that ex
 
 The most popular projects feature is another method used to draw in the site visitor and get engagement with the site. This area of the homepage is ordered by projects with the most likes. The list highlights the top three projects.
 
-![Most Popular projects]()
+- Most Popular Projects
+![Most Popular Projects](media/readme/images/index_most_popular.png)
 
 [Back to top](<#contents>)
 
