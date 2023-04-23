@@ -56,15 +56,14 @@ Link to the live site - https://adventureswithwood.herokuapp.com/
         * [**Delete Project or Post**](<#delete-project-or-post>)
             * [Delete Notification](<#delete-notification>)   
         * [**403 Page**](<#403-page>)
-        * [**Log In To Update or Delete**](<#log-in-to-update-or-delete>)
     * [**Future Features**](<#future-features>)
         * [Admin Area](<#admin-area>)
         * [User Profile](<#user-profile>)
-        * [User Change Password](<#user-change-password>)
-        * [Subscription feature](<#subscription-feature>)
+        * [Notification feature](<#notification-feature>)
         * [Categories](<#categories>)
         * [Search feature](<#search-feature>)
         * [Print Project instructions](<#print-project-instructions>)
+        * [Enhanced Form Validation](<#enhanced-form-validation>)
 * [**Technologies Used**](<#technologies-used>)
     * [Languages](<#languages>)
     * [Frameworks](<#frameworks>)
@@ -429,49 +428,64 @@ When a user submits a project/post successfully, a message apears at the top of 
 
 ### Update project or post
 
-The edit project/post page is available to logged in users. The edit button appears at the bottom of the card on the list page or beside the author on the details page. Each of these projects will feature an edit button. When the edit project button is clicked the user is navigated to the edit project page. The page stying and content is exactly the same as the create page, including the project form. The only difference is the form is pre filled out with the content. The user can then use this form to edit the content and submit the amendments to overwrite the previous content.
+The Update project/post page is available to logged in users. The Update option appears below the summary on the list page and details page. When the Update option is clicked the user is navigated to the edit project page. The page stying and content is exactly the same as the create page. The only difference is the form is pre filled out with the content. The user can then use this form to edit the content and submit the amendments to overwrite the previous content.
 
-![Edit project Page](readme/assets/images/edit-project-page.png)
+- Update Project Form
 
-![Edit project Page](readme/assets/images/edit-project-page-2.png)
+![Update Project Form](media/readme/images/project_update_form.png)
 
-[Back to top](<#contents>)
+- Update Post Form
+
+![Update Post Form](media/readme/images/post_update_form.png)
+
 
 #### Update Notification
 
 If a user successfully submits the update form the page is refreshed. A message is displayed to the user which confirms the successful form submission. The user is redirected to the list page for projects/posts.
 
-![Update Success](readme/assets/images/edit-project-success.png)
+- Update Project Notification
+
+![Update Project Notification](media/readme/images/project_update_notification.png)
+
+- Update Post Notification
+
+![Update Post Notification](media/readme/images/post_update_notification.png)
 
 [Back to top](<#contents>)
 
-### Delete project or post
 
-A user can delete their project or post easily from the relevannt list page or details page. This option is only visible to the author of the project or post. If a user clicks the delete button, a delete confirmation is displayed seeking confirmation from the user for deletion. The user has the option to cancel the delete by clicking the cancel button or to confirm deletion by clicking the delete button. If the user clicks the cancel button the user is reverted back to the previous page. If the user clicks the delete button the project/post is deleted from the database and the page is refreshed showing it removed from the list.
+### Delete Project or Post
 
-![My projects Delete](readme/assets/images/my-projects-delete.png)
+A user can delete their project or post easily from the relevannt list page or details page. This option is only visible to the author of the project or post. If a user clicks on delete, a delete confirmation is displayed seeking confirmation from the user for deletion. The user has the option to cancel the delete by clicking the cancel button or to confirm deletion by clicking the delete button. If the user clicks the cancel button the user is reverted back to the previous page. If the user clicks the delete button the project/post is deleted from the database and the page is refreshed showing it removed from the list.
+
+- Delete Otpion
+
+![Delete Option](media/readme/images/update_delete.png)
+
+- Delete Confirmation Page
+
+![Delete](media/readme/images/delete.png)
+
 
 [Back to top](<#contents>)
 
 #### Delete Notification
 
-If a user confirms the deletion of a project a notification is displayed to the user at the top of the page on refresh. This notification confirms the deletion of the project. The user can hide this notification by clicking the x icon. 
+If a user confirms the deletion of a project or post, a notification is displayed to the user at the top of the page. This notification confirms the deletion of the project. The user can hide this notification by clicking the x icon. 
 
-![Deleted Notification](readme/assets/images/project-deleted-notification.png)
+- Delete Confirmation Notification
+
+![Delete](media/readme/images/delete_notification.png)
 
 [Back to top](<#contents>)
 
 ### 403 Page
 
-The 403 page is triggered when a user navigates to a site URL which they don't have permission to access. This could be because of a number of reasons, mainly if they are not logged in or not the author of a particular project or post
+The 403 page is triggered when a user navigates to a site URL which they don't have permission to access. This could be because of a number of reasons, mainly if they are not logged in or not the author of a particular project or post. An example is if they manually typed in .../delete when on a project or post page. Only the author of the project/post can update/delete it.
 
-![403 Page]()
+- 403 Page
 
-#### Log In To Update or Delete
-
-Users must be logged in and be the author to update or delete a post/project. Some site users might try to update or delete projects or posts by manually entering the URL into the browser URL bar. If a user tries this, they will be rdirected to the sign in page. If they log in correctly and they are the author then the update/delete page will appear. If not, they will be gvein the 403(permission denied) page.
-
-![Delete Project/Post Logged In](readme/assets/images/edit-project-logged-in.png)
+![403 Page](media/readme/images/403.png)
 
 [Back to top](<#contents>)
 
@@ -481,43 +495,43 @@ I believe the Adventures With Wood site has a lot of potential for expansion in 
 
 ### Admin Area
 
-I would like to add an admin area for administrators so they wouldn't have to log into the Django admin area. I would have liked to have implimented this prior to deadline but unfortunately due to time constraints I chose to prioritise other features. The basic concept would be to have an admin navigation option on the main site navigation bar that is only visible to users with admin privilages. Navigating to this page would open a dashboard for administrators to view the basic site stats like number of posts and comments and new users. They would also be able to execute basic tasks and actions like approving comments and adding a featured project. This page would have to be secured and hidden from other site users.
+I would like to add an admin area for administrators so they wouldn't have to log into the Django admin area. The basic concept would be to have an admin navigation option on the main site navigation bar that is only visible to users with admin privilages. Navigating to this page would open a dashboard for administrators to view the basic site stats like number of posts and comments and new users. They would also be able to execute basic tasks and actions like approving comments and adding a featured project. This page would have to be secured and hidden from other site users.
 
 [Back to top](<#contents>)
 
 ### User Profile
 
-Another feature that I believe would greatly improve on the site would be a customisable user profile section. In this section logged in / authorised users would be able to edit and update their profile details. They would also be able to add a profile picture / avatar for further profile customisation. This would greatly improve the social element of the app and the overall user experience. 
+Another feature that would improve the site would be a customisable user profile section. In this section a user would be able to edit their profile. They would also be able to add a profile picture/avatar. This would greatly improve the social element of the app and the overall user experience. 
 
 [Back to top](<#contents>)
 
-### User Change Password
+### Notification Feature
 
-I woiuld like to offer password change option for users who forget or want to change their password. Currently a user has no way to retrieve their password / profile if they forget their log in details. This will mean they will lose their access to their profile and projects. This is a big problem and could lead to users abandoning the site in the future.
-
-[Back to top](<#contents>)
-
-### Subscription Feature
-
-Another future feature I would like is a subscritpion option where users can sign up to email notifications when there is activity on the site(new project/post/comment on their work).
+Another future feature I would like is a notification option where users can sign up to email notifications when there is activity on the site(new project/post/comment on their work).
 
 [Back to top](<#contents>)
 
 ### Categories
 
-The Adventures With Wood site currently features project category fields which don't have any usable functionality. These fields were originally intended to group projects together to be displayed in project category lists / sections. This is definitely a feature I would like to integrate in the future. I would also like for a user to be able to search the site for a food category and be presented with projects that match that category.
+The Adventures With Wood site currently features category fields which don't have any usable functionality. These fields were originally intended to group projects together to be displayed in project category lists/sections.
 
 [Back to top](<#contents>)
 
 ### Search feature
 
-I did plan to have a search bar on the homepage in the original Adventures With Wood plan. Unfortunately this feature was delayed due to being a low priority in comparison to other features. In the future I would like a user to be able to use the search bar field on the nav bar or the all projects page to search for specific projects, posts or keywords. Submitting this field would then return a search template page with a list of any matching results. This would be a better experience for the user rather than having to manually search for a particular project.
+In the future I would like a user to be able to use the search bar field on the nav bar to search for specific projects, posts, categories or keywords. Submitting this field would then return a search results page with a list of any matching results. This would be a better experience for the user rather than having to manually scroll through each page.
 
 [Back to top](<#contents>)
 
 ### Print project instructions
 
 I did plan to incldue the ability to print out the project instructions so they could be more useable outdoors etc.
+
+[Back to top](<#contents>)
+
+### Enhanced Form Validation
+
+I did plan to add enhanced form vaildation above the built-in ones. Validation for typos, numbers instead of letters, etc
 
 [Back to top](<#contents>)
 
