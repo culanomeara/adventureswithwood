@@ -145,7 +145,7 @@ Agile methodology was used to plan and design the Adventures with Wood applicati
 
 ### Database Schema
 
-Database scheme was drawn up using [App Diagrams.net](https://app.diagrams.net/). The scheme was used to plan the database models and fields. It also helped to display the relationships between the models and how they interact. Adventures With Wood consists of four custom models and one generic - Project, Post, Category, Comment and User. I did not include Keywords or Userlevels in my final design
+Database scheme was drawn up using [App Diagrams.net](https://app.diagrams.net/). The scheme was used to plan the database models and fields. It also helped to display the relationships between the models and how they interact. Adventures With Wood consists of four custom models and one generic - Project, Post, Category, Comment and User. I did not include Keywords or Userlevels in my final design. I added Category type field(Project/Post) after my initial design.
 
 ![Adventures With Wood Database Scheme](media/readme/images/db_model_design.jpg)
 
@@ -721,103 +721,94 @@ Click on Delete | Post Delete Confirm Page will be displayed | Works as expected
 Click on Confirm | Post will be deleted and confirmation message shown | Works as expected |
 
 ### Site admin
-17. As a site admin, I can create, read, update and delete any project or post to manage site content
+17. As a site admin, I can create a project or post in the backend to manage site content
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
 Navigate to https://adventureswithwood.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
 Click on Project add + button | Project add form is presented to user in backend | Works as expected |
 Fill out form with relevant details and click save | New project is added to database | Works as expected |
-Navigate to https://adventureswithwood.herokuapp.com/ logged in as user | Create New Project option is displayed on top nav bar | Works as expected |
-Click on Create New Project menu option  | Create New Project form is presented to user in frontend | Works as expected |
-Fill out form with relevant details and click save | New project is added to database | Works as expected |
 Navigate to https://adventureswithwood.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
 Click on Post add + button | Post add form is presented to user in backend | Works as expected |
 Fill out form with relevant details and click save | New post is added to database | Works as expected |
-Navigate to https://adventureswithwood.herokuapp.com/ logged in as user | Create post option is displayed on the nav bar| Works as expected |
-Click on Create New Post menu option  | Create New Post form is presented to user in frontend | Works as expected |
-Fill out form with relevant details and click save | New post is added to database | Works as expected |
 
-18. As a site admin, I can approve or disapprove comments so that I can filter out objectionable comments
+18. As a site admin, I can update a project or post in the backend to manage site content
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to https://adventureswithwood.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
+Click on Project table button | Project list is displayed | Works as expected |
+Click on Project you want to update | Project details are displayed | Works as expected |
+Update details and click save | Project is updated to database | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
+Click on Post table button | Post list is displayed | Works as expected |
+Click on Post you want to update | Post details are displayed | Works as expected |
+Update details and click save | Post is updated to database | Works as expected |
+
+18. As a site admin, I can delete a project or post in the backend to manage site content
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to https://adventureswithwood.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
+Click on Project table button | Project list is displayed | Works as expected |
+Click on Project you want to delete | Project details are displayed | Works as expected |
+Click delete | Project is deleted from database | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
+Click on Post table button | Post list is displayed | Works as expected |
+Click on Post you want to delete | Post details are displayed | Works as expected |
+Click delete | Post is deleted from database | Works as expected |
+
+18. As a site admin, I can remove comments so that I can filter out objectionable comments
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
 Navigate to https://adventureswithwood.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
 Click on Comments table | A list of all comments is displayed | Works as expected |
-Select the commetns for approval from list and approve | Approved comments are displayed on the front end of the website | Works as expected |
+Select the comment(s) for removal | Comment is selected | Works as expected |
+Select "delete selected comments" from dropdown menu and click "go" | Confirm delete notice appears | Works as expected |
+Click "Yes, I'm sure" | Comment(s) deleted | Works as expected |
 
-<details><summary>Screenshot</summary>
-<img src="docs/testing/test-user-story-15a.png">
-<img src="docs/testing/test-user-story-15b.png">
-
-</details>
-
-19. As a site admin, I can create, read, update and delete categories to organise site content
+19. As a site admin, I can create categories to organise site content
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
 Navigate to https://adventureswithwood.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
-Click on Category add + button | Category add form is presented to user in backend | Works as expected |
+Click on Category Add+ button | Category add form is presented to user in backend | Works as expected |
 Fill out form with relevant details and click save | New category is added to database | Works as expected |
 
-<details><summary>Screenshot</summary>
-<img src="docs/testing/test-user-story-16a.png">
-<img src="docs/testing/test-user-story-16b.png">
-<img src="docs/testing/test-user-story-16c.png">
-<img src="docs/testing/test-user-story-16d.png">
-</details>
+19. As a site admin, I can update categories to organise site content
 
-20. As a site admin, I can choose which Projectss are featured on the home page
-
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
 Navigate to https://adventureswithwood.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
-Choose your Projects from the Projectss table | Projects edit form is presented to user in backend | Works as expected |
-Select the featured Projects checkbox and click save | New Projects is appearing on the home page carousel | Works as expected |
-Navigate to https://adventureswithwood.herokuapp.com/Projectss logged in as superuser | Add Projects button is displayed above Projects list | Works as expected |
-Choose your Projects from the Projectss table | Projects edit form is presented to user in frontend | Works as expected |
-Select the featured Projects checkbox and click save | New Projects is appearing on the home page carousel | Works as expected |
+Click on Category table | Category list appears | Works as expected |
+Click on Category you wish to update | Category name and type fields appear | Works as expected |
+Make updates and click save | Updated category is saved to database | Works as expected |
 
+20. As a site admin, I can delete categories to organise site content
 
-<details><summary>Screenshot</summary>
-<img src="docs/testing/test-user-story-16e.png">
-<img src="docs/testing/test-user-story-16f.png">
-
-</details>
-
-21. As a site admin, I want to be able to log into admin dashboard to edit projects/posts/categories/comments
-
-Navigate to https://adventureswithwood.herokuapp.com/admin | Admin sign in form is displayed | Works as expected |
-Once logged in Projects, Posts, Categories, Comments tables are available | App tables are displayed | Works as expected |
-
-<details><summary>Screenshot</summary>
-<img src="docs/testing/test-user-story-17a.png">
-<img src="docs/testing/test-user-story-17b.png">
-<img src="docs/testing/test-user-story-17c.png">
-
-</details>
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to https://adventureswithwood.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
+Click on Category table | Category list appears | Works as expected |
+Select Category(s) you wish to delete | Category(s) are selected | Works as expected |
+Select "delete selected categoerys" from dropdown menu and click "go" | Confirm delete notice appears | Works as expected |
+Click "Yes, I'm sure" | Category(s) deleted | Works as expected |
 
 ### Site Owner
 
-22. As a site owner, I want data entry to be validated on sign-up page
-
-23. As a site owner, I want the user to come to a custom 404 error page tha explains in simple language what has gone wrong if they enter a URL that does not exist
+21. As a site owner, I want the user to come to a custom 403 error page tha explains in simple language what has gone wrong if they enter a URL that they don't have permission to access
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Type the wrong page in the www address | Reroute to a customised 404 page | Works as expected |
+Navigate to an Update page by adding ".../update" to post/project url | Reroute to a customised 403 page | Works as expected |
 
-<details><summary>Screenshot</summary>
-<img src="docs/testing/test-user-story-21.png">
-</details>
-
-24. As a site owner, I want user to be able to contact me and provide their feedback
+22. As a site owner, I want the user to come to a custom 404 error page tha explains in simple language what has gone wrong if they enter a URL that does not exist
 
 **Step** | **Expected Result** | **Actual Result**
-Navigate to the contact page, scroll down to contact form | Form allows user to make contact and provide feedback | Works as expected |
+------------ | ------------ | ------------ |
+Navigate to a url that doesn't exist | Reroute to a customised 404 page | Works as expected |
 
-<details><summary>Screenshot</summary>
-<img src="docs/testing/test-user-story-23.png">
-
-</details>
 
 ### Automated testing
 
