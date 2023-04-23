@@ -542,7 +542,7 @@ I did plan to add enhanced form vaildation above the built-in ones. Validation f
 * [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML) - Provides the basic content and structure for the site.
 * [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS) - Provides the styling for the site.
 * [Python](https://www.python.org/) - Provides the functionality for the site.
-* [JavaScript](https://www.javascript.com/) - Provides the interactivity and front end functionality for the site.
+* [JavaScript](https://www.javascript.com/) - Provides the timeout functionality for the messages/notifications
 * [Git](https://git-scm.com/) - Provides the version control system for the site.
 
 [Back to top](<#contents>)
@@ -600,19 +600,14 @@ The testing approach is as follows:
 1. Manual testing of user stories
 2. Automated testing
 
-### Manual testing of user stories
+### User Story Tests
 
 ### Users
 1. I want to get inspiration for DIY wooden projects
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://adventureswithwood.herokuapp.com/ | Home page main body loads with carousel, site description and most popular projects | Works as expected |
-
-<details><summary>Screenshot</summary>
-<img src="docs/testing/test-user-story-1.png">
-</details>
-
+Navigate to https://adventureswithwood.herokuapp.com/ | Home page main body loads with carousel, site introduction and most popular projects | Works as expected |
 
 2. As a user, I can view all projects
 
@@ -620,133 +615,113 @@ Navigate to https://adventureswithwood.herokuapp.com/ | Home page main body load
 ------------ | ------------ | ------------ |
 Navigate to https://adventureswithwood.herokuapp.com/projects | All projects should be visible | Works as expected |
 
-<details><summary>Screenshot</summary>
-<img src="docs/testing/test-user-story-2a.png">
-<img src="docs/testing/test-user-story-2b.png">
-<img src="docs/testing/test-user-story-2c.png">
-<img src="docs/testing/test-user-story-2d.png">
-<img src="docs/testing/test-user-story-2e.png">
-</details>
-
-3. As a user, I can view all projects 
+3. As a user, I can view all posts 
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://adventureswithwood.herokuapp.com/ | Projectss page main body loads with all Projectss displayed | Works as expected |
-
-<details><summary>Screenshot</summary>
-<img src="docs/testing/test-user-story-3.png">
-</details>
-
+Navigate to https://adventureswithwood.herokuapp.com/posts | Posts page main body loads with all Posts displayed | Works as expected |
 
 4. As a site user I want to be able to view the most popular Projects
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://adventureswithwood.herokuapp.com/ and scroll to most popular Projects section | Projects with likes appear in three panels on homepage | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/ and scroll down to most popular Projects section | Projects with likes appear in three panels on homepage | Works as expected |
 
-<details><summary>Screenshot</summary>
-<img src="docs/testing/test-user-story-4.png">
-</details>
-
-5. - As a user, I want to be able to view details of a particular project
+5. As a user, I want to be able to view details of a particular project
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://adventureswithwood.herokuapp.com/ and click on project image | User can see projects dispalyed on carousel and click on any pciture to be be brought to details page | Works as expected |
-Navigate to https://adventureswithwood.herokuapp.com/projects/ and click on a project to see project details page | User can see projects dispalyed and click on any pciture to be be brought to details page | Works as expected |
-
-<details><summary>Screenshot</summary>
-<img src="docs/testing/test-user-story-3.png">
-</details>
+Navigate to https://adventureswithwood.herokuapp.com/ and click on project image on carusel or most popular projects section | click on any picture to be be brought to details page | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/projects/ and click on a project to see project details page | User can see projects dispalyed and click on any picture to be be brought to details page | Works as expected |
 
 6. As a user, I want to be able to view details of a particular post
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://adventureswithwood.herokuapp.com/posts/ and click on a post to see post details page | User can see posts dispalyed and click on any pciture to be be brought to details page | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/posts/ and click on a post to see post details page | User can see posts dispalyed and click on any picture to be be brought to details page | Works as expected |
 
-<details><summary>Screenshot</summary>
-<img src="docs/testing/test-user-story-3.png">
-</details>
-
-7. As a site user, I can log in to like/unlike projects or make comments
+7. As a site user, I can log in
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
 Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ and submit user details | User is logged in | Works as expected |
 
-<details><summary>Screenshot</summary>
-<img src="docs/testing/test-user-story-2a.png">
-<img src="docs/testing/test-user-story-2b.png">
-<img src="docs/testing/test-user-story-2c.png">
-<img src="docs/testing/test-user-story-2d.png">
-<img src="docs/testing/test-user-story-2e.png">
-<img src="docs/testing/test-user-story-7a.png">
-<img src="docs/testing/test-user-story-7b.png">
-</details>
-
-8. As a site user, I want to be able to create new Projects and Posts
+8. As a site user, I want to be able to create a new Project
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ and click log in with Google button | account is created for the user with details from Google account | Works as expected |
-Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ and click log in with Facebook button | account is created for the user with details from Facebook account | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ or click on Login nav link and submit user details | User is logged in | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/project_create or click on Create New Project nav link | Create New Project Form is displayed | Works as expected |
+Enter details on Create New Project Form page then click submit| New project is created | Works as expected |
 
-<details><summary>Screenshot</summary>
-<img src="docs/testing/test-user-story-2a.png">
-<img src="docs/testing/test-user-story-2b.png">
-<img src="docs/testing/test-user-story-2c.png">
-<img src="docs/testing/test-user-story-2d.png">
-<img src="docs/testing/test-user-story-2e.png">
-</details>
+9. As a site user, I want to be able to create a new Post
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ or click on Login nav link and submit user details | User is logged in | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/post_create or click on Create New Post nav link | Create New Post Form is displayed | Works as expected |
+Enter details on Create New Post Form page then click submit| New post is created | Works as expected |
 
 10. As a site user, I can view comments on an individual project
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://adventureswithwood.herokuapp.com//Projectss/ | Projects page loads | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/Projects/ | Projects page loads | Works as expected |
 Click on Projects card for more information | Projects detail page loads with comments section at the bottom of the page | Works as expected |
 Logged in users can fill out the comment form and click submit button | Comment is submitted for approval | Works as expected |
-Admin user approves comment in admin dashboard | Approved comments are displayed on the Projectss page | Works as expected |
 
-<details><summary>Screenshot</summary>
-<img src="docs/testing/test-user-story-2a.png">
-<img src="docs/testing/test-user-story-2b.png">
-<img src="docs/testing/test-user-story-2c.png">
-<img src="docs/testing/test-user-story-2d.png">
-<img src="docs/testing/test-user-story-2e.png">
-<img src="docs/testing/test-user-story-6a.png">
-</details>
-
-11. As a site user, I can log in to comment on projects
+11. As a site user, I can comment on projects
+------------ | ------------ | ------------ |
+Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ or click on Login nav link and submit user details | User is logged in | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/Projects/ | Projects page loads | Works as expected |
+Click on Projects card for more information | Projects detail page loads with comments section at the bottom of the page | Works as expected |
+Logged in users can fill out the comment form and click submit button | Comment is submitted | Works as expected |
 
 12. As a site user, I want to be aware of logged in status
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to any page and check nav bar | Logged in users see welcome message with personalised username and sign out link | Works as expected |
-Navigate to any page and check nav bar | Unauthenticated users see welcome message with register and sign in links | Works as expected |
+Navigate to any page and check nav bar | Logged in users see sign out link | Works as expected |
+Navigate to any page and check nav bar | Unauthenticated users see nav bar with Sign Up and Sign In options | Works as expected |
 
-<details><summary>Screenshot</summary>
-<img src="docs/testing/test-user-story-10a.png">
-<img src="docs/testing/test-user-story-10b.png">
-<img src="docs/testing/test-user-story-10c.png">
-</details>
-
-13. As a site user, I want to be able to update/edit/delete my projects/posts
+13. As a site user, I want to be able to update one of my projects
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://adventureswithwood.herokuapp.com/contact | Logged in users see username field of form prepopulated | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ or click on Login nav link and submit user details | User is logged in | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/projects or navigate to project details page of specific project they want to update | Logged in user that is also author of that project will see Update option under project summary | Works as expected |
+Click on Update | Project Update form will be displayed with pre-filled content shown | Works as expected |
+Click on Submit | Project updates will be submitted and confirmation message shown | Works as expected |
 
-<details><summary>Screenshot</summary>
-<img src="docs/testing/test-user-story-12.png">
+14. As a site user, I want to be able to update one of my Posts
 
-</details>
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ or click on Login nav link and submit user details | User is logged in | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/posts or navigate to post details page of specific post they want to update | Logged in user that is also author of that post will see Update option under post summary | Works as expected |
+Click on Update | Post Update form will be displayed with pre-filled content shown | Works as expected |
+Click on Submit | Post updates will be submitted and confirmation message shown | Works as expected |
+
+15. As a site user, I want to be able to Delete one of my projects
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ or click on Login nav link and submit user details | User is logged in | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/projects or navigate to project details page of specific project they want to delete | Logged in user that is also author of that project will see Delete option under Project summary | Works as expected |
+Click on Delete | Project Delete Confirm Page will be displayed | Works as expected |
+Click on Confirm | Project will be deleted and confirmation message shown | Works as expected |
+
+16. As a site user, I want to be able to Delete one of my posts
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ or click on Login nav link and submit user details | User is logged in | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/posts or navigate to post details page of specific post they want to delete | Logged in user that is also author of that post will see Delete option under post summary | Works as expected |
+Click on Delete | Post Delete Confirm Page will be displayed | Works as expected |
+Click on Confirm | Post will be deleted and confirmation message shown | Works as expected |
 
 ### Site admin
-14. As a site admin, I can create, read, update and delete any project or post to manage site content
+17. As a site admin, I can create, read, update and delete any project or post to manage site content
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -763,21 +738,7 @@ Navigate to https://adventureswithwood.herokuapp.com/ logged in as user | Create
 Click on Create New Post menu option  | Create New Post form is presented to user in frontend | Works as expected |
 Fill out form with relevant details and click save | New post is added to database | Works as expected |
 
-<details><summary>Screenshot</summary>
-<img src="docs/testing/test-user-story-14a.png">
-<img src="docs/testing/test-user-story-14b.png">
-<img src="docs/testing/test-user-story-14c.png">
-<img src="docs/testing/test-user-story-14d.png">
-<img src="docs/testing/test-user-story-14e.png">
-<img src="docs/testing/test-user-story-14f.png">
-<img src="docs/testing/test-user-story-14g.png">
-<img src="docs/testing/test-user-story-14h.png">
-<img src="docs/testing/test-user-story-14i.png">
-<img src="docs/testing/test-user-story-14j.png">
-<img src="docs/testing/test-user-story-14k.png">
-</details>
-
-15. As a site admin, I can approve or disapprove comments so that I can filter out objectionable comments
+18. As a site admin, I can approve or disapprove comments so that I can filter out objectionable comments
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -791,7 +752,7 @@ Select the commetns for approval from list and approve | Approved comments are d
 
 </details>
 
-16. As a site admin, I can create, read, update and delete categories to organise site content
+19. As a site admin, I can create, read, update and delete categories to organise site content
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -806,7 +767,7 @@ Fill out form with relevant details and click save | New category is added to da
 <img src="docs/testing/test-user-story-16d.png">
 </details>
 
-17. As a site admin, I can choose which Projectss are featured on the home page
+20. As a site admin, I can choose which Projectss are featured on the home page
 
 Navigate to https://adventureswithwood.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
 Choose your Projects from the Projectss table | Projects edit form is presented to user in backend | Works as expected |
@@ -822,7 +783,7 @@ Select the featured Projects checkbox and click save | New Projects is appearing
 
 </details>
 
-18. As a site admin, I want to be able to log into admin dashboard to edit projects/posts/categories/comments
+21. As a site admin, I want to be able to log into admin dashboard to edit projects/posts/categories/comments
 
 Navigate to https://adventureswithwood.herokuapp.com/admin | Admin sign in form is displayed | Works as expected |
 Once logged in Projects, Posts, Categories, Comments tables are available | App tables are displayed | Works as expected |
@@ -836,9 +797,9 @@ Once logged in Projects, Posts, Categories, Comments tables are available | App 
 
 ### Site Owner
 
-21. As a site owner, I want data entry to be validated on sign-up page
+22. As a site owner, I want data entry to be validated on sign-up page
 
-22. As a site owner, I want the user to come to a custom 404 error page tha explains in simple language what has gone wrong if they enter a URL that does not exist
+23. As a site owner, I want the user to come to a custom 404 error page tha explains in simple language what has gone wrong if they enter a URL that does not exist
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -848,7 +809,7 @@ Type the wrong page in the www address | Reroute to a customised 404 page | Work
 <img src="docs/testing/test-user-story-21.png">
 </details>
 
-23. As a site owner, I want user to be able to contact me and provide their feedback
+24. As a site owner, I want user to be able to contact me and provide their feedback
 
 **Step** | **Expected Result** | **Actual Result**
 Navigate to the contact page, scroll down to contact form | Form allows user to make contact and provide feedback | Works as expected |
