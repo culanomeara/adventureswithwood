@@ -4,7 +4,7 @@ Adventures With Wood is a full stack web application that gives users a platform
 
 The application impliments user authorisation and full CRUD functionality, allowing users to create, update, read and delete projects stored in a relational database management system. Users can also like projects and be part of the site community by adding comments to projects. 
 
-The site also features a back end admin dashboard that allows an administrator to review and approve user comments, as well as monitor and edit projects, posts and users. 
+The site also features a back end admin dashboard that allows a superuser to review user comments, as well as monitor, edit, delete projects, posts and categories. 
 
 Link to the live site - https://adventureswithwood.herokuapp.com/
 
@@ -54,6 +54,7 @@ Link to the live site - https://adventureswithwood.herokuapp.com/
             * [Update Form](<#update-form>)
             * [Update Notification](<#update-notification>)
         * [**Delete Project or Post**](<#delete-project-or-post>)
+            * [Delete Confirmation Page](<#delete-confirmation-page>)
             * [Delete Notification](<#delete-notification>)   
         * [**403 Page**](<#403-page>)
     * [**Future Features**](<#future-features>)
@@ -84,8 +85,8 @@ Link to the live site - https://adventureswithwood.herokuapp.com/
         * [Automated Tests](<#automated-tests>)
         * [Responsive Tests](<#responsive-tests>)
         * [Browser Tests](<#browser-tests>)
+        * [OS Tests](<#os-tests>)
         * [Lighthouse Tests](<#lighthouse-tests>)
-        * [Wave Accessibility Tests](<#wave-accessibility-tests>)
     * [**Bugs**](<#bugs>)
         * [Resolved](<#resolved>)
         * [Unresolved](<#unresolved>)
@@ -458,9 +459,11 @@ If a user successfully submits the update form the page is refreshed. A message 
 
 A user can delete their project or post easily from the relevannt list page or details page. This option is only visible to the author of the project or post. If a user clicks on delete, a delete confirmation is displayed seeking confirmation from the user for deletion. The user has the option to cancel the delete by clicking the cancel button or to confirm deletion by clicking the delete button. If the user clicks the cancel button the user is reverted back to the previous page. If the user clicks the delete button the project/post is deleted from the database and the page is refreshed showing it removed from the list.
 
-- Delete Otpion
+- Delete Option
 
 ![Delete Option](media/readme/images/update_delete.png)
+
+#### Delete Confirmation Page
 
 - Delete Confirmation Page
 
@@ -845,7 +848,7 @@ The Adventures With Wood CSS stylesheet has been tested using the [W3C CSS Valid
 
 ### PEP8 (PYTHON)
 
-Due to the closure of the PEP8 Python Validation online site, I used the new [Code Institute Python Linter](https://pep8ci.herokuapp.com/) to test all of the Adventures With Wood python code files. 
+I used the new [Code Institute Python Linter](https://pep8ci.herokuapp.com/) to test all of the Adventures With Wood python code files. 
 
 #### urls.py
 Passed without error
@@ -903,24 +906,63 @@ Three automated tests were set up in the file tests.py
 ### Browser Tests
 
 #### Site tested in:
-![Google Chrome v112](readme/assets/images/css-validation.png)
 
-![Apple Safari v16.3](readme/assets/images/css-validation.png)
+- Google Chrome
 
+![Google Chrome](media/readme/images/browser_test_chrome.jpg)
+
+- Apple Safari
+
+![Apple Safari]()
+
+- Mozilla Fierfox
+
+![Mozilla Fierfox](media/readme/images/browser_test_firefox.jpg)
+
+- Microsoft Edge
+
+![Microsoft Edge](media/readme/images/browser_test_edge.jpg)
+
+[Back to top](<#contents>)
+
+### OS Tests
+
+Site was developed on an Apple MacBook using iOS v13.2
+
+#### Site tested in:
+
+- Windows 10 PRO
+
+![Windows 10 PRO](media/readme/images/os_test_windows.jpg)
 
 [Back to top](<#contents>)
 
 ### Lighthouse Tests
 
+#### Mobile
+
+[Mobile Link](https://pagespeed.web.dev/analysis/https-adventureswithwood-herokuapp-com/mx8dwnnzdu?form_factor=mobile)
+
+![Screenshot Mobile](media/readme/images/lighthouse_test_mobile.jpg)
+
+#### Desktop
+
+[Desktop link](https://pagespeed.web.dev/analysis/https-adventureswithwood-herokuapp-com/mx8dwnnzdu?form_factor=desktop)
+
+![Screenshot Desktop](media/readme/images/lighthouse_test_desktop.jpg)
+
 [Back to top](<#contents>)
 
-### Wave Accessibility Tests
-
-[Back to top](<#contents>)
 
 ## Bugs
 
 ### Resolved 
+
+**Bug** | **Cause** | **Outcome**
+------------ | ------------ | ------------ |
+Images were showing up tiny on Projects page | Missing semi-colon in css file | Resolved |
+All users were able to access CRUD functions  | Didn't have authentication set up across the site | Resolved |
+When updating project or post, crash occured if you didn't add new image  | Image already in DB wasn't returned back when saving | Used request.files to pull image in and then sent back when saved. Resolved |
 
 [Back to top](<#contents>)
 
