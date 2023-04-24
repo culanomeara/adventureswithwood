@@ -78,28 +78,4 @@
     </div>
   </div>
 </section>
-<!--section class="posts">
-  <h2 class="heading">Posts</h2>
-  <div class="post-panel">
-    {% for post in posts %}
-    <a href="/posts/{{ post.slug }}">
-      {% if "placeholder" in post.featured_image.url %}
-      <img alt="{{ post.title }}"
-        src="https://res.cloudinary.com/dsmlahszj/image/upload/v1679261024/e6gpexfcgmaneqv7bvcf.png">
-      {% else %}
-      <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
-      {% endif %}
-      <div class="post-info">
-        
-          <div class="post-info-inner">
-              <h4 class="heading">{{ post.title }}</h4>
-              <p>
-                  {{ post.excerpt }}
-              </p>
-          </div>
-      </div>
-    </a>
-  </div>
-  {% endfor %}
-</section-->
 {%endblock%}

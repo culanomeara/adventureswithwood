@@ -100,7 +100,6 @@ Link to the live site - https://adventureswithwood.herokuapp.com/
     * [**Content**](<#content>)
     * [**Media**](<#media>)
     * [**Code**](<#code>)
-*  [**Acknowledgements**](<#acknowledgements>)
 
 # Project 
 
@@ -832,7 +831,9 @@ The website was tested on the following devices:
 
 When the Adventures With Wood site was first tested with the [W3C HTML Markup Validation Service](https://validator.w3.org/) it showed two errors and some info messages. The errors were missing alts for images. The info messages were all related to a stray semi-colon.
 
-![HTML Validation Test](readme/assets/images/html-validation.png)
+[HTML link](https://validator.w3.org/nu/?doc=https%3A%2F%2Fadventureswithwood.herokuapp.com%2F)
+
+![HTML Validation Test](media/readme/images/html_validator_test.jpg)
 
 [Back to top](<#contents>)
 
@@ -840,9 +841,9 @@ When the Adventures With Wood site was first tested with the [W3C HTML Markup Va
 
 The Adventures With Wood CSS stylesheet has been tested using the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) by direct input. Unfortunately there were two errors shown for grid template areas proj1 and proj2. I removed the offending references and the site passed the test.
 
-![CSS Validation Errors](readme/assets/images/css-validation-errors.png)
+[CSS link](https://jigsaw.w3.org/css-validator/validator#css)
 
-![CSS Validation Test](readme/assets/images/css-validation.png)
+![CSS Validation Test](media/readme/images/css_validator_test.jpg)
 
 [Back to top](<#contents>)
 
@@ -895,7 +896,7 @@ Passed without error
 
 ### Automated Tests
 
-Three automated tests were set up in the file tests.py
+Three automated tests were set up in the file tests.py to test views: Home, Project and Post. All tests passed.
 
 [Back to top](<#contents>)
 
@@ -967,6 +968,8 @@ When updating project or post, crash occured if you didn't add new image  | Imag
 [Back to top](<#contents>)
 
 ### Unresolved
+
+There are no unresolved bugs that I am aware of!
 
 [Back to top](<#contents>)
 
@@ -1189,15 +1192,14 @@ The site logo/placeholder image was created using Canva https://www.canva.com/
 
 ## Code 
 
-I used the "I think therefore I blog" walk through project as a starting point and template. I created a blog like page that presented projects and posts. I added to the base code with custom views, models, html and css.
+I used the "I think therefore I blog" walk through project as a starting point and template. I created a blog like page that presented projects and posts. I added to the base code with custom views, models, html and css. I used the JS script for message timeouts from that blog and modified it for my own requirements.
 
 I watched a good few of Codemy videos for Django blog building https://www.youtube.com/watch?v=m3efqF9abyg
+
+The home page carousel was from bootstrap docs https://getbootstrap.com/docs/4.0/components/carousel/
 
 I got the idea for the MOST POPULAR projects in this CI PP4 project by John Constant https://ci-pp4-recipe-site.herokuapp.com/
 
 [Back to top](<#contents>)
 
-## Acknowledgements
-
-[Back to top](<#contents>)
 
