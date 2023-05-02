@@ -14,9 +14,9 @@
                             <div class="image-container">
                                 {% if "placeholder" in project.featured_image.url %}
                                 <img class="card-img-top img-thumbnail"
-                                    src="https://res.cloudinary.com/dsmlahszj/image/upload/v1677950722/ijwoqevbawjruy19i6bt.png">
+                                    src="https://res.cloudinary.com/dsmlahszj/image/upload/v1677950722/ijwoqevbawjruy19i6bt.png" alt="{{ project.title }}">
                                 {% else %}
-                                <img class="card-img-top img-thumbnail" src=" {{ project.featured_image.url }}">
+                                <img class="card-img-top img-thumbnail" src=" {{ project.featured_image.url }}" alt="{{ project.title }}">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Author: {{ project.author }}</p>

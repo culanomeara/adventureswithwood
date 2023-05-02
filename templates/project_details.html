@@ -6,10 +6,9 @@
         <div class="card-body">
             <div class="image-container">
                 {% if "placeholder" in project.featured_image.url %}
-                <img src="https://res.cloudinary.com/dsmlahszj/image/upload/v1679261024/e6gpexfcgmaneqv7bvcf.png"
-                    max-width="50%">
+                <img src="https://res.cloudinary.com/dsmlahszj/image/upload/v1679261024/e6gpexfcgmaneqv7bvcf.png" alt="{{ project.title }}">
                 {% else %}
-                <img src=" {{ project.featured_image.url }}" max-width="50%">
+                <img src=" {{ project.featured_image.url }}" alt="{{ project.title }}">
                 {% endif %}
                 <div class="image-flash">
                     <p class="author">{{ project.author }} | {{ project.created_on }}

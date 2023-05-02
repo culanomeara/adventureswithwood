@@ -9,9 +9,9 @@
                 <!-- If the featured image URL contains "placeholder", a default image is displayed. If not, the actual image URL is displayed -->
                 {% if "placeholder" in post.featured_image.url %} 
                 <img src="https://res.cloudinary.com/dsmlahszj/image/upload/v1679261024/e6gpexfcgmaneqv7bvcf.png"
-                    max-width="50%"> 
+                alt="{{ post.title }}"> 
                 {% else %}
-                <img src=" {{ post.featured_image.url }}" max-width="50%">
+                <img src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
                 {% endif %}
                 <div class="image-flash">
                     <p class="author">{{ post.author }} | {{ post.created_on }}

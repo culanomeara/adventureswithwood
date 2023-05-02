@@ -4,9 +4,9 @@
 {% block content %}
 <header>
   <!-- https://getbootstrap.com/docs/4.0/components/carousel/ -->
-  <div class="container w-60">
+  <div class="container">
     <div id="carouselCaptions" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
+      <div class="carousel-inner mx-auto">
         {% for project in featured_projects %}
         {% if forloop.first %}
         <div class="carousel-item active">
@@ -14,7 +14,7 @@
           <div class="carousel-item">
             {% endif %}
             <a href="projects/{{ project.slug }}">
-              <img src="{{ project.featured_image.url }}" class="w-100 mx-auto" alt="{{ project.title }}"
+              <img src="{{ project.featured_image.url }}" class="w-100" alt="{{ project.title }}"
                 style="max-height:60vh;">
               <div class="carousel-caption d-none d-md-block hero-flash">
                 <h1>{{ project.title }}</h1>
