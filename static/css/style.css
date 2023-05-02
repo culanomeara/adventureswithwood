@@ -75,7 +75,7 @@ body {
 /* Image Flash Styling */
 .image-flash {
     position: absolute;
-    bottom: 5%;
+    top: 5%;
     min-width: 15%;
     left: -2px;
     background-color: #a52a2a;
