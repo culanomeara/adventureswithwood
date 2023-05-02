@@ -168,6 +168,14 @@ body {
     color: #445261;
 }
 
+/*Carousel Control Icon Styling */
+.carousel-control-next,
+.carousel-control-prev {
+  width: 5vw;
+  height: 5vw;
+  color:#a52a2a;
+}
+
 /* Button Styling */
 .btn-signup {
     background-color: #a52a2a;
