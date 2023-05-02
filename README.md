@@ -1,13 +1,12 @@
 # **Adventures With Wood**
 
-Adventures With Wood is a full stack web application that gives users a platform to view, create and share projects in wood. The intention of the site is to provide a simple, intuitive, visually appealing and user friendly platform for users to share wood-inspired projects and interact with the community. The intended target audience is anyone with an interest in wood, DIY and making things. The target audience will mostly span across men and women from young adults to older generations. 
+Adventures With Wood is a full stack web application that gives users a platform to view, create and share projects in wood. The intention of the site is to provide a simple, intuitive, visually appealing and user-friendly platform for users to share wood-inspired projects and interact with the community. The intended target audience is anyone with an interest in wood, DIY and making things. The target audience will mostly span across men and women from young adults to older generations. 
 
-The application impliments user authorisation and full CRUD functionality, allowing users to create, update, read and delete projects stored in a relational database management system. Users can also like projects and be part of the site community by adding comments to projects. 
+The application implements user authorisation and full CRUD functionality, allowing users to create, update, read and delete projects stored in a relational database management system. Users can also like projects and be part of the site community by adding comments to projects. 
 
-The site also features a back end admin dashboard that allows a superuser to review user comments, as well as monitor, edit, delete projects, posts and categories. 
+The site also features a back-end admin dashboard that allows a superuser to review user comments, as well as monitor, edit, delete projects, posts and categories. 
 
 Link to the live site - https://adventureswithwood.herokuapp.com/
-
 
 # Contents
 
@@ -105,8 +104,7 @@ Link to the live site - https://adventureswithwood.herokuapp.com/
 
 ## Objective
 
-This project was created for Portfolio Project Four submission for the Full Stack Software Development Higher National Diploma at [Code Institute](https://codeinstitute.net/). Amoungst other assessment criteria, the project had to be built using HTML, CSS, JavaScript, Python and Django and feature full CRUD functionality and user authorisation. The project also had to be planned and designed using Agile methodologies. 
-
+This project was created for Portfolio Project Four submission for the Full Stack Software Development Higher National Diploma at [Code Institute](https://codeinstitute.net/). Amongst other assessment criteria, the project had to be built using HTML, CSS, JavaScript, Python and Django and feature full CRUD functionality and user authorisation. The project also had to be planned and designed using Agile methodologies. 
 
 
 [Back to top](<#contents>)
@@ -128,7 +126,7 @@ This project was created for Portfolio Project Four submission for the Full Stac
 ## Site Owner Goals
 
 - Provide a stable and enjoyable user experience that encourages interaction and participation.
-- The platform should be accessibile, welcoming and appealing to new users.
+- The platform should be accessible, welcoming and appealing to new users.
 - Content should be high quality and well structured.
 - Provide fully responsive application with straightforward navigation
 - Ensure only authenticated and valid users have access to CRUD functionality
@@ -149,7 +147,6 @@ Database scheme was drawn up using [App Diagrams.net](https://app.diagrams.net/)
 
 ![Adventures With Wood Database Scheme](media/readme/images/db_model_design.jpg)
 
-
 [Back to top](<#contents>)
 
 # User Experience UX
@@ -158,13 +155,13 @@ Database scheme was drawn up using [App Diagrams.net](https://app.diagrams.net/)
 
 In terms of project management, user stories are an integral part of the software development creative process. Adventures With Wood consists of 22 user stories. 
 
-A full list of user stories can be found in the [Adventures With Wood GitHub Project Board](https://github.com/users/culanomeara/projects/1/views/1).
+A full list of user stories can be found in the [Adventures with Wood GitHub Project Board](https://github.com/users/culanomeara/projects/1/views/1).
 
 [Back to top](<#contents>)
 
 ## Site Design 
 
-The Adventures With Wood app features a simple and user friendly design. Balsamiq was used to do some wireframe mock ups for the homepage and projects/posts pages.
+The Adventures with Wood app features a simple and user friendly design. Balsamiq was used to do some wireframe mock ups for the homepage and projects/posts pages.
 
 -Index.html wireframe
 
@@ -224,12 +221,11 @@ Site navigation is present at all times on every page of the site in the form of
 
 ![Navigation Bar - Mobile](media/readme/images/navbar_mobile.png)
 
-
 [Back to top](<#contents>)
 
 #### Carousel
 
-The homepage Carousel section is the large eye catching section which is just beneath the navigation bar. The carousel is only displayed on the homepage. It is used to catch the users attention, and to clearly showcase the general topic of the site. It features a large, colourful full screen image and a centralised text box with the project title. It auto scrolls but users also have the option of clicking left or right using the arrows on the image. If users click on an image they are brought to the Project details page for that project.
+The homepage Carousel section is the large eye-catching section which is just beneath the navigation bar. The carousel is only displayed on the homepage. It is used to catch the users attention, and to clearly showcase the general topic of the site. It features a large, colourful full screen image and a centralised text box with the project title. It auto scrolls but users also have the option of clicking left or right using the arrows on the image. If users click on an image, they are brought to the Project details page for that project.
 
 - Carousel
 
@@ -260,15 +256,14 @@ The most popular projects feature is another method used to draw in the site vis
 ### Projects and Posts Pages
 
 #### Projects
-The project page is a template used to display the summary of a project. Each published project has a summary page. Theses pages are available for all users to view, including non logged in users. The main purpose of the page is to display the brief project overview. Users will generally navigate to a full project page by clicking on the project from the project card either on the home page via the Carousel or Most Popular Projects or the projects page. As the user has now shown a specific interest in the project, all the information about the project is displayed on the details page.
+The project page is a template used to display the summary of a project. Each published project has a summary page. These pages are available for all users to view, including non-logged in users. The main purpose of the page is to display the brief project overview. Users will generally navigate to a full project page by clicking on the project from the project card either on the home page via the Carousel or Most Popular Projects or the projects page. As the user has now shown a specific interest in the project, all the information about the project is displayed on the details page.
 
 - Projects Page
 
 ![Projects page](media/readme/images/projects_page.png)
 
-
 #### Posts
-The posts page is a template used to display the summary of a post. Each published post has a summary page. Theses pages are available for all users to view, including non logged in users. The main purpose of the page is to display the brief post contents. Users will generally navigate to a full post page by clicking thru from this page. As the user has now shown a specific interest in the post, all the information about the post is displayed on the details page.
+The posts page is a template used to display the summary of a post. Each published post has a summary page. These pages are available for all users to view, including non-logged in users. The main purpose of the page is to display the brief post contents. Users will generally navigate to a full post page by clicking thru from this page. As the user has now shown a specific interest in the post, all the information about the post is displayed on the details page.
 
 ![Posts Page](media/readme/images/projects_page.png)
 
@@ -277,7 +272,7 @@ The posts page is a template used to display the summary of a post. Each publish
 ### Project and Post Details
 
 #### Project Details
-The project details page is a template used to display the full information on a project. Each published project has a details page. Theses pages are available for all users to view, including non logged in users. The main purpose of the page is to display the project tools, amterials and instructions. Users will generally navigate to a full project page by clicking the view project button on the project card either on the home page or the projects page. As the user has now shown a specific interest in the project, all the information about the project is displayed here.
+The project details page is a template used to display the full information on a project. Each published project has a details page. These pages are available for all users to view, including non-logged in users. The main purpose of the page is to display the project tools, materials and instructions. Users will generally navigate to a full project page by clicking the view project button on the project card either on the home page or the projects page. As the user has now shown a specific interest in the project, all the information about the project is displayed here.
 
 - Project Details
 
@@ -286,7 +281,7 @@ The project details page is a template used to display the full information on a
 [Back to top](<#contents>)
 
 #### Post Details
-The post details page is a template used to display the full information on a post. Each published post has a details page. Theses pages are available for all users to view, including non logged in users. The main purpose of the page is to display the full post contents. Users will generally navigate to a full post page by clicking thru from the Posts page. As the user has now shown a specific interest in the post, all the information about the post is displayed here.
+The post details page is a template used to display the full information on a post. Each published post has a details page. These pages are available for all users to view, including non-logged in users. The main purpose of the page is to display the full post contents. Users will generally navigate to a full post page by clicking thru from the Posts page. As the user has now shown a specific interest in the post, all the information about the post is displayed here.
 
 - Post Details
 
@@ -334,12 +329,11 @@ The project comment form is what the user uses to post a comment on a project. T
 
 ![Comment](media/readme/images/project_comment_submitted.png)
 
-
 [Back to top](<#contents>)
 
 #### Form Validation
 
-The built-in valdiation is used to validate the comment form. The form is checked for required fields and passwords require a level of difficulty. A notification appears on the users screen to advise them about the failure. The user can then rectify their mistake and submit the form again. When the comment form is filled out correctly the form submits successfully and the page is refreshed.
+The built-in validation is used to validate the comment form. The form is checked for required fields and passwords require a level of difficulty. A notification appears on the users screen to advise them about the failure. The user can then rectify their mistake and submit the form again. When the comment form is filled out correctly the form submits successfully, and the page is refreshed.
 
 - Form Validation: Field Required
 
@@ -351,12 +345,11 @@ The built-in valdiation is used to validate the comment form. The form is checke
 
 [Back to top](<#contents>)
 
-
 ### Authorisation
 
 #### Sign Up
 
-A user can navigate to the sign up page via the site navigation bars if they are not logged in. The Adventures With Wood sign up page is a built-in template from the [Django Allauth Package](https://django-allauth.readthedocs.io/en/latest/installation.html). Allauth provides the basic functionality for the user authorisation used in Adventures With Wood. However, the basic allauth template have been customised and styled to match the site design. Once a user submits the form correctly they are redirected back to the homepage as a logged in user. For each action, they are notified of that action: via a message at the top of the page. These messages can be removed by clicking on the X.
+A user can navigate to the sign-up page via the site navigation bars if they are not logged in. The Adventures With Wood sign up page is a built-in template from the [Django Allauth Package](https://django-allauth.readthedocs.io/en/latest/installation.html). Allauth provides the basic functionality for the user authorisation used in Adventures With Wood. However, the basic allauth template have been customised and styled to match the site design. Once a user submits the form correctly, they are redirected back to the homepage as a logged in user. For each action, they are notified of that action: via a message at the top of the page. These messages can be removed by clicking on the X.
 
 - Sign Up Form
 ![Sign Up](media/readme/images/sign_up_form.png)
@@ -369,7 +362,7 @@ A user can navigate to the sign up page via the site navigation bars if they are
 
 #### Sign In
 
-A user can navigate to the Sign in page via the site navigation bars if they are not already signed in. As with the Sign Up page, it's a built-in form. The styling of the sign in page is very similar to the rest of the user authorisation pages. The colour scheme and layout are consistent, but the form and page heading are different. Once the sign in form is submitted correctly the user is redirected to the homepage as a logged in user.
+A user can navigate to the Sign in page via the site navigation bars if they are not already signed in. As with the Sign-Up page, it's a built-in form. The styling of the sign in page is very similar to the rest of the user authorisation pages. The colour scheme and layout are consistent, but the form and page heading are different. Once the sign in form is submitted correctly the user is redirected to the homepage as a logged in user.
 
 - Sign In Form
 
@@ -393,14 +386,13 @@ A user can navigate to the Sign Out page via the site navigation bars if they ar
 
 ![Sign Out Notification](media/readme/images/sign_out_notification.png)
 
-
 [Back to top](<#contents>)
 
 ### Create a new project or post
 
 #### Create form
 
-The Create template form is a page which features a project/post form to enable users to submit a project/post to the Adventures With Wood site. This page is only visible to logged in users and appears in the navigation menu. The page features similar styling to the rest of the site for consistency. It uses SummerNote so that users can add formatting to their new project/posts
+The Create template form is a page which features a project/post form to enable users to submit a project/post to the Adventures With Wood site. This page is only visible to logged in users and appears in the navigation menu. The page features similar styling to the rest of the site for consistency. It uses SummerNote so that users can add formatting to their new project/posts.
 
 - Project Create Form
 
@@ -414,7 +406,7 @@ The Create template form is a page which features a project/post form to enable 
 
 #### Create notification
 
-When a user submits a project/post successfully, a message apears at the top of the page confirming the submission of the project/post.
+When a user submits a project/post successfully, a message appears at the top of the page confirming the submission of the project/post.
 
 - Project Submission Notification
 
@@ -428,7 +420,7 @@ When a user submits a project/post successfully, a message apears at the top of 
 
 ### Update project or post
 
-The Update project/post page is available to logged in users. The Update option appears below the summary on the list page and details page. When the Update option is clicked the user is navigated to the edit project page. The page stying and content is exactly the same as the create page. The only difference is the form is pre filled out with the content. The user can then use this form to edit the content and submit the amendments to overwrite the previous content.
+The Update project/post page is available to logged in users. The Update option appears below the summary on the list page and details page. When the Update option is clicked, the user is navigated to the edit project page. The page styling and content is exactly the same as the create page. The only difference is the form is prefilled out with the content. The user can then use this form to edit the content and submit the amendments to overwrite the previous content.
 
 - Update Project Form
 
@@ -437,7 +429,6 @@ The Update project/post page is available to logged in users. The Update option 
 - Update Post Form
 
 ![Update Post Form](media/readme/images/post_update_form.png)
-
 
 #### Update Notification
 
@@ -453,10 +444,9 @@ If a user successfully submits the update form the page is refreshed. A message 
 
 [Back to top](<#contents>)
 
-
 ### Delete Project or Post
 
-A user can delete their project or post easily from the relevannt list page or details page. This option is only visible to the author of the project or post. If a user clicks on delete, a delete confirmation is displayed seeking confirmation from the user for deletion. The user has the option to cancel the delete by clicking the cancel button or to confirm deletion by clicking the delete button. If the user clicks the cancel button the user is reverted back to the previous page. If the user clicks the delete button the project/post is deleted from the database and the page is refreshed showing it removed from the list.
+A user can delete their project or post easily from the relevant list page or details page. This option is only visible to the author of the project or post. If a user clicks on delete, a delete confirmation is displayed seeking confirmation from the user for deletion. The user has the option to cancel the delete by clicking the cancel button or to confirm deletion by clicking the delete button. If the user clicks the cancel button the user is reverted back to the previous page. If the user clicks the delete button the project/post is deleted from the database and the page is refreshed showing it removed from the list.
 
 - Delete Option
 
@@ -467,7 +457,6 @@ A user can delete their project or post easily from the relevannt list page or d
 - Delete Confirmation Page
 
 ![Delete](media/readme/images/delete.png)
-
 
 [Back to top](<#contents>)
 
@@ -497,7 +486,7 @@ I believe the Adventures With Wood site has a lot of potential for expansion in 
 
 ### Admin Area
 
-I would like to add an admin area for administrators so they wouldn't have to log into the Django admin area. The basic concept would be to have an admin navigation option on the main site navigation bar that is only visible to users with admin privilages. Navigating to this page would open a dashboard for administrators to view the basic site stats like number of posts and comments and new users. They would also be able to execute basic tasks and actions like approving comments and adding a featured project. This page would have to be secured and hidden from other site users.
+I would like to add an admin area for administrators so they wouldn't have to log into the Django admin area. The basic concept would be to have an admin navigation option on the main site navigation bar that is only visible to users with admin privileges. Navigating to this page would open a dashboard for administrators to view the basic site stats like number of posts and comments and new users. They would also be able to execute basic tasks and actions like approving comments and adding a featured project. This page would have to be secured and hidden from other site users.
 
 [Back to top](<#contents>)
 
@@ -527,13 +516,13 @@ In the future I would like a user to be able to use the search bar field on the 
 
 ### Print project instructions
 
-I did plan to incldue the ability to print out the project instructions so they could be more useable outdoors etc.
+I did plan to include the ability to print out the project instructions so they could be more useable outdoors etc.
 
 [Back to top](<#contents>)
 
 ### Enhanced Form Validation
 
-I did plan to add enhanced form vaildation above the built-in ones. Validation for typos, numbers instead of letters, etc
+I did plan to add enhanced form validation above the built-in ones. Validation for typos, numbers instead of letters, etc
 
 [Back to top](<#contents>)
 
@@ -551,7 +540,7 @@ I did plan to add enhanced form vaildation above the built-in ones. Validation f
 
 ## Frameworks
 
-* [Bootstrap](https://getbootstrap.com/) - Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains HTML, CSS and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components..
+* [Bootstrap](https://getbootstrap.com/) - Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains HTML, CSS and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.
 * [Django](https://www.djangoproject.com/) - Django is a free and open-source, Python-based web framework that follows the model–template–views architectural pattern.
 
 [Back to top](<#contents>)
@@ -561,15 +550,15 @@ I did plan to add enhanced form vaildation above the built-in ones. Validation f
 * [GitHub](https://github.com/) - An internet hosting service used for version control. Used to host the Adventures With Wood repository and for the project board used for project management and user stories.
 * [GitPod](https://www.gitpod.io/) - A cloud development environment used as the primary site code editor.
 * [Heroku](https://dashboard.heroku.com/) - A cloud platform used to host the Adventures With Wood full stack application.
-* [Cloudinary](https://cloudinary.com/?&utm_campaign=1329&utm_content=instapagelogocta-selfservetest) - A cloud based video and image management platform used to store the site images.
+* [Cloudinary](https://cloudinary.com/?&utm_campaign=1329&utm_content=instapagelogocta-selfservetest) - A cloud-based video and image management platform used to store the site images.
 * [Slack](https://slack.com/intl/en-gb/) - An online instant messaging program used for site feedback and guidance from the [Code Institute](https://codeinstitute.net/) community.
 * [App Diagrams](https://app.diagrams.net/) - An online diagram software used for the database schemas.
 * [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) - A set of web developer tools built directly into the chrome browser. Used for responsiveness tests and further testing.
-* [Google Fonts](https://fonts.google.com/) - A web based font service by Google used to supply the site typography.
-* [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) - An open source automated testing tool used for site tests.
+* [Google Fonts](https://fonts.google.com/) - A web-based font service by Google used to supply the site typography.
+* [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) - An open-source automated testing tool used for site tests.
 * [Responsive Design Checker](https://responsivedesignchecker.com/) - An online testing tool used for responsive site testing.
 * [Am I Responsive](https://ui.dev/amiresponsive) - An online testing tool used for responsive site testing.
-* [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org/) - An online suite of evaluation tools use to test the site for accessibility.
+* [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org/) - An online suite of evaluation tools used to test the site for accessibility.
 
 [Back to top](<#contents>)
 
@@ -633,14 +622,14 @@ Navigate to https://adventureswithwood.herokuapp.com/ and scroll down to most po
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://adventureswithwood.herokuapp.com/ and click on project image on carusel or most popular projects section | click on any picture to be be brought to details page | Works as expected |
-Navigate to https://adventureswithwood.herokuapp.com/projects/ and click on a project to see project details page | User can see projects dispalyed and click on any picture to be be brought to details page | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/ and click on project image on carousel or most popular projects section | click on any picture to be brought to details page | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/projects/ and click on a project to see project details page | User can see projects displayed and click on any picture to be brought to details page | Works as expected |
 
 6. As a user, I want to be able to view details of a particular post
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://adventureswithwood.herokuapp.com/posts/ and click on a post to see post details page | User can see posts dispalyed and click on any picture to be be brought to details page | Works as expected |
+Navigate to https://adventureswithwood.herokuapp.com/posts/ and click on a post to see post details page | User can see posts displayed and click on any picture to be brought to details page | Works as expected |
 
 7. As a site user, I can log in
 
@@ -693,7 +682,7 @@ Navigate to any page and check nav bar | Unauthenticated users see nav bar with 
 Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ or click on Login nav link and submit user details | User is logged in | Works as expected |
 Navigate to https://adventureswithwood.herokuapp.com/projects or navigate to project details page of specific project they want to update | Logged in user that is also author of that project will see Update option under project summary | Works as expected |
 Click on Update | Project Update form will be displayed with pre-filled content shown | Works as expected |
-Click on Submit | Project updates will be submitted and confirmation message shown | Works as expected |
+Click on Submit | Project updates will be submitted, and confirmation message shown | Works as expected |
 
 14. As a site user, I want to be able to update one of my Posts
 
@@ -702,7 +691,7 @@ Click on Submit | Project updates will be submitted and confirmation message sho
 Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ or click on Login nav link and submit user details | User is logged in | Works as expected |
 Navigate to https://adventureswithwood.herokuapp.com/posts or navigate to post details page of specific post they want to update | Logged in user that is also author of that post will see Update option under post summary | Works as expected |
 Click on Update | Post Update form will be displayed with pre-filled content shown | Works as expected |
-Click on Submit | Post updates will be submitted and confirmation message shown | Works as expected |
+Click on Submit | Post updates will be submitted, and confirmation message shown | Works as expected |
 
 15. As a site user, I want to be able to Delete one of my projects
 
@@ -711,7 +700,7 @@ Click on Submit | Post updates will be submitted and confirmation message shown 
 Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ or click on Login nav link and submit user details | User is logged in | Works as expected |
 Navigate to https://adventureswithwood.herokuapp.com/projects or navigate to project details page of specific project they want to delete | Logged in user that is also author of that project will see Delete option under Project summary | Works as expected |
 Click on Delete | Project Delete Confirm Page will be displayed | Works as expected |
-Click on Confirm | Project will be deleted and confirmation message shown | Works as expected |
+Click on Confirm | Project will be deleted, and confirmation message shown | Works as expected |
 
 16. As a site user, I want to be able to Delete one of my posts
 
@@ -720,7 +709,7 @@ Click on Confirm | Project will be deleted and confirmation message shown | Work
 Navigate to https://adventureswithwood.herokuapp.com/accounts/login/ or click on Login nav link and submit user details | User is logged in | Works as expected |
 Navigate to https://adventureswithwood.herokuapp.com/posts or navigate to post details page of specific post they want to delete | Logged in user that is also author of that post will see Delete option under post summary | Works as expected |
 Click on Delete | Post Delete Confirm Page will be displayed | Works as expected |
-Click on Confirm | Post will be deleted and confirmation message shown | Works as expected |
+Click on Confirm | Post will be deleted, and confirmation message shown | Works as expected |
 
 ### Site admin
 17. As a site admin, I can create a project or post in the backend to manage site content
@@ -794,7 +783,7 @@ Make updates and click save | Updated category is saved to database | Works as e
 Navigate to https://adventureswithwood.herokuapp.com/admin logged in as superuser | Admin dashboard is displayed | Works as expected |
 Click on Category table | Category list appears | Works as expected |
 Select Category(s) you wish to delete | Category(s) are selected | Works as expected |
-Select "delete selected categoerys" from dropdown menu and click "go" | Confirm delete notice appears | Works as expected |
+Select "delete selected categorys" from dropdown menu and click "go" | Confirm delete notice appears | Works as expected |
 Click "Yes, I'm sure" | Category(s) deleted | Works as expected |
 
 ### Site Owner
@@ -809,8 +798,7 @@ Navigate to an Update page by adding ".../update" to post/project url | Reroute 
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to a url that doesn't exist | Reroute to a customised 404 page | Works as expected |
-
+Navigate to a url that does not exist | Reroute to a customised 404 page | Works as expected |
 
 ### Automated testing
 
@@ -839,7 +827,7 @@ When the Adventures With Wood site was first tested with the [W3C HTML Markup Va
 
 ### W3C (CSS)
 
-The Adventures With Wood CSS stylesheet has been tested using the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) by direct input. Unfortunately there were two errors shown for grid template areas proj1 and proj2. I removed the offending references and the site passed the test.
+The Adventures With Wood CSS stylesheet has been assessed using the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) by direct input. Unfortunately there were two errors shown for grid template areas proj1 and proj2. I removed the offending references and the site passed the test.
 
 [CSS link](https://jigsaw.w3.org/css-validator/validator#css)
 
@@ -916,9 +904,9 @@ Three automated tests were set up in the file tests.py to test views: Home, Proj
 
 ![Apple Safari]()
 
-- Mozilla Fierfox
+- Mozilla Firefox
 
-![Mozilla Fierfox](media/readme/images/browser_test_firefox.jpg)
+![Mozilla Firefox](media/readme/images/browser_test_firefox.jpg)
 
 - Microsoft Edge
 
@@ -954,16 +942,15 @@ Site was developed on an Apple MacBook using iOS v13.2
 
 [Back to top](<#contents>)
 
-
 ## Bugs
 
 ### Resolved 
 
 **Bug** | **Cause** | **Outcome**
 ------------ | ------------ | ------------ |
-Images were showing up tiny on Projects page | Missing semi-colon in css file | Resolved |
+Images were showing up tiny on Projects page | Missing semi-colon in CSS file | Resolved |
 All users were able to access CRUD functions  | Didn't have authentication set up across the site | Resolved |
-When updating project or post, crash occured if you didn't add new image  | Image already in DB wasn't returned back when saving | Used request.files to pull image in and then sent back when saved. Resolved |
+When updating project or post, crash occurred if you didn't add new image  | Image already in DB wasn't returned back when saving | Used request.files to pull image in and then sent back when saved. Resolved |
 
 [Back to top](<#contents>)
 
@@ -988,7 +975,7 @@ _In GITHUB:_
 
 2. Create a requirements file --> pip3 freeze --local > requirements.txt
 
-3. Create your project: in this case for-the-love-of-food
+3. Create your project: in this case adventures-with-wood
 
 4. Create an app using command --> python3 manage.py startapp APP_NAME
 
@@ -1015,7 +1002,6 @@ _In GITHUB:_
 6. Go to Database App/Resources/ Add-ons and search and click 'Heroku Postgres'.
 7. Go to the Settings tab, scroll down to Config Vars and select Reveal Config Vars and copy text.
 
-
 _IN GITPOD..._
 
 8. Create env.py file on top of level directory.
@@ -1023,11 +1009,9 @@ _IN GITPOD..._
 10. set environment variables --> os.environ["DATABASE_URL"] = "Paste in Heroku DATABASE_URL Link"
 11. Add in a secret key --> os.environ["SECRET_KEY"] = "Make up your own randomSecretKey"
 
-
 _IN HEROKU ..._
 
 12. Add secret Key to config vars --> SECRET_KEY, “randomSecretKey”
-
 
 _IN GITPOD / IN SETTINGS.PY_
 
@@ -1039,7 +1023,6 @@ if os.path.isfile("env.py"):
    import env
 
 14. Remove the secret key and replace it with the following variable--> SECRET_KEY = os.environ.get('SECRET_KEY')
-
 
 15. Comment out the DataBases section -->
  DATABASES = {
@@ -1056,15 +1039,12 @@ if os.path.isfile("env.py"):
 
 17. In the terminal, save files and make migrations --> python3 manage.py migrate
 
-
 _GETTING STATIC AND MEDIA FILES STORED ON CLOUDINARY..._
-
 
 18. Create a cloudinary account, and copy the CLOUDINARY_URL from the dashboard.
 
 19. Add url to env.py -->
 os.environ["CLOUDINARY_URL"] = "cloudinary://************************"
-
 
 _BACK IN HEROKU ..._
 
@@ -1072,7 +1052,6 @@ _BACK IN HEROKU ..._
 Add to Settings tab in Config Vars e.g. COUDINARY_URL, cloudinary://************************
 
 21. In config vars, add DISABLE_COLLECTSTATIC, 1. This will be rmeoved before final deployment.
-
 
 _IN GITPOD / SETTINGS.PY_
 
@@ -1111,7 +1090,6 @@ TEMPLATES = [
 25. Add heroku hostname to ALLOWED_HOSTS-->
 ALLOWED_HOSTS = ["PROJ_NAME.herokuapp.com", "localhost"]
 
-
 _IN GITPOD..._
 
 26. Create 3 new folders: media, static and templates
@@ -1131,11 +1109,10 @@ _IN HEROKU ..._
 
 _IN GITPOD / ENV.PY_
 
-1. Set DEVELOPMENT varialbe to 0!
+1. Set DEVELOPMENT variable to 0!
 2. Add a few more settings--> X_FRAME_OPTIONS = 'SAMEORIGIN'
     * Without this, the summer note editor would no longer work when we deploy the project. This is due to Cross-Origin Resource Sharing, which tells the browser which resources are permitted to be loaded.
 3. Save, add and commit as "deployment commit", and push to github.
-
 
 _IN HEROKU..._
 
@@ -1151,7 +1128,7 @@ _IN HEROKU..._
 
 You can Fork the Repository. This makes a copy of the original repository on our Github account so you can make changes without affecting the original repository.
 1. Log into GitHub and locate the GitHub repository you want.
-2. Click on the "Fork" button which is located in the top right corner.
+2. Click on the "Fork" button which is in the top right corner.
 3. You will now have a copy of the original repository in your GitHub account.
 
 [Back to top](<#contents>)
@@ -1159,7 +1136,7 @@ You can Fork the Repository. This makes a copy of the original repository on our
 ### Cloning
 
 1. Log into GitHub and locate the GitHub repository you want.
-2. Under the repository name, click "Code" button which will come up with a dropdown menu.
+2. Under the repository name, click "Code" button which will produce a dropdown menu.
 3. Where it says Clone, copy the link below.
 
 [Link to deployed site](https://adventureswithwood.herokuapp.com/)
@@ -1192,7 +1169,7 @@ The site logo/placeholder image was created using Canva https://www.canva.com/
 
 ## Code 
 
-I used the "I think therefore I blog" walk through project as a starting point and template. I created a blog like page that presented projects and posts. I added to the base code with custom views, models, html and css. I used the JS script for message timeouts from that blog and modified it for my own requirements.
+I used the "I think therefore I blog" walk through project as a starting point and template. I created a blog like page that presented projects and posts. I added to the base code with custom views, models, html and CSS. I used the JS script for message timeouts from that blog and modified it for my own requirements.
 
 I watched a good few of Codemy videos for Django blog building https://www.youtube.com/watch?v=m3efqF9abyg
 
@@ -1200,7 +1177,7 @@ The home page carousel was from bootstrap docs https://getbootstrap.com/docs/4.0
 
 I got the idea for the MOST POPULAR projects in this CI PP4 project by John Constant https://ci-pp4-recipe-site.herokuapp.com/
 
-
 [Back to top](<#contents>)
+
 
 

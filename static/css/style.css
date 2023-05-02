@@ -1,24 +1,79 @@
 @import url('https://fonts.googleapis.com/css2?family=Antic&family=IBM+Plex+Mono&display=swap');
 
+/* Body Styling */
 body {
     font-family: 'Antic', sans-serif;
     color: #a52a2a;
 }
 
+/* Navbar Text Styling */
 #navbarText {
     font-size: 1.4rem;
     font-weight: 700;
     color: #a52a2a;
 }
 
+/* Wrapper Styling */
+.wrapper {
+    display: grid;
+    grid-gap: 2rem;
+    padding-top: 2rem;
+}
+
+/* Intro Styling */
+.intro {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Top Styling */
+.top {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-areas:
+        'hero hero proj1'
+        'hero hero proj2';
+}
+
+/* Hero Styling */
+.hero {
+    grid-area: hero;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 1.6rem;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Project Styling */
+.proj {
+    font-size: 1.3rem;
+    max-height: 50vh;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    overflow: hidden;
+    position: relative;
+    color: #a52a2a;
+}
+
+/* Card Styling */
 .card {
     border: none;
 }
 
+/* Image Container Styling */
 .image-container {
     position: relative;
 }
 
+/* Image Flash Styling */
 .image-flash {
     position: absolute;
     bottom: 5%;
@@ -27,11 +82,60 @@ body {
     background-color: #a52a2a;
 }
 
+/* Hero Flash Styling */
+.hero-flash {
+    padding: 0.8rem;
+    color: white;
+    font-weight: 150;
+    font-size: 1.6rem;
+    background-color: #a52a2a;
+}
+
+/* Carousel Image Styling */
+.carousel-inner img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 530px;
+    max-width: 850px;
+}
+
+/* Intro Image Styling */
+.intro img {
+    width: 100%;
+    padding-top: 1rem;
+    padding-left: 0;
+}
+
+/* hero and project Image Styling */
+.hero img,
+.proj img {
+    max-width: 100%;
+    max-height: 100vh;
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+
+.hero a:hover img,
+.proj a:hover img {
+    transform: scale(1.1);
+}
+
+/* Image flash heading Styling */
+.image-flash h3 {
+    padding: 0.6rem;
+    color: white;
+    font-weight: 120;
+    font-size: 1.6rem;
+}
+
+/* Author Styling */
 .author {
     color: white;
     margin: 4px;
 }
 
+/* project/post link Styling */
 .p-link {
     text-decoration: none;
     color: #a52a2a;
@@ -41,6 +145,7 @@ body {
     color: #ba7506
 }
 
+/* project/post update/delete buttons Styling */
 .p-update {
     text-decoration: none;
     color: #445261;
@@ -50,17 +155,20 @@ body {
     color: #a52a2a;
 }
 
+/* project/post title Styling */
 .p-title {
     margin-top: 20%;
     margin-left: 5%;
 }
 
+/* project/post subtitle Styling */
 .p-subtitle {
     margin-left: 5%;
     margin-bottom: 20%;
     color: #445261;
 }
 
+/* Button Styling */
 .btn-signup {
     background-color: #a52a2a;
     color: #fff;
@@ -70,17 +178,6 @@ body {
 .btn-signup:active {
     background-color: #fff;
     color: #a52a2a;
-}
-
-.link {
-    color: #a52a2a;
-    text-decoration: none;
-}
-
-.link:hover,
-.link:active {
-    color: #445261;
-    text-decoration: underline;
 }
 
 .btn-like {
@@ -96,68 +193,19 @@ body {
     border: none;
 }
 
-.wrapper {
-    display: grid;
-    grid-gap: 2rem;
-    padding-top: 2rem;
+/* Link Styling */
+.link {
+    color: #a52a2a;
+    text-decoration: none;
 }
 
-.intro {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    justify-content: space-between;
-    align-items: center;
+.link:hover,
+.link:active {
+    color: #445261;
+    text-decoration: underline;
 }
 
-.intro img {
-    width: 100%;
-    padding-top: 1rem;
-    padding-left: 0;
-}
-
-.hero img,
-.proj img {
-    max-width: 100%;
-    max-height: 100vh;
-    transform: scale(1.1);
-    transition: all 0.5s;
-}
-
-.top {
-    display: grid;
-    grid-gap: 2rem;
-    grid-template-areas:
-        'hero hero proj1'
-        'hero hero proj2';
-}
-
-.hero {
-    grid-area: hero;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    padding: 1.6rem;
-    overflow: hidden;
-    position: relative;
-}
-
-.image-flash h3 {
-    padding: 0.6rem;
-    color: white;
-    font-weight: 120;
-    font-size: 1.6rem;
-}
-
-.hero-flash,
-.button {
-    padding: 0.8rem;
-    color: white;
-    font-weight: 150;
-    font-size: 1.6rem;
-    background-color: #a52a2a;
-}
-
+/* Default Button Styling */
 .button {
     padding: 0.4rem;
     color: white;
@@ -167,24 +215,7 @@ body {
     align-self: center;
 }
 
-.proj {
-    font-size: 1.3rem;
-    max-height: 50vh;
-    text-align: center;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    overflow: hidden;
-    position: relative;
-    color: #a52a2a;
-}
-
-.hero a:hover img,
-.proj a:hover img {
-    transform: scale(1.1);
-}
-
+/* Form input Styling */
 .signup input,
 .create_p input,
 .login input {

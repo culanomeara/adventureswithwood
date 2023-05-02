@@ -14,8 +14,7 @@
           <div class="carousel-item">
             {% endif %}
             <a href="projects/{{ project.slug }}">
-              <img src="{{ project.featured_image.url }}" class="w-100" alt="{{ project.title }}"
-                style="max-height:60vh;">
+              <img src="{{ project.featured_image.url }}" class="w-75" alt="{{ project.title }}">
               <div class="carousel-caption d-none d-md-block hero-flash">
                 <h1>{{ project.title }}</h1>
               </div>
@@ -33,6 +32,7 @@
         </div>
       </div>
     </div>
+  </div>  
 </header>
 <hr>
 <section class="intro container">
