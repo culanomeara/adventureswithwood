@@ -169,8 +169,8 @@ body {
 }
 
 /*Carousel Control Icon Styling */
-.carousel-control-next,
-.carousel-control-prev {
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
   width: 5vw;
   height: 5vw;
   color:#a52a2a;
