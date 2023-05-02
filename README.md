@@ -195,7 +195,7 @@ The homepage is the first page of the site that a user will see when they naviga
 
 - Nav bar and Carousel
 
-![Nav bar and Carousel](media/readme/images/index_nav_carousel.png)
+![Nav bar and Carousel](media/readme/images/index.jpg)
 
 - Who We are
 ![Who We are](media/readme/images/index_who_we_are.png)
@@ -902,7 +902,7 @@ Three automated tests were set up in the file tests.py to test views: Home, Proj
 
 - Apple Safari
 
-![Apple Safari]()
+![Apple Safari](media/readme/images/browser_test_safari.jpg)
 
 - Mozilla Firefox
 
