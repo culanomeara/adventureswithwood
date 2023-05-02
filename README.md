@@ -10,7 +10,7 @@ Link to the live site - https://adventureswithwood.herokuapp.com/
 
 # Contents
 
-* [**Project**](<#project>)
+* [**Portfolio Four**](<#portfolio-four>)
     * [Objective](<#objective>)
     * [Site User Goals](<#site-user-goals>)
     * [Site Owner Goals](<#site-owner-goals>)
@@ -29,9 +29,9 @@ Link to the live site - https://adventureswithwood.herokuapp.com/
             * [Carousel](<#carousel>)
             * [Intro](<#intro>)
             * [Most Popular projects List](<#most-popular-projects-list>)
-        * [**Project and Post Pages**](<#project-and-post-pages>)
-            * [Project](<#project>)
-            * [Post](<#post>)
+        * [**Project and Post Pages**](<#projects-and-posts-pages>)
+            * [Project](<#projects>)
+            * [Post](<#posts>)
         * [**Project and Post Details**](<#project-and-post-details>)
             * [Project Details](<#project-details>)
             * [Post Details](<#post-details>)
@@ -100,7 +100,7 @@ Link to the live site - https://adventureswithwood.herokuapp.com/
     * [**Media**](<#media>)
     * [**Code**](<#code>)
 
-# Project 
+# Portfolio Four
 
 ## Objective
 
@@ -201,7 +201,7 @@ The homepage is the first page of the site that a user will see when they naviga
 ![Who We are](media/readme/images/index_who_we_are.png)
 
 - Most Popular Projects
-![Most Popular Projects](media/readme/images/index_most_popular.png)
+![Most Popular Projects](media/readme/images/index_most_popular_projects.jpg)
 
 [Back to top](<#contents>)
 
@@ -249,7 +249,7 @@ The most popular projects feature is another method used to draw in the site vis
 
 - Most Popular Projects
 
-![Most Popular Projects](media/readme/images/index_most_popular.png)
+![Most Popular Projects](media/readme/images/index_most_popular_projects.jpg)
 
 [Back to top](<#contents>)
 
@@ -265,7 +265,7 @@ The project page is a template used to display the summary of a project. Each pu
 #### Posts
 The posts page is a template used to display the summary of a post. Each published post has a summary page. These pages are available for all users to view, including non-logged in users. The main purpose of the page is to display the brief post contents. Users will generally navigate to a full post page by clicking thru from this page. As the user has now shown a specific interest in the post, all the information about the post is displayed on the details page.
 
-![Posts Page](media/readme/images/projects_page.png)
+![Posts Page](media/readme/images/posts_page.jpg)
 
 [Back to top](<#contents>)
 
