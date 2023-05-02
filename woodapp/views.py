@@ -23,7 +23,7 @@ class Home(View):
     """
     def get(self, request, *args, **kwargs):
         featured_projects = (
-            Project.objects.all().order_by('-created_on')[:5]
+            Project.objects.all().order_by('-created_on')[:20]
         )
         most_popular = Project.objects.all().order_by('likes')[:3]
         most_recent = Category.objects.all().order_by('type')[:6]
