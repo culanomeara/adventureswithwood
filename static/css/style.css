@@ -66,6 +66,12 @@ body {
     border: none;
 }
 
+/* Image styling */
+img {
+    max-width: 500px;
+    max-height: 500px;
+}
+
 /* Image Container Styling */
 .image-container {
     position: relative;
@@ -73,6 +79,15 @@ body {
 
 /* Image Flash Styling */
 .image-flash {
+    position: absolute;
+    bottom: 15%;
+    min-width: 15%;
+    left: -2px;
+    background-color: #a52a2a;
+}
+
+/* Most Popular Image Flash Styling */
+.most-image-flash {
     position: absolute;
     top: 15%;
     min-width: 15%;
