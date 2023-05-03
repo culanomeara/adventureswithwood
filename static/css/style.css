@@ -97,10 +97,10 @@ img {
 
 /* Hero Flash Styling */
 .hero-flash {
-    padding: 0.8rem;
+    padding: 0.6rem;
     color: white;
-    font-weight: 150;
-    font-size: 1.6rem;
+    font-weight: 120;
+    font-size: 1.2rem;
     background-color: #a52a2a;
 }
 
