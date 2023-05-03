@@ -229,7 +229,7 @@ The homepage Carousel section is the large eye-catching section which is just be
 
 - Carousel
 
-![Carousel](media/readme/images/index_nav_carousel.png)
+![Carousel](media/readme/images/index_carousel.jpg)
 
 [Back to top](<#contents>)
 
@@ -817,11 +817,23 @@ The website was tested on the following devices:
 
 ### W3C (HTML)
 
-When the Adventures With Wood site was first tested with the [W3C HTML Markup Validation Service](https://validator.w3.org/) it showed two errors and some info messages. The errors were missing alts for images. The info messages were all related to a stray semi-colon.
+When the Adventures With Wood site was first tested with the [W3C HTML Markup Validation Service](https://validator.w3.org/) it showed two errors and some info messages. The errors were missing alts for images. The info messages were all related to a stray semi-colon and a stray / after hr.
 
 [HTML link](https://validator.w3.org/nu/?doc=https%3A%2F%2Fadventureswithwood.herokuapp.com%2F)
 
 ![HTML Validation Test](media/readme/images/html_validator_test.jpg)
+
+- Projects Page
+
+![HTML Validation Test Projects Page](media/readme/images/html_validator_test_projects.jpg)
+
+- Posts Page
+
+![HTML Validation Test Projects Page](media/readme/images/html_validator_test_posts.jpg)
+
+- Sign Up Page
+
+![HTML Validation Test Sign Up Page](media/readme/images/html_validator_test_signup.jpg)
 
 [Back to top](<#contents>)
 
