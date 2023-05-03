@@ -143,6 +143,12 @@ img {
     font-size: 1.6rem;
 }
 
+.most-image-flash h4 {
+    padding: 0.4rem;
+    color: white;
+    font-size: 1.2rem;
+}
+
 /* Author Styling */
 .author {
     color: white;
