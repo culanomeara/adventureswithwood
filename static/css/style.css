@@ -135,7 +135,8 @@ img {
 }
 
 /* Image flash heading Styling */
-.image-flash h3 {
+.image-flash h3,
+.most-image-flash h3 {
     padding: 0.6rem;
     color: white;
     font-weight: 120;
